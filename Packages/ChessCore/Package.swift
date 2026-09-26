@@ -13,8 +13,8 @@ let package = Package(
         .target(name: "ChessCore"),
         // Clock, puzzles, progression, storage, store and controller, ported from src/app.
         .target(name: "ChessServices", dependencies: ["ChessCore"]),
-        .testTarget(name: "ChessCoreTests", dependencies: ["ChessCore"]),
-        .testTarget(name: "ChessServicesTests", dependencies: ["ChessServices"]),
+        .testTarget(name: "ChessCoreTests", dependencies: ["ChessCore"], resources: [.copy("Fixtures")]),
+        .testTarget(name: "ChessServicesTests", dependencies: ["ChessServices", "ChessCore"], resources: [.copy("Fixtures")]),
     ],
     swiftLanguageModes: [.v6]
 )
