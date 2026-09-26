@@ -84,10 +84,15 @@ struct TextStyle: Sendable {
     var opacity: Double = 1
     /// `font-feature-settings: 'tnum'`
     var tabularNumbers = false
+    /// `font-style: italic` — the bundled faces have no italic, so this is a synthetic oblique,
+    /// exactly what the browser does with the same four faces.
+    var italic = false
 
     var font: Font {
-        let f = AppFonts.font(family, size: size, weight: weight)
-        return tabularNumbers ? f.monospacedDigit() : f
+        var f = AppFonts.font(family, size: size, weight: weight)
+        if tabularNumbers { f = f.monospacedDigit() }
+        if italic { f = f.italic() }
+        return f
     }
 
     /// `letter-spacing` in points.
@@ -157,6 +162,43 @@ struct TextStyle: Sendable {
     /// gameScreen.ts promotion heading: heading family at 24px; the inline style sets no weight,
     /// so it inherits the body's 400
     static let promotionTitle = TextStyle(family: .heading, weight: 400, size: 24)
+    /// puzzlesScreen / statsScreen / settingsScreen header: heading 400 36px
+    static let pageTitle = TextStyle(family: .heading, weight: 400, size: 36)
+
+    // MARK: loginScreen.ts inline styles
+
+    /// `h1 { font-size: 34px; line-height: 1.1 }` on top of the h1 rule (heading 600, −0.015em)
+    static let loginTitle = TextStyle(family: .heading, weight: 600, size: 34, lineHeight: 1.1, letterSpacing: -0.015)
+    /// 15px / 1.6 at text 66%
+    static let loginLead = TextStyle(family: .body, weight: 400, size: 15, lineHeight: 1.6, color: Theme.text.opacity(0.66))
+    /// `.input` at 16px
+    static let loginInput = TextStyle(family: .body, weight: 400, size: 16)
+    /// italic 12.5px (the colour is set by the screen: transparent until a hint shows)
+    static let loginHint = TextStyle(family: .body, weight: 400, size: 12.5, italic: true)
+    /// body 500 15px, letter-spacing 0.4px, #fdfcfb
+    static let loginButton = TextStyle(family: .body, weight: 500, size: 15, lineHeight: 1.2, letterSpacing: 0.4 / 15, color: Color(hex: 0xFDFCFB))
+    /// 14px at text 55%
+    static let loginLink = TextStyle(family: .body, weight: 400, size: 14, color: Theme.text.opacity(0.55))
+
+    // MARK: ad-hoc inline styles of the screens
+
+    /// A body-font inline style: `font-size: N px` plus whatever the element sets.
+    static func inline(_ size: CGFloat, weight: Int = 400, lineHeight: CGFloat? = 1.55, letterSpacing: CGFloat = 0,
+                       uppercase: Bool = false, color: Color? = nil, opacity: Double = 1,
+                       tabularNumbers: Bool = false, italic: Bool = false) -> TextStyle {
+        TextStyle(family: .body, weight: weight, size: size, lineHeight: lineHeight, letterSpacing: letterSpacing,
+                  uppercase: uppercase, color: color, opacity: opacity, tabularNumbers: tabularNumbers, italic: italic)
+    }
+
+    /// `.card-title` with an inline `font-size` override (the screens use 15px).
+    static func cardTitle(_ size: CGFloat) -> TextStyle {
+        TextStyle(family: .heading, weight: 600, size: size, lineHeight: 1.2)
+    }
+
+    /// `.dialog-title` with an inline `font-size` (the game-over sheet uses 26px).
+    static func dialogTitle(_ size: CGFloat) -> TextStyle {
+        TextStyle(family: .heading, weight: 600, size: size)
+    }
 }
 
 private struct TextStyleModifier: ViewModifier {
@@ -188,10 +230,32 @@ private struct OptionalForeground: ViewModifier {
     }
 }
 
+extension TextStyle {
+    /// CSS `min-content` width of `text` in this style: the widest word, because a browser breaks
+    /// lines at spaces and never inside a word (SwiftUI would fall back to breaking characters).
+    /// Measured with the UIKit face; the trailing tracking keeps the estimate on the safe side.
+    func minContentWidth(_ text: String) -> CGFloat {
+        guard let ui = AppFonts.uiFont(family, size: size, weight: weight) else { return 0 }
+        let source = uppercase ? text.uppercased() : text
+        var widest: CGFloat = 0
+        for word in source.split(whereSeparator: \.isWhitespace) {
+            let measured = NSAttributedString(string: String(word), attributes: [.font: ui, .kern: tracking]).size().width
+            widest = max(widest, measured + tracking)
+        }
+        return widest.rounded(.up)
+    }
+}
+
 extension View {
     /// Applies a `TextStyle`: font, tracking, uppercase, colour, opacity, and the CSS line box
     /// (extra leading is split above and below so single lines measure `line-height × size`).
     func textStyle(_ style: TextStyle) -> some View {
         modifier(TextStyleModifier(style: style))
+    }
+
+    /// `min-width: min-content` for a text: when a flex row squeezes the view it wraps at spaces
+    /// but never below its widest word.
+    func minContent(_ text: String, _ style: TextStyle, alignment: Alignment = .leading) -> some View {
+        frame(minWidth: style.minContentWidth(text), alignment: alignment)
     }
 }

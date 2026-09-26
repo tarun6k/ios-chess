@@ -85,40 +85,82 @@ struct PieceGlyph: View {
         let baseline = Self.baseline(fontSize: fontSize)
         let bleed = Self.bleed
         Canvas { context, size in
-            var text = context.resolve(Text(PieceGlyphs.text(type)).font(font))
-            let measured = text.measure(in: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
-            let textBaseline = text.firstBaseline(in: measured)
+            let text = Text(PieceGlyphs.text(type)).font(font)
+            let measured = context.resolve(text).measure(in: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+            let textBaseline = context.resolve(text).firstBaseline(in: measured)
             let origin = CGPoint(
                 x: (size.width - measured.width) / 2,
                 y: bleed + baseline - textBaseline
             )
-            func draw(_ color: Color, dx: CGFloat, dy: CGFloat, in g: inout GraphicsContext) {
-                text.shading = .color(color)
-                g.draw(text, at: CGPoint(x: origin.x + dx, y: origin.y + dy), anchor: .topLeading)
-            }
-            // text-shadow paints back to front: the blurred drop shadow, then the outlines.
-            context.drawLayer { layer in
-                layer.addFilter(.blur(radius: 1.5))
-                draw(style.shadow, dx: 0, dy: 2, in: &layer)
-            }
-            draw(style.outline, dx: 0, dy: 1, in: &context)
-            draw(style.outline, dx: 0, dy: -1, in: &context)
-            draw(style.outline, dx: 1, dy: 0, in: &context)
-            draw(style.outline, dx: -1, dy: 0, in: &context)
-            draw(style.fill, dx: 0, dy: 0, in: &context)
+            Self.draw(text, style: style, at: origin, in: &context)
         }
         .frame(width: fontSize + 2 * bleed, height: fontSize + 2 * bleed)
         .frame(width: fontSize, height: fontSize)
         .accessibilityHidden(true)
     }
 
-    /// Baseline offset from the top of a `line-height: 1` box in the body font, with Blink's
-    /// integer font metrics.
-    static func baseline(fontSize: CGFloat) -> CGFloat {
+    /// Baseline offset from the top of a line box (`line-height: 1` → `fontSize` tall, or the
+    /// given `lineBox`) in the body font, with Blink's integer font metrics.
+    static func baseline(fontSize: CGFloat, lineBox: CGFloat? = nil) -> CGFloat {
         guard let ui = AppFonts.uiFont(.body, size: fontSize, weight: 400) else { return fontSize * 0.8 }
         let ascent = ui.ascender.rounded()
         let descent = (-ui.descender).rounded()
-        let halfLeading = ((fontSize - ascent - descent) / 2).rounded(.down)
+        let halfLeading = (((lineBox ?? fontSize) - ascent - descent) / 2).rounded(.down)
         return ascent + halfLeading
+    }
+
+    /// Paints `text` in the body font with a piece style's outline and drop shadow at `origin`
+    /// (top-left of the text's own box), the way the browser paints `text-shadow`.
+    static func draw(_ text: Text, style: PieceStyle, at origin: CGPoint, in context: inout GraphicsContext) {
+        var resolved = context.resolve(text)
+        func paint(_ color: Color, dx: CGFloat, dy: CGFloat, in g: inout GraphicsContext) {
+            resolved.shading = .color(color)
+            g.draw(resolved, at: CGPoint(x: origin.x + dx, y: origin.y + dy), anchor: .topLeading)
+        }
+        // text-shadow paints back to front: the blurred drop shadow, then the outlines.
+        context.drawLayer { layer in
+            layer.addFilter(.blur(radius: 1.5))
+            paint(style.shadow, dx: 0, dy: 2, in: &layer)
+        }
+        paint(style.outline, dx: 0, dy: 1, in: &context)
+        paint(style.outline, dx: 0, dy: -1, in: &context)
+        paint(style.outline, dx: 1, dy: 0, in: &context)
+        paint(style.outline, dx: -1, dy: 0, in: &context)
+        paint(style.fill, dx: 0, dy: 0, in: &context)
+    }
+}
+
+/// A run of piece glyphs separated by spaces (the captured-piece chips:
+/// `GLYPHS[t] + VS).join(' ')` at `font-size: 30px; line-height: 1.2`) in one piece style.
+struct PieceGlyphRun: View {
+    let types: [PieceType]
+    let style: PieceStyle
+    let fontSize: CGFloat
+    let lineHeight: CGFloat
+
+    private static let bleed: CGFloat = 8
+
+    var body: some View {
+        let string = types.map(PieceGlyphs.text).joined(separator: " ")
+        let font = AppFonts.body(fontSize)
+        let lineBox = fontSize * lineHeight
+        let baseline = PieceGlyph.baseline(fontSize: fontSize, lineBox: lineBox)
+        let width = Self.width(of: string, fontSize: fontSize)
+        let bleed = Self.bleed
+        Canvas { context, _ in
+            let text = Text(string).font(font)
+            let measured = context.resolve(text).measure(in: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+            let textBaseline = context.resolve(text).firstBaseline(in: measured)
+            PieceGlyph.draw(text, style: style, at: CGPoint(x: bleed, y: bleed + baseline - textBaseline), in: &context)
+        }
+        .frame(width: width + 2 * bleed, height: lineBox + 2 * bleed)
+        .frame(width: width, height: lineBox)
+        .accessibilityHidden(true)
+    }
+
+    /// The advance width of the run in the body font (the span's inline width).
+    private static func width(of string: String, fontSize: CGFloat) -> CGFloat {
+        guard let ui = AppFonts.uiFont(.body, size: fontSize, weight: 400) else { return fontSize * CGFloat(string.count) }
+        return (string as NSString).size(withAttributes: [.font: ui]).width.rounded(.up)
     }
 }

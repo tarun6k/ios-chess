@@ -19,15 +19,25 @@ enum ButtonVariant: Sendable {
 struct ClassicButtonStyle: ButtonStyle {
     var variant: ButtonVariant
     var block = false
+    /// Inline `min-height` (the screens use 44 for the main actions); measured on the border box.
+    var minHeight: CGFloat? = nil
+    /// Inline `flex: 1` (the review arrows share a row equally).
+    var fill = false
+    /// Inline `padding` / `font-size` overrides (the Insights "PGN" button uses `0 6px` at 12px).
+    var vertical: CGFloat? = nil
+    var horizontal: CGFloat? = nil
+    var fontSize: CGFloat? = nil
 
     @Environment(\.isEnabled) private var isEnabled
 
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .textStyle(.button)
-            .padding(.vertical, Theme.Space.s2)
-            .padding(.horizontal, variant == .ghost ? Theme.Space.s1 : Theme.Space.s3 * 1.2)
-            .frame(maxWidth: block ? .infinity : nil)
+        var style = TextStyle.button
+        if let fontSize { style.size = fontSize }
+        return configuration.label
+            .textStyle(style)
+            .padding(.vertical, vertical ?? Theme.Space.s2)
+            .padding(.horizontal, horizontal ?? (variant == .ghost ? Theme.Space.s1 : Theme.Space.s3 * 1.2))
+            .frame(maxWidth: block || fill ? .infinity : nil, minHeight: minHeight.map { $0 - 2 })
             .padding(1)
             .background(pressedBackground(configuration.isPressed), in: RoundedRectangle(cornerRadius: Theme.Radius.md))
             .overlay(RoundedRectangle(cornerRadius: Theme.Radius.md).strokeBorder(borderColor, lineWidth: 1))
@@ -73,27 +83,50 @@ extension ButtonStyle where Self == ClassicButtonStyle {
     /// `class="btn btn-ghost"`
     static var ghost: ClassicButtonStyle { ClassicButtonStyle(variant: .ghost) }
     /// `class="btn btn-<variant> btn-block"`
-    static func block(_ variant: ButtonVariant) -> ClassicButtonStyle { ClassicButtonStyle(variant: variant, block: true) }
+    static func block(_ variant: ButtonVariant, minHeight: CGFloat? = nil) -> ClassicButtonStyle {
+        ClassicButtonStyle(variant: variant, block: true, minHeight: minHeight)
+    }
+    /// `class="btn btn-<variant>" style="min-height: …"`, optionally `flex: 1`.
+    static func classic(_ variant: ButtonVariant, minHeight: CGFloat? = nil, fill: Bool = false) -> ClassicButtonStyle {
+        ClassicButtonStyle(variant: variant, minHeight: minHeight, fill: fill)
+    }
 }
 
 // MARK: - Inputs (`.input`)
 
 /// `.input`: min-height 36, padding 6 × 10, 14px body, divider border (accent when focused),
-/// radius 4, accent caret.
-private struct InputChrome: ViewModifier {
+/// radius 4, accent caret. The login screen overrides padding, size and background inline.
+struct InputChrome: ViewModifier {
     let focused: Bool
     var minHeight: CGFloat = 36
+    var style: TextStyle = .input
+    var vertical: CGFloat = 6
+    var horizontal: CGFloat = 10
+    var background: Color = .clear
 
     func body(content: Content) -> some View {
         content
-            .textStyle(.input)
+            .textStyle(style)
             .tint(Theme.accent)
-            .padding(.vertical, 6)
-            .padding(.horizontal, 10)
+            .padding(.vertical, vertical)
+            .padding(.horizontal, horizontal)
             .frame(maxWidth: .infinity, minHeight: minHeight, alignment: .leading)
+            .background(background, in: RoundedRectangle(cornerRadius: Theme.Radius.md))
             .overlay(RoundedRectangle(cornerRadius: Theme.Radius.md)
                 .strokeBorder(focused ? Theme.accent : Theme.divider, lineWidth: 1))
+            // `:focus-visible { outline: 2px solid accent }` with `.input:focus-visible { outline-offset: 0 }`:
+            // a 2px ring hugging the border box while the field has the keyboard.
+            .overlay {
+                if focused {
+                    RoundedRectangle(cornerRadius: Theme.Radius.md + 2)
+                        .strokeBorder(Theme.accent, lineWidth: 2)
+                        .padding(-2)
+                }
+            }
     }
+
+    /// Chrome's default `::placeholder` colour.
+    static let placeholderColor = Color(hex: 0x757575)
 }
 
 /// `<input class="input">`
@@ -109,9 +142,11 @@ struct ClassicTextField: View {
     }
 
     var body: some View {
-        TextField(placeholder, text: $text)
-            .focused($focused)
-            .modifier(InputChrome(focused: focused))
+        TextField(text: $text, prompt: Text(placeholder).foregroundStyle(InputChrome.placeholderColor)) {
+            Text(placeholder)
+        }
+        .focused($focused)
+        .modifier(InputChrome(focused: focused))
     }
 }
 
@@ -130,7 +165,7 @@ struct ClassicTextEditor: View {
             .overlay(alignment: .topLeading) {
                 if text.isEmpty {
                     Text(placeholder)
-                        .foregroundStyle(Theme.neutral500)
+                        .foregroundStyle(InputChrome.placeholderColor)
                         .padding(.top, 8)
                         .padding(.leading, 5)
                         .allowsHitTesting(false)
@@ -153,15 +188,20 @@ struct Card<Content: View>: View {
     }
 
     var style: Style = .card
+    /// Inline `gap` override (the moves card uses `CARD_STYLE.replace('gap:10px', 'gap:8px')`).
+    var gap: CGFloat? = nil
+    /// Inline `padding` overrides (the game-over offer cards use `10px 12px`).
+    var vertical: CGFloat? = nil
+    var horizontal: CGFloat? = nil
     @ViewBuilder var content: Content
 
     var body: some View {
-        VStack(alignment: .leading, spacing: style == .card ? Theme.Space.s2 : 10) {
+        VStack(alignment: .leading, spacing: gap ?? (style == .card ? Theme.Space.s2 : 10)) {
             content
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, style == .card ? Theme.Space.s3 : 16)
-        .padding(.horizontal, style == .card ? Theme.Space.s3 : 20)
+        .padding(.vertical, vertical ?? (style == .card ? Theme.Space.s3 : 16))
+        .padding(.horizontal, horizontal ?? (style == .card ? Theme.Space.s3 : 20))
         .overlay(RoundedRectangle(cornerRadius: Theme.Radius.md).strokeBorder(Theme.divider, lineWidth: 1))
     }
 }
@@ -184,7 +224,7 @@ struct CardTitle: View {
 struct SectionLabel: View {
     let text: String
     init(_ text: String) { self.text = text }
-    var body: some View { Text(text).textStyle(.label) }
+    var body: some View { Text(text).textStyle(.label).minContent(text, .label) }
 }
 
 // MARK: - Tags (`.tag`)
@@ -195,10 +235,16 @@ struct Tag: View {
 
     let text: String
     let variant: Variant
+    /// Inline `min-height` — the time-control tag buttons use 28.
+    var minHeight: CGFloat? = nil
+    /// Inline `opacity` — unearned badges sit at 0.55.
+    var opacity: Double = 1
 
-    init(_ text: String, _ variant: Variant) {
+    init(_ text: String, _ variant: Variant, minHeight: CGFloat? = nil, opacity: Double = 1) {
         self.text = text
         self.variant = variant
+        self.minHeight = minHeight
+        self.opacity = opacity
     }
 
     var body: some View {
@@ -206,10 +252,12 @@ struct Tag: View {
             .textStyle(.tag)
             .padding(.vertical, 3)
             .padding(.horizontal, 10)
+            .frame(minHeight: minHeight)
             .background(background, in: RoundedRectangle(cornerRadius: Theme.Radius.md * 0.75))
             .overlay(RoundedRectangle(cornerRadius: Theme.Radius.md * 0.75)
                 .strokeBorder(variant == .outline ? Theme.accent : .clear, lineWidth: 1))
             .foregroundStyle(foreground)
+            .opacity(opacity)
     }
 
     private var background: Color {
@@ -252,7 +300,9 @@ struct SegmentedControl<Value: Hashable & Sendable>: View {
     @Binding var selection: Value
 
     var body: some View {
-        HStack(spacing: 0) {
+        // `segWrap`: `display: flex` — the buttons shrink like flex items (never below their
+        // widest word, so "Push me" wraps to "Push / me") and stretch to the row's height.
+        FlexRow(align: .stretch, fill: false) {
             ForEach(options) { option in
                 let active = option.value == selection
                 Button {
@@ -260,8 +310,11 @@ struct SegmentedControl<Value: Hashable & Sendable>: View {
                 } label: {
                     Text(option.label)
                         .textStyle(.segment)
+                        .multilineTextAlignment(.center)
+                        .minContent(option.label, .segment, alignment: .center)
                         .padding(.vertical, 4)
                         .padding(.horizontal, 14)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .foregroundStyle(active ? Theme.accent800 : Theme.neutral600)
                         .background(active ? Theme.accent100 : .clear)
                         .overlay(alignment: .bottom) {
