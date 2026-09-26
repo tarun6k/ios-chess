@@ -1,0 +1,1373 @@
+{
+  "puzzles": [
+    {
+      "id": "m1-backrank",
+      "kind": "mate1",
+      "tier": 1,
+      "title": "Back-rank strike",
+      "fen": "6k1/5ppp/8/8/8/8/8/R3K3 w - - 0 1",
+      "solution": "a1a8",
+      "prompt": "White mates in one.",
+      "xp": 10
+    },
+    {
+      "id": "m1-corner",
+      "kind": "mate1",
+      "tier": 1,
+      "title": "Cornered king",
+      "fen": "k7/8/1K6/8/8/8/8/7R w - - 0 1",
+      "solution": "h1h8",
+      "prompt": "White mates in one.",
+      "xp": 10
+    },
+    {
+      "id": "m1-longdiag",
+      "kind": "mate1",
+      "tier": 1,
+      "title": "The long reach",
+      "fen": "7k/6pp/8/8/8/8/8/Q6K w - - 0 1",
+      "solution": "a1a8",
+      "prompt": "White mates in one.",
+      "xp": 10
+    },
+    {
+      "id": "m1-seventh",
+      "kind": "mate1",
+      "tier": 1,
+      "title": "Rooks on rampage",
+      "fen": "7k/R7/1R6/8/8/8/8/4K3 w - - 0 1",
+      "solution": "b6b8",
+      "prompt": "White mates in one.",
+      "xp": 10
+    },
+    {
+      "id": "m1-deflect",
+      "kind": "mate1",
+      "tier": 2,
+      "title": "Take with tempo",
+      "fen": "3r2k1/5ppp/8/8/8/8/5PPP/3QR1K1 w - - 0 1",
+      "solution": "d1d8",
+      "prompt": "White mates in one.",
+      "xp": 15
+    },
+    {
+      "id": "m2-ladder",
+      "kind": "mate2",
+      "tier": 2,
+      "title": "Ladder finish",
+      "fen": "7k/8/8/8/8/8/1R6/R3K3 w - - 0 1",
+      "solution": "a1a7",
+      "prompt": "White mates in two.",
+      "xp": 20
+    },
+    {
+      "id": "m2-boxin",
+      "kind": "mate2",
+      "tier": 2,
+      "title": "Boxed in",
+      "fen": "6k1/8/5K2/8/8/8/8/1Q6 w - - 0 1",
+      "solution": "b1g6",
+      "prompt": "White mates in two.",
+      "xp": 20
+    },
+    {
+      "id": "m2-qr",
+      "kind": "mate2",
+      "tier": 2,
+      "title": "Heavy pieces",
+      "fen": "3k4/8/8/8/8/8/Q6R/4K3 w - - 0 1",
+      "solution": "a2f7",
+      "prompt": "White mates in two.",
+      "xp": 20
+    },
+    {
+      "id": "m3-squeeze",
+      "kind": "mate3",
+      "tier": 3,
+      "title": "The slow squeeze",
+      "fen": "6k1/8/8/5K2/8/8/8/1Q6 w - - 0 1",
+      "solution": "b1b7",
+      "prompt": "White mates in three.",
+      "xp": 35
+    },
+    {
+      "id": "t-freequeen",
+      "kind": "tactic",
+      "tier": 1,
+      "title": "Loose piece",
+      "fen": "1q5k/8/8/8/8/8/8/KR6 w - - 0 1",
+      "solution": "b1b8",
+      "prompt": "White wins material.",
+      "xp": 10
+    },
+    {
+      "id": "t-snipe",
+      "kind": "tactic",
+      "tier": 1,
+      "title": "Long diagonal snipe",
+      "fen": "r3k3/8/8/8/8/8/5PB1/4K3 w - - 0 1",
+      "solution": "g2a8",
+      "prompt": "White wins material.",
+      "xp": 10
+    },
+    {
+      "id": "t-fork",
+      "kind": "tactic",
+      "tier": 2,
+      "title": "Family fork",
+      "fen": "q3k3/8/8/3N4/8/8/6P1/4K3 w - - 0 1",
+      "solution": "d5c7",
+      "prompt": "White wins the queen.",
+      "xp": 20
+    },
+    {
+      "id": "t-pin",
+      "kind": "tactic",
+      "tier": 2,
+      "title": "Pile on the pin",
+      "fen": "4k3/4r3/8/8/8/8/4R3/4K1B1 w - - 0 1",
+      "solution": "g1e3",
+      "prompt": "Exploit the pin to win material.",
+      "xp": 20
+    },
+    {
+      "id": "t-promo",
+      "kind": "tactic",
+      "tier": 2,
+      "title": "Touchdown",
+      "fen": "4k3/P7/8/8/8/8/6p1/4K3 w - - 0 1",
+      "solution": "a7a8q",
+      "prompt": "Find the strongest continuation.",
+      "xp": 15
+    },
+    {
+      "id": "d-qsave",
+      "kind": "defense",
+      "tier": 2,
+      "title": "Save the queen",
+      "fen": "rnb1kbnr/pppp1ppp/8/4p3/4P1q1/5P2/PPPP2PP/RNBQKBNR b KQkq - 0 3",
+      "solution": "g4h4",
+      "prompt": "Black to move — rescue the attacked queen.",
+      "xp": 15
+    }
+  ],
+  "drills": [
+    {
+      "id": "kp-vs-k",
+      "title": "King & pawn vs king",
+      "fen": "8/8/8/4k3/8/8/4P3/4K3 w - - 0 1",
+      "playerColor": "w",
+      "goal": "win",
+      "description": "Escort the pawn home. Use the opposition — king in front of the pawn.",
+      "xp": 30
+    },
+    {
+      "id": "opposition",
+      "title": "The opposition",
+      "fen": "8/8/8/3k4/8/3K4/3P4/8 w - - 0 1",
+      "playerColor": "w",
+      "goal": "win",
+      "description": "Win the pawn ending by taking the opposition at the right moment.",
+      "xp": 30
+    },
+    {
+      "id": "lucena",
+      "title": "Rook ending: build the bridge",
+      "fen": "1K1k4/1P6/8/8/8/8/r7/2R5 w - - 0 1",
+      "playerColor": "w",
+      "goal": "win",
+      "description": "The Lucena position. Shelter your king from checks and promote.",
+      "xp": 45
+    },
+    {
+      "id": "defend-kp",
+      "title": "Hold the draw",
+      "fen": "4k3/8/8/4P3/4K3/8/8/8 b - - 0 1",
+      "playerColor": "b",
+      "goal": "draw",
+      "description": "Defend king vs king-and-pawn. Stay in front and keep the opposition.",
+      "xp": 30
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c-silent-queen",
+      "kind": "silent-queen",
+      "title": "The silent queen",
+      "description": "Beat the AI without ever moving your queen.",
+      "xp": 60
+    },
+    {
+      "id": "c-knight-mate",
+      "kind": "knight-mate",
+      "title": "Knight's honor",
+      "description": "Beat the AI — the mating move must be made by a knight.",
+      "xp": 80
+    },
+    {
+      "id": "c-rook-odds",
+      "kind": "rook-odds",
+      "title": "Down a rook",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/1NBQKBNR w Kkq - 0 1",
+      "description": "You start without your queenside rook. Survive 20 moves without being checkmated.",
+      "xp": 50
+    }
+  ],
+  "daily": [
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "ms": 1767225600000,
+      "key": "2026-01-01",
+      "hash": 1161665730,
+      "index": 0,
+      "id": "m1-backrank"
+    },
+    {
+      "iso": "2026-03-04T10:00:00Z",
+      "ms": 1772618400000,
+      "key": "2026-03-04",
+      "hash": 1161725315,
+      "index": 5,
+      "id": "m2-ladder"
+    },
+    {
+      "iso": "2026-09-26T08:00:00Z",
+      "ms": 1790409600000,
+      "key": "2026-09-26",
+      "hash": 1161904125,
+      "index": 0,
+      "id": "m1-backrank"
+    },
+    {
+      "iso": "2024-02-29T12:00:00Z",
+      "ms": 1709208000000,
+      "key": "2024-02-29",
+      "hash": 3681655525,
+      "index": 10,
+      "id": "t-snipe"
+    },
+    {
+      "iso": "2026-12-31T23:59:59Z",
+      "ms": 1798761599000,
+      "key": "2026-12-31",
+      "hash": 1162619135,
+      "index": 5,
+      "id": "m2-ladder"
+    },
+    {
+      "iso": "1999-12-31T00:00:00Z",
+      "ms": 946598400000,
+      "key": "1999-12-31",
+      "hash": 4249193157,
+      "index": 12,
+      "id": "t-pin"
+    },
+    {
+      "iso": "2026-06-30T23:30:00-05:00",
+      "ms": 1782880200000,
+      "key": "2026-07-01",
+      "hash": 1161844476,
+      "index": 6,
+      "id": "m2-boxin"
+    }
+  ],
+  "january": [
+    "m1-backrank",
+    "m1-corner",
+    "m1-longdiag",
+    "m1-seventh",
+    "m1-deflect",
+    "m2-ladder",
+    "m2-boxin",
+    "m2-qr",
+    "m3-squeeze",
+    "m1-backrank",
+    "m1-corner",
+    "m1-longdiag",
+    "m1-seventh",
+    "m1-deflect",
+    "m2-ladder",
+    "m2-boxin",
+    "m2-qr",
+    "m3-squeeze",
+    "t-freequeen",
+    "m1-corner",
+    "m1-longdiag",
+    "m1-seventh",
+    "m1-deflect",
+    "m2-ladder",
+    "m2-boxin",
+    "m2-qr",
+    "m3-squeeze",
+    "t-freequeen",
+    "t-snipe",
+    "m1-longdiag",
+    "m1-seventh"
+  ],
+  "levels": [
+    {
+      "xp": 0,
+      "level": 1,
+      "into": 0,
+      "needed": 100
+    },
+    {
+      "xp": 1,
+      "level": 1,
+      "into": 1,
+      "needed": 100
+    },
+    {
+      "xp": 99,
+      "level": 1,
+      "into": 99,
+      "needed": 100
+    },
+    {
+      "xp": 100,
+      "level": 2,
+      "into": 0,
+      "needed": 200
+    },
+    {
+      "xp": 101,
+      "level": 2,
+      "into": 1,
+      "needed": 200
+    },
+    {
+      "xp": 299,
+      "level": 2,
+      "into": 199,
+      "needed": 200
+    },
+    {
+      "xp": 300,
+      "level": 3,
+      "into": 0,
+      "needed": 300
+    },
+    {
+      "xp": 599,
+      "level": 3,
+      "into": 299,
+      "needed": 300
+    },
+    {
+      "xp": 600,
+      "level": 4,
+      "into": 0,
+      "needed": 400
+    },
+    {
+      "xp": 1000,
+      "level": 5,
+      "into": 0,
+      "needed": 500
+    },
+    {
+      "xp": 1500,
+      "level": 6,
+      "into": 0,
+      "needed": 600
+    },
+    {
+      "xp": 5000,
+      "level": 10,
+      "into": 500,
+      "needed": 1000
+    },
+    {
+      "xp": 12345,
+      "level": 16,
+      "into": 345,
+      "needed": 1600
+    },
+    {
+      "xp": 100000,
+      "level": 45,
+      "into": 1000,
+      "needed": 4500
+    }
+  ],
+  "badges": [
+    {
+      "id": "first-win",
+      "title": "First blood",
+      "description": "Win your first game"
+    },
+    {
+      "id": "first-mate",
+      "title": "Checkmate!",
+      "description": "Deliver your first checkmate"
+    },
+    {
+      "id": "castle-10",
+      "title": "Safe as houses",
+      "description": "Castle in 10 games in a row"
+    },
+    {
+      "id": "flag-win",
+      "title": "Beat the clock",
+      "description": "Win a game on time"
+    },
+    {
+      "id": "puzzle-10",
+      "title": "Sharp eyes",
+      "description": "Solve 10 puzzles"
+    },
+    {
+      "id": "puzzle-50",
+      "title": "Tactician",
+      "description": "Solve 50 puzzles"
+    },
+    {
+      "id": "en-passant",
+      "title": "In passing",
+      "description": "Capture en passant"
+    },
+    {
+      "id": "underpromo",
+      "title": "Less is more",
+      "description": "Underpromote a pawn"
+    },
+    {
+      "id": "streak-3",
+      "title": "On a roll",
+      "description": "Three-day challenge streak"
+    },
+    {
+      "id": "streak-7",
+      "title": "Habit formed",
+      "description": "Seven-day challenge streak"
+    },
+    {
+      "id": "rating-1200",
+      "title": "Club player",
+      "description": "Reach a 1200 rating"
+    },
+    {
+      "id": "rating-1600",
+      "title": "Strong player",
+      "description": "Reach a 1600 rating"
+    },
+    {
+      "id": "giant-slayer",
+      "title": "Giant slayer",
+      "description": "Beat the AI set 200+ above your rating"
+    },
+    {
+      "id": "games-25",
+      "title": "Regular",
+      "description": "Play 25 games"
+    }
+  ],
+  "badgeScenarios": [
+    {
+      "name": "fresh",
+      "progress": {
+        "xp": 0,
+        "badges": [],
+        "solvedPuzzles": [],
+        "completedDrills": [],
+        "completedConstraints": [],
+        "dailyStreak": 0,
+        "lastDailyDate": null,
+        "counters": {
+          "gamesPlayed": 0,
+          "gamesWon": 0,
+          "castledGames": 0,
+          "winsOnTime": 0,
+          "puzzlesSolved": 0,
+          "checkmates": 0,
+          "enPassants": 0,
+          "underpromotions": 0,
+          "hintsUsed": 0
+        }
+      },
+      "rating": 800,
+      "fresh": [],
+      "badges": []
+    },
+    {
+      "name": "first win",
+      "progress": {
+        "xp": 0,
+        "badges": [],
+        "solvedPuzzles": [],
+        "completedDrills": [],
+        "completedConstraints": [],
+        "dailyStreak": 0,
+        "lastDailyDate": null,
+        "counters": {
+          "gamesPlayed": 0,
+          "gamesWon": 1,
+          "castledGames": 0,
+          "winsOnTime": 0,
+          "puzzlesSolved": 0,
+          "checkmates": 0,
+          "enPassants": 0,
+          "underpromotions": 0,
+          "hintsUsed": 0
+        }
+      },
+      "rating": 800,
+      "fresh": [
+        "first-win"
+      ],
+      "badges": [
+        "first-win"
+      ]
+    },
+    {
+      "name": "rating 1250",
+      "progress": {
+        "xp": 0,
+        "badges": [],
+        "solvedPuzzles": [],
+        "completedDrills": [],
+        "completedConstraints": [],
+        "dailyStreak": 0,
+        "lastDailyDate": null,
+        "counters": {
+          "gamesPlayed": 0,
+          "gamesWon": 0,
+          "castledGames": 0,
+          "winsOnTime": 0,
+          "puzzlesSolved": 0,
+          "checkmates": 0,
+          "enPassants": 0,
+          "underpromotions": 0,
+          "hintsUsed": 0
+        }
+      },
+      "rating": 1250,
+      "fresh": [
+        "rating-1200"
+      ],
+      "badges": [
+        "rating-1200"
+      ]
+    },
+    {
+      "name": "rating 1650 with 1200 already earned",
+      "progress": {
+        "xp": 0,
+        "badges": [
+          "rating-1200"
+        ],
+        "solvedPuzzles": [],
+        "completedDrills": [],
+        "completedConstraints": [],
+        "dailyStreak": 0,
+        "lastDailyDate": null,
+        "counters": {
+          "gamesPlayed": 0,
+          "gamesWon": 0,
+          "castledGames": 0,
+          "winsOnTime": 0,
+          "puzzlesSolved": 0,
+          "checkmates": 0,
+          "enPassants": 0,
+          "underpromotions": 0,
+          "hintsUsed": 0
+        }
+      },
+      "rating": 1650,
+      "fresh": [
+        "rating-1600"
+      ],
+      "badges": [
+        "rating-1200",
+        "rating-1600"
+      ]
+    },
+    {
+      "name": "counter thresholds",
+      "progress": {
+        "xp": 0,
+        "badges": [],
+        "solvedPuzzles": [],
+        "completedDrills": [],
+        "completedConstraints": [],
+        "dailyStreak": 7,
+        "lastDailyDate": null,
+        "counters": {
+          "gamesPlayed": 0,
+          "gamesWon": 0,
+          "castledGames": 10,
+          "winsOnTime": 0,
+          "puzzlesSolved": 10,
+          "checkmates": 0,
+          "enPassants": 0,
+          "underpromotions": 0,
+          "hintsUsed": 0
+        }
+      },
+      "rating": 800,
+      "fresh": [
+        "castle-10",
+        "puzzle-10",
+        "streak-3",
+        "streak-7"
+      ],
+      "badges": [
+        "castle-10",
+        "puzzle-10",
+        "streak-3",
+        "streak-7"
+      ]
+    },
+    {
+      "name": "everything",
+      "progress": {
+        "xp": 0,
+        "badges": [],
+        "solvedPuzzles": [],
+        "completedDrills": [],
+        "completedConstraints": [],
+        "dailyStreak": 30,
+        "lastDailyDate": null,
+        "counters": {
+          "gamesPlayed": 100,
+          "gamesWon": 100,
+          "castledGames": 100,
+          "winsOnTime": 100,
+          "puzzlesSolved": 100,
+          "checkmates": 100,
+          "enPassants": 100,
+          "underpromotions": 100,
+          "hintsUsed": 100
+        }
+      },
+      "rating": 2000,
+      "fresh": [
+        "first-win",
+        "first-mate",
+        "castle-10",
+        "flag-win",
+        "puzzle-10",
+        "puzzle-50",
+        "en-passant",
+        "underpromo",
+        "streak-3",
+        "streak-7",
+        "rating-1200",
+        "rating-1600",
+        "games-25"
+      ],
+      "badges": [
+        "first-win",
+        "first-mate",
+        "castle-10",
+        "flag-win",
+        "puzzle-10",
+        "puzzle-50",
+        "en-passant",
+        "underpromo",
+        "streak-3",
+        "streak-7",
+        "rating-1200",
+        "rating-1600",
+        "games-25"
+      ]
+    },
+    {
+      "name": "giant slayer is only ever granted externally",
+      "progress": {
+        "xp": 0,
+        "badges": [
+          "giant-slayer"
+        ],
+        "solvedPuzzles": [],
+        "completedDrills": [],
+        "completedConstraints": [],
+        "dailyStreak": 0,
+        "lastDailyDate": null,
+        "counters": {
+          "gamesPlayed": 0,
+          "gamesWon": 0,
+          "castledGames": 0,
+          "winsOnTime": 0,
+          "puzzlesSolved": 0,
+          "checkmates": 0,
+          "enPassants": 0,
+          "underpromotions": 0,
+          "hintsUsed": 0
+        }
+      },
+      "rating": 1200,
+      "fresh": [
+        "rating-1200"
+      ],
+      "badges": [
+        "giant-slayer",
+        "rating-1200"
+      ]
+    },
+    {
+      "name": "just below every threshold",
+      "progress": {
+        "xp": 0,
+        "badges": [],
+        "solvedPuzzles": [],
+        "completedDrills": [],
+        "completedConstraints": [],
+        "dailyStreak": 2,
+        "lastDailyDate": null,
+        "counters": {
+          "gamesPlayed": 24,
+          "gamesWon": 0,
+          "castledGames": 9,
+          "winsOnTime": 0,
+          "puzzlesSolved": 9,
+          "checkmates": 0,
+          "enPassants": 0,
+          "underpromotions": 0,
+          "hintsUsed": 0
+        }
+      },
+      "rating": 1199,
+      "fresh": [],
+      "badges": []
+    }
+  ],
+  "offerScenarios": [
+    {
+      "name": "fresh, no game",
+      "weaknesses": {},
+      "completedDrills": [],
+      "completedConstraints": [],
+      "lastGameWon": null,
+      "offers": [
+        {
+          "id": "offer-c-silent-queen",
+          "kind": "constraint",
+          "title": "The silent queen",
+          "detail": "Beat the AI without ever moving your queen.",
+          "constraintId": "c-silent-queen",
+          "xp": 60
+        }
+      ]
+    },
+    {
+      "name": "hanging pieces",
+      "weaknesses": {
+        "hanging-pieces": 3
+      },
+      "completedDrills": [],
+      "completedConstraints": [],
+      "lastGameWon": null,
+      "offers": [
+        {
+          "id": "offer-puzzles-hanging-pieces",
+          "kind": "puzzle-set",
+          "title": "Targeted training",
+          "detail": "You struggle with leaving pieces undefended — try these 3 puzzles.",
+          "puzzleIds": [
+            "t-freequeen",
+            "t-snipe",
+            "d-qsave"
+          ],
+          "xp": 30
+        },
+        {
+          "id": "offer-c-silent-queen",
+          "kind": "constraint",
+          "title": "The silent queen",
+          "detail": "Beat the AI without ever moving your queen.",
+          "constraintId": "c-silent-queen",
+          "xp": 60
+        }
+      ]
+    },
+    {
+      "name": "endgame after first drill",
+      "weaknesses": {
+        "endgame": 2
+      },
+      "completedDrills": [
+        "kp-vs-k"
+      ],
+      "completedConstraints": [],
+      "lastGameWon": null,
+      "offers": [
+        {
+          "id": "offer-drill-opposition",
+          "kind": "drill",
+          "title": "Endgame clinic",
+          "detail": "Your endgame technique has been costing you — try “The opposition”.",
+          "drillId": "opposition",
+          "xp": 30
+        },
+        {
+          "id": "offer-c-silent-queen",
+          "kind": "constraint",
+          "title": "The silent queen",
+          "detail": "Beat the AI without ever moving your queen.",
+          "constraintId": "c-silent-queen",
+          "xp": 60
+        }
+      ]
+    },
+    {
+      "name": "fresh, won",
+      "weaknesses": {},
+      "completedDrills": [],
+      "completedConstraints": [],
+      "lastGameWon": true,
+      "offers": [
+        {
+          "id": "offer-rematch",
+          "kind": "rematch-blitz",
+          "timed": true,
+          "title": "Prove it",
+          "detail": "Rematch — but blitz (3+2) this time?",
+          "xp": 25
+        },
+        {
+          "id": "offer-c-silent-queen",
+          "kind": "constraint",
+          "title": "The silent queen",
+          "detail": "Beat the AI without ever moving your queen.",
+          "constraintId": "c-silent-queen",
+          "xp": 60
+        }
+      ]
+    },
+    {
+      "name": "fresh, lost",
+      "weaknesses": {},
+      "completedDrills": [],
+      "completedConstraints": [],
+      "lastGameWon": false,
+      "offers": [
+        {
+          "id": "offer-rematch",
+          "kind": "rematch-blitz",
+          "timed": true,
+          "title": "Redemption",
+          "detail": "Rematch? I'll ease off a notch. Blitz 3+2.",
+          "xp": 25
+        },
+        {
+          "id": "offer-c-silent-queen",
+          "kind": "constraint",
+          "title": "The silent queen",
+          "detail": "Beat the AI without ever moving your queen.",
+          "constraintId": "c-silent-queen",
+          "xp": 60
+        }
+      ]
+    },
+    {
+      "name": "two weaknesses, first constraint done, won",
+      "weaknesses": {
+        "hanging-pieces": 3,
+        "back-rank": 2
+      },
+      "completedDrills": [],
+      "completedConstraints": [
+        "c-silent-queen"
+      ],
+      "lastGameWon": true,
+      "offers": [
+        {
+          "id": "offer-puzzles-hanging-pieces",
+          "kind": "puzzle-set",
+          "title": "Targeted training",
+          "detail": "You struggle with leaving pieces undefended — try these 3 puzzles.",
+          "puzzleIds": [
+            "t-freequeen",
+            "t-snipe",
+            "d-qsave"
+          ],
+          "xp": 30
+        },
+        {
+          "id": "offer-puzzles-back-rank",
+          "kind": "puzzle-set",
+          "title": "Targeted training",
+          "detail": "You struggle with back-rank mates — try these 3 puzzles.",
+          "puzzleIds": [
+            "m1-backrank",
+            "m1-deflect",
+            "m2-ladder"
+          ],
+          "xp": 30
+        },
+        {
+          "id": "offer-rematch",
+          "kind": "rematch-blitz",
+          "timed": true,
+          "title": "Prove it",
+          "detail": "Rematch — but blitz (3+2) this time?",
+          "xp": 25
+        }
+      ]
+    },
+    {
+      "name": "first constraint done",
+      "weaknesses": {},
+      "completedDrills": [],
+      "completedConstraints": [
+        "c-silent-queen"
+      ],
+      "lastGameWon": null,
+      "offers": [
+        {
+          "id": "offer-c-knight-mate",
+          "kind": "constraint",
+          "title": "Knight's honor",
+          "detail": "Beat the AI — the mating move must be made by a knight.",
+          "constraintId": "c-knight-mate",
+          "xp": 80
+        }
+      ]
+    },
+    {
+      "name": "all drills done, opening weakness has no puzzles",
+      "weaknesses": {
+        "endgame": 1,
+        "opening": 5
+      },
+      "completedDrills": [
+        "kp-vs-k",
+        "opposition",
+        "lucena",
+        "defend-kp"
+      ],
+      "completedConstraints": [],
+      "lastGameWon": false,
+      "offers": [
+        {
+          "id": "offer-drill-kp-vs-k",
+          "kind": "drill",
+          "title": "Endgame clinic",
+          "detail": "Your endgame technique has been costing you — try “King & pawn vs king”.",
+          "drillId": "kp-vs-k",
+          "xp": 30
+        },
+        {
+          "id": "offer-rematch",
+          "kind": "rematch-blitz",
+          "timed": true,
+          "title": "Redemption",
+          "detail": "Rematch? I'll ease off a notch. Blitz 3+2.",
+          "xp": 25
+        },
+        {
+          "id": "offer-c-silent-queen",
+          "kind": "constraint",
+          "title": "The silent queen",
+          "detail": "Beat the AI without ever moving your queen.",
+          "constraintId": "c-silent-queen",
+          "xp": 60
+        }
+      ]
+    },
+    {
+      "name": "all weaknesses tied",
+      "weaknesses": {
+        "hanging-pieces": 1,
+        "missed-tactics": 1,
+        "back-rank": 1,
+        "endgame": 1,
+        "opening": 1,
+        "king-safety": 1
+      },
+      "completedDrills": [],
+      "completedConstraints": [],
+      "lastGameWon": null,
+      "offers": [
+        {
+          "id": "offer-puzzles-hanging-pieces",
+          "kind": "puzzle-set",
+          "title": "Targeted training",
+          "detail": "You struggle with leaving pieces undefended — try these 3 puzzles.",
+          "puzzleIds": [
+            "t-freequeen",
+            "t-snipe",
+            "d-qsave"
+          ],
+          "xp": 30
+        },
+        {
+          "id": "offer-puzzles-missed-tactics",
+          "kind": "puzzle-set",
+          "title": "Targeted training",
+          "detail": "You struggle with missing tactical shots — try these 3 puzzles.",
+          "puzzleIds": [
+            "t-fork",
+            "t-pin",
+            "t-promo"
+          ],
+          "xp": 30
+        },
+        {
+          "id": "offer-c-silent-queen",
+          "kind": "constraint",
+          "title": "The silent queen",
+          "detail": "Beat the AI without ever moving your queen.",
+          "constraintId": "c-silent-queen",
+          "xp": 60
+        }
+      ]
+    },
+    {
+      "name": "king safety + missed tactics, all constraints done, won",
+      "weaknesses": {
+        "king-safety": 4,
+        "missed-tactics": 2
+      },
+      "completedDrills": [],
+      "completedConstraints": [
+        "c-silent-queen",
+        "c-knight-mate",
+        "c-rook-odds"
+      ],
+      "lastGameWon": true,
+      "offers": [
+        {
+          "id": "offer-puzzles-king-safety",
+          "kind": "puzzle-set",
+          "title": "Targeted training",
+          "detail": "You struggle with king safety — try these 3 puzzles.",
+          "puzzleIds": [
+            "m1-backrank",
+            "m2-boxin",
+            "m2-qr"
+          ],
+          "xp": 30
+        },
+        {
+          "id": "offer-puzzles-missed-tactics",
+          "kind": "puzzle-set",
+          "title": "Targeted training",
+          "detail": "You struggle with missing tactical shots — try these 3 puzzles.",
+          "puzzleIds": [
+            "t-fork",
+            "t-pin",
+            "t-promo"
+          ],
+          "xp": 30
+        },
+        {
+          "id": "offer-rematch",
+          "kind": "rematch-blitz",
+          "timed": true,
+          "title": "Prove it",
+          "detail": "Rematch — but blitz (3+2) this time?",
+          "xp": 25
+        }
+      ]
+    },
+    {
+      "name": "endgame + king safety, lost",
+      "weaknesses": {
+        "endgame": 3,
+        "king-safety": 1
+      },
+      "completedDrills": [
+        "kp-vs-k",
+        "opposition"
+      ],
+      "completedConstraints": [
+        "c-silent-queen",
+        "c-knight-mate"
+      ],
+      "lastGameWon": false,
+      "offers": [
+        {
+          "id": "offer-drill-lucena",
+          "kind": "drill",
+          "title": "Endgame clinic",
+          "detail": "Your endgame technique has been costing you — try “Rook ending: build the bridge”.",
+          "drillId": "lucena",
+          "xp": 45
+        },
+        {
+          "id": "offer-puzzles-king-safety",
+          "kind": "puzzle-set",
+          "title": "Targeted training",
+          "detail": "You struggle with king safety — try these 3 puzzles.",
+          "puzzleIds": [
+            "m1-backrank",
+            "m2-boxin",
+            "m2-qr"
+          ],
+          "xp": 30
+        },
+        {
+          "id": "offer-rematch",
+          "kind": "rematch-blitz",
+          "timed": true,
+          "title": "Redemption",
+          "detail": "Rematch? I'll ease off a notch. Blitz 3+2.",
+          "xp": 25
+        }
+      ]
+    },
+    {
+      "name": "only opening",
+      "weaknesses": {
+        "opening": 9
+      },
+      "completedDrills": [],
+      "completedConstraints": [],
+      "lastGameWon": true,
+      "offers": [
+        {
+          "id": "offer-rematch",
+          "kind": "rematch-blitz",
+          "timed": true,
+          "title": "Prove it",
+          "detail": "Rematch — but blitz (3+2) this time?",
+          "xp": 25
+        },
+        {
+          "id": "offer-c-silent-queen",
+          "kind": "constraint",
+          "title": "The silent queen",
+          "detail": "Beat the AI without ever moving your queen.",
+          "constraintId": "c-silent-queen",
+          "xp": 60
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bullet 1+0",
+      "baseMs": 60000,
+      "incrementMs": 0
+    },
+    {
+      "name": "Blitz 3+2",
+      "baseMs": 180000,
+      "incrementMs": 2000
+    },
+    {
+      "name": "Rapid 10+0",
+      "baseMs": 600000,
+      "incrementMs": 0
+    },
+    {
+      "name": "Rapid 15+10",
+      "baseMs": 900000,
+      "incrementMs": 10000
+    },
+    {
+      "name": "Classical 30+0",
+      "baseMs": 1800000,
+      "incrementMs": 0
+    }
+  ],
+  "custom": [
+    {
+      "baseMin": 3,
+      "incSec": 2,
+      "control": {
+        "name": "Custom 3+2",
+        "baseMs": 180000,
+        "incrementMs": 2000
+      }
+    },
+    {
+      "baseMin": 0,
+      "incSec": -5,
+      "control": {
+        "name": "Custom 1+0",
+        "baseMs": 60000,
+        "incrementMs": 0
+      }
+    },
+    {
+      "baseMin": 500,
+      "incSec": 999,
+      "control": {
+        "name": "Custom 120+60",
+        "baseMs": 7200000,
+        "incrementMs": 60000
+      }
+    },
+    {
+      "baseMin": 2.6,
+      "incSec": 1.4,
+      "control": {
+        "name": "Custom 3+1",
+        "baseMs": 180000,
+        "incrementMs": 1000
+      }
+    },
+    {
+      "baseMin": 1.5,
+      "incSec": 0.5,
+      "control": {
+        "name": "Custom 2+1",
+        "baseMs": 120000,
+        "incrementMs": 1000
+      }
+    },
+    {
+      "baseMin": 2.5,
+      "incSec": 2.5,
+      "control": {
+        "name": "Custom 3+3",
+        "baseMs": 180000,
+        "incrementMs": 3000
+      }
+    },
+    {
+      "baseMin": -3.5,
+      "incSec": -0.5,
+      "control": {
+        "name": "Custom 1+0",
+        "baseMs": 60000,
+        "incrementMs": 0
+      }
+    },
+    {
+      "baseMin": 119.5,
+      "incSec": 59.5,
+      "control": {
+        "name": "Custom 120+60",
+        "baseMs": 7200000,
+        "incrementMs": 60000
+      }
+    },
+    {
+      "baseMin": 120.4,
+      "incSec": 60.4,
+      "control": {
+        "name": "Custom 120+60",
+        "baseMs": 7200000,
+        "incrementMs": 60000
+      }
+    }
+  ],
+  "format": [
+    {
+      "ms": 3600000,
+      "text": "1:00:00"
+    },
+    {
+      "ms": 5025000,
+      "text": "1:23:45"
+    },
+    {
+      "ms": 600000,
+      "text": "10:00"
+    },
+    {
+      "ms": 59400,
+      "text": "1:00"
+    },
+    {
+      "ms": 20000,
+      "text": "0:20"
+    },
+    {
+      "ms": 19950,
+      "text": "0:19.9"
+    },
+    {
+      "ms": 5040,
+      "text": "0:05.0"
+    },
+    {
+      "ms": 0,
+      "text": "0:00.0"
+    },
+    {
+      "ms": 1,
+      "text": "0:00.0"
+    },
+    {
+      "ms": 99,
+      "text": "0:00.0"
+    },
+    {
+      "ms": 100,
+      "text": "0:00.1"
+    },
+    {
+      "ms": 999,
+      "text": "0:00.9"
+    },
+    {
+      "ms": 1000,
+      "text": "0:01.0"
+    },
+    {
+      "ms": 1001,
+      "text": "0:01.0"
+    },
+    {
+      "ms": 19999,
+      "text": "0:19.9"
+    },
+    {
+      "ms": 20001,
+      "text": "0:21"
+    },
+    {
+      "ms": 59000,
+      "text": "0:59"
+    },
+    {
+      "ms": 59001,
+      "text": "1:00"
+    },
+    {
+      "ms": 60000,
+      "text": "1:00"
+    },
+    {
+      "ms": 61000,
+      "text": "1:01"
+    },
+    {
+      "ms": 3599999,
+      "text": "1:00:00"
+    },
+    {
+      "ms": 3600001,
+      "text": "1:00:01"
+    },
+    {
+      "ms": 36000000,
+      "text": "10:00:00"
+    },
+    {
+      "ms": 7200000,
+      "text": "2:00:00"
+    },
+    {
+      "ms": 7199001,
+      "text": "2:00:00"
+    },
+    {
+      "ms": 180000,
+      "text": "3:00"
+    },
+    {
+      "ms": 171250,
+      "text": "2:52"
+    }
+  ],
+  "blobs": {
+    "chess.settings": "{\"coordinates\":true,\"autoQueen\":false,\"takebacks\":true,\"sounds\":true,\"haptics\":true,\"boardFlip\":\"auto\",\"animations\":true}",
+    "chess.settings.partial": "{\"sounds\":false,\"boardFlip\":\"black\"}",
+    "chess.playerModel": "{\"version\":1,\"rating\":800,\"ratingHistory\":[],\"wins\":0,\"losses\":0,\"draws\":0,\"streak\":0,\"features\":{\"games\":0,\"avgCaptureRate\":0,\"avgEarlyQueenPly\":24,\"avgCastlePly\":30,\"avgChecksPerGame\":0,\"avgPawnStorm\":0,\"avgTradeRate\":0,\"avgCpLoss\":0,\"avgThinkMs\":0},\"weaknesses\":{\"hanging-pieces\":0,\"missed-tactics\":0,\"back-rank\":0,\"endgame\":0,\"opening\":0,\"king-safety\":0},\"openings\":[]}",
+    "chess.progress.fresh": "{\"xp\":0,\"badges\":[],\"solvedPuzzles\":[],\"completedDrills\":[],\"completedConstraints\":[],\"dailyStreak\":0,\"lastDailyDate\":null,\"counters\":{\"gamesPlayed\":0,\"gamesWon\":0,\"castledGames\":0,\"winsOnTime\":0,\"puzzlesSolved\":0,\"checkmates\":0,\"enPassants\":0,\"underpromotions\":0,\"hintsUsed\":0}}",
+    "chess.progress": "{\"xp\":250,\"badges\":[\"first-win\",\"first-mate\"],\"solvedPuzzles\":[\"m1-corner\",\"t-fork\"],\"completedDrills\":[\"kp-vs-k\"],\"completedConstraints\":[],\"dailyStreak\":2,\"lastDailyDate\":\"2026-09-25\",\"counters\":{\"gamesPlayed\":7,\"gamesWon\":3,\"castledGames\":2,\"winsOnTime\":0,\"puzzlesSolved\":2,\"checkmates\":1,\"enPassants\":0,\"underpromotions\":0,\"hintsUsed\":4}}",
+    "chess.progress.old": "{\"xp\":120,\"badges\":[\"first-win\"],\"counters\":{\"gamesPlayed\":3}}",
+    "chess.savedGame": "{\"mode\":\"ai\",\"startFen\":\"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\",\"uciMoves\":[\"e2e4\"],\"thinkMs\":[1200],\"playerColor\":\"w\",\"difficulty\":\"match\",\"timeControl\":null,\"clockRemaining\":null,\"timerOn\":false,\"hintsLeft\":3,\"challengeId\":null,\"adaptationNotes\":[],\"aiSkill\":8,\"aiElo\":1000,\"savedAt\":1}",
+    "chess.archive": "[{\"pgn\":\"\",\"mode\":\"ai\",\"playerColor\":\"w\",\"result\":\"\",\"score\":\"*\",\"aiElo\":null,\"date\":0,\"analysis\":null,\"adaptationNotes\":[],\"startFen\":\"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\",\"uciMoves\":[]},{\"pgn\":\"\",\"mode\":\"ai\",\"playerColor\":\"w\",\"result\":\"\",\"score\":\"*\",\"aiElo\":null,\"date\":1,\"analysis\":null,\"adaptationNotes\":[],\"startFen\":\"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\",\"uciMoves\":[]},{\"pgn\":\"\",\"mode\":\"ai\",\"playerColor\":\"w\",\"result\":\"\",\"score\":\"*\",\"aiElo\":null,\"date\":2,\"analysis\":null,\"adaptationNotes\":[],\"startFen\":\"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\",\"uciMoves\":[]}]",
+    "chess.mistakes": "[{\"fen\":\"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\",\"playedUci\":\"a2a3\",\"bestUci\":\"e2e4\",\"cpLoss\":300,\"date\":1790380800000,\"playerColor\":\"w\"},{\"fen\":\"rnbqkbnr/pppp1ppp/8/4p3/4P1q1/5P2/PPPP2PP/RNBQKBNR b KQkq - 0 3\",\"playedUci\":\"g4g5\",\"bestUci\":\"g4h4\",\"cpLoss\":812,\"date\":1790380800001,\"playerColor\":\"b\"}]",
+    "chess.difficulty": "\"challenge\"",
+    "chess.playerName": "\"Ada\"",
+    "chess.guest": "true"
+  }
+}

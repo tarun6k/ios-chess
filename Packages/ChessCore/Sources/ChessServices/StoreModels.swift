@@ -1,7 +1,7 @@
 // The persisted game records of src/app/store.ts: `GameMode`, `SavedGame`, `ArchivedGame`, plus
 // the `[number, number]` clock tuple. Their JSON is exactly what the TS app writes with
 // JSON.stringify: same keys, `null` where the TS type says `| null`, and "w"/"b" for the player
-// colour. The remaining store types (Settings, PlayerModel, Progress, RecordedMistake) arrive
+// colour. The remaining store types (Settings, PlayerModel, PlayerProgress, RecordedMistake) arrive
 // with Store.swift in Phase 5.
 
 import ChessCore
