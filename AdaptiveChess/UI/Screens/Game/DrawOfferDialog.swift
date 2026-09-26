@@ -27,6 +27,9 @@ struct DrawOfferDialog: View {
                 }
             }
         }
+        // A real container: without it SwiftUI hands the identifier to every button inside,
+        // overriding `play-draw-decline` / `play-draw-accept`.
+        .accessibilityElement(children: .contain)
         .accessibilityIdentifier("play-draw-offer")
     }
 }

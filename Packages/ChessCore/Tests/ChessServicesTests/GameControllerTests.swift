@@ -1029,6 +1029,108 @@ struct FeedbackAndCancellationTests {
     }
 }
 
+// Phase 9: nothing may keep running once the player is done with a game — the clock's tick timer,
+// the AI's humanlike pause, a pending move, hint, draw evaluation or puzzle check. `scheduledTimerCount`
+// counts every live `setInterval`/`setTimeout`, `hangingCount` every request still parked in the engine
+// and `inflightRequests` every controller task that has not finished.
+@MainActor
+@Suite("GameController: no timers or tasks leak")
+struct LeakTests {
+    static let blitz = TimeControl(name: "Blitz 3+2", baseMs: 180_000, incrementMs: 2000)
+
+    @Test("resigning a timed AI game stops the clock and every pending request")
+    func resign() async throws {
+        let h = Harness()
+        let c = h.controller()
+        h.ai.script("e7e5")
+        try c.newGame(mode: .ai, playerColor: .white, timeControl: Self.blitz)
+        try h.play(c, "e2e4")
+        await h.drain()
+        #expect(h.time.scheduledTimerCount == 2, "the clock ticks and the reply is pacing")
+        await h.settle()
+        #expect(c.game.history.count == 2)
+        #expect(h.time.scheduledTimerCount == 1, "only the clock is left")
+
+        // A hint and a draw evaluation park in the engine…
+        let hint = Task { await c.useHint() }
+        await h.drain()
+        c.offerDraw()
+        await h.drain()
+        #expect(h.ai.hangingCount == 2)
+
+        // …and resignation cancels them along with the clock.
+        c.resign()
+        await hint.value
+        await h.drain()
+        #expect(h.ai.hangingCount == 0)
+        #expect(h.time.scheduledTimerCount == 0)
+        #expect(c.inflightRequests == 0)
+        #expect(c.clock?.active == nil)
+        let frozen = c.clock?.remaining
+        h.time.advance(ms: 60_000)
+        #expect(c.clock?.remaining == frozen, "a paused clock no longer counts down")
+        #expect(c.game.result?.kind == .resignation)
+    }
+
+    @Test("starting another game while the AI is pacing its reply drops the old game's timers")
+    func newGame() async throws {
+        let h = Harness()
+        let c = h.controller()
+        h.ai.script("e7e5")
+        try c.newGame(mode: .ai, playerColor: .white, timeControl: Self.blitz)
+        try h.play(c, "e2e4")
+        await h.drain()
+        #expect(h.time.scheduledTimerCount == 2)
+
+        try c.newGame(mode: .pvp)
+        await h.drain()
+        #expect(h.time.scheduledTimerCount == 0)
+        #expect(h.ai.hangingCount == 0)
+        #expect(c.inflightRequests == 0)
+        h.time.advance(ms: 1000)
+        #expect(c.game.history.isEmpty, "the old reply must not land in the new game")
+    }
+
+    @Test("dispose() leaves nothing behind, including a post-game analysis")
+    func dispose() async throws {
+        let h = Harness()
+        let c = h.controller()
+        h.ai.script("e7e5", "b8c6", "g8f6", "f8c5")
+        try c.newGame(mode: .ai, playerColor: .white, timeControl: Self.blitz)
+        for uci in ["e2e4", "g1f3", "b1c3", "f1c4"] {
+            try h.play(c, uci)
+            await h.settle()
+        }
+        #expect(c.game.history.count == 8)
+        #expect(h.time.scheduledTimerCount == 1)
+        c.resign()
+        await h.drain()
+        #expect(h.ai.analyzeRequests.count == 1, "eight plies earn a post-game analysis")
+        #expect(h.ai.hangingCount == 1)
+        #expect(c.inflightRequests == 1)
+
+        c.dispose()
+        await h.drain()
+        #expect(h.ai.hangingCount == 0)
+        #expect(h.time.scheduledTimerCount == 0)
+        #expect(c.inflightRequests == 0)
+    }
+
+    @Test("a finished puzzle or drill leaves no timer running")
+    func puzzleEnd() async throws {
+        let h = Harness()
+        let c = h.controller()
+        try c.newGame(mode: .puzzle, challenge: ChallengeContext(puzzle: puzzle("m1-backrank")))
+        try h.play(c, "a1a8")
+        await h.settle()
+        #expect(c.puzzleState == .solved)
+        #expect(c.game.result?.kind == .checkmate)
+        #expect(h.time.scheduledTimerCount == 0)
+        #expect(h.ai.hangingCount == 0)
+        #expect(c.inflightRequests == 0)
+    }
+}
+
 @MainActor
 @Suite("ManualTimeSource timeouts")
 struct ManualTimeSourceTimeoutTests {

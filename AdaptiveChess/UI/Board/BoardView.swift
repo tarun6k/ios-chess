@@ -83,6 +83,11 @@ struct BoardView: View {
             .frame(width: gridSide, height: gridSide)
             .padding(1)
             .background(Color(r: 60, g: 40, b: 16, a: 0.5)) // border: 1px solid rgba(60,40,16,0.5)
+            // The gesture must stop at the border: the texture below overflows the grid by
+            // another eight squares and SwiftUI's `.clipped()` clips only the drawing, not hit
+            // testing, so without this a drag on a blank spot up to 8 squares under the board
+            // (the cards have no fill) would lift a piece instead of scrolling the page.
+            .contentShape(Rectangle())
             .boardGestures(
                 state: state,
                 size: CGSize(width: gridSide + 2, height: gridSide + 2),
@@ -108,7 +113,7 @@ struct BoardView: View {
         Rectangle()
             .fill(.clear)
             .overlay {
-                Image("wood")
+                Image(decorative: "wood")
                     .resizable()
                     .frame(width: 700, height: 1400)
             }
@@ -119,18 +124,19 @@ struct BoardView: View {
                 )
             }
             .clipShape(RoundedRectangle(cornerRadius: 6))
+            .allowsHitTesting(false) // decoration only; its overflow must not catch touches
     }
 
     /// The wood texture once across the whole grid (`8 × --sq` wide, positioned at
     /// `−c·sq, −r·sq` per square, so every square shows its own patch) under the 64 squares.
     private func grid(squareSize sq: CGFloat) -> some View {
         ZStack(alignment: .topLeading) {
-            Image("wood")
+            Image(decorative: "wood")
                 .resizable()
                 .frame(width: 8 * sq, height: 16 * sq)
                 .frame(width: 8 * sq, height: 8 * sq, alignment: .topLeading)
                 .clipped()
-                .accessibilityHidden(true)
+                .allowsHitTesting(false)
             VStack(spacing: 0) {
                 ForEach(0..<8, id: \.self) { r in
                     HStack(spacing: 0) {

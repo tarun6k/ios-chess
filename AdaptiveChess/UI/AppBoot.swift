@@ -55,6 +55,9 @@ final class AppBoot {
             Self.log.fault("Application Support is unavailable: \(String(describing: error), privacy: .public) — persisting through UserDefaults only")
             storage = Storage(primary: UserDefaultsStore(), secondary: UserDefaultsStore())
         }
+        #if DEBUG
+        DebugScenario.resetStoredStateIfRequested(storage)
+        #endif
         let state = AppState(storage: storage)
         let migrated = state.migrateFromCapacitor()
         if !migrated.isEmpty {

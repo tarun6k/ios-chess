@@ -52,6 +52,17 @@ enum AppFonts {
         UIFont(name: postScriptName(family, weight: weight), size: size)
     }
 
+    /// The browser's synthetic oblique for `font-style: italic`: WebKit skews the upright face
+    /// by 14° when a family has no italic face. `Font.italic()` cannot do this — it asks for an
+    /// italic face and keeps the text upright when there is none.
+    static let obliqueSkew = tan(14 * CGFloat.pi / 180)
+
+    static func obliqueUIFont(_ family: Family, size: CGFloat, weight: Int) -> UIFont {
+        let matrix = CGAffineTransform(a: 1, b: 0, c: obliqueSkew, d: 1, tx: 0, ty: 0)
+        let descriptor = UIFontDescriptor(name: postScriptName(family, weight: weight), matrix: matrix)
+        return UIFont(descriptor: descriptor, size: size)
+    }
+
     /// The PostScript names that fail to load at runtime (empty when the bundle is intact).
     static func missingFaces() -> [String] {
         all.filter { UIFont(name: $0, size: 12) == nil }
@@ -89,9 +100,10 @@ struct TextStyle: Sendable {
     var italic = false
 
     var font: Font {
-        var f = AppFonts.font(family, size: size, weight: weight)
+        var f = italic
+            ? Font(AppFonts.obliqueUIFont(family, size: size, weight: weight) as CTFont)
+            : AppFonts.font(family, size: size, weight: weight)
         if tabularNumbers { f = f.monospacedDigit() }
-        if italic { f = f.italic() }
         return f
     }
 

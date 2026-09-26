@@ -126,6 +126,7 @@ struct GameScreenOverlays: View {
                 PromotionDialog(color: g.turn, moves: promo.moves) { m in
                     model.finishMove(m, controller: controller)
                 }
+                .accessibilityElement(children: .contain)
                 .accessibilityIdentifier("play-promotion")
             }
             if controller.mode == .pvp, let offerer = g.drawOffer, g.status == .active {

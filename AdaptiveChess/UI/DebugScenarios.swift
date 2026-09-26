@@ -17,6 +17,17 @@ enum DebugScenario {
         return next < args.endIndex ? args[next] : nil
     }
 
+    /// `--reset-state`: forget everything the app has stored before booting, so a UI test can start
+    /// from the very first launch (the login screen) on a simulator that has been used before.
+    static let resetArgument = "--reset-state"
+
+    static func resetStoredStateIfRequested(_ storage: Storage) {
+        guard ProcessInfo.processInfo.arguments.contains(resetArgument) else { return }
+        for key in StoreKey.allCases {
+            storage.remove(forKey: key.rawValue)
+        }
+    }
+
     /// Runs the named scenario against the live app; unknown names do nothing.
     @MainActor
     static func run(_ name: String, boot: AppBoot) async {

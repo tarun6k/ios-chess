@@ -201,6 +201,7 @@ struct SidePanel: View {
                     .defaultScrollAnchor(.bottom)
                 }
             }
+            .accessibilityElement(children: .contain) // the cells keep their SAN labels
             .accessibilityIdentifier("play-moves")
         }
     }

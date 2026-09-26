@@ -14,6 +14,33 @@ struct DesignSystemTests {
         }
     }
 
+    @Test("italic is a 14° synthetic oblique of the upright face, as the browser renders it")
+    func syntheticOblique() throws {
+        let oblique = AppFonts.obliqueUIFont(.body, size: 13, weight: 400)
+        let upright = try #require(AppFonts.uiFont(.body, size: 13, weight: 400))
+        #expect(oblique.fontName == AppFonts.bodyRegular)
+        // SwiftUI renders the CTFont, whose matrix carries the skew (`UIFont.fontDescriptor`
+        // does not report it back). A pure horizontal shear: x' = x + tan 14° · y.
+        let matrix = CTFontGetMatrix(oblique as CTFont)
+        #expect(abs(matrix.c / matrix.a - tan(14 * CGFloat.pi / 180)) < 1e-6, "\(matrix)")
+        #expect(matrix.b == 0 && abs(matrix.a - matrix.d) < 1e-6, "\(matrix)")
+        // The shear reaches the outlines: the oblique glyph's path is the upright path under that
+        // matrix (compared on the bounds — "l" has a foot serif, so it widens by less than its
+        // height × tan 14°).
+        var glyph = CGGlyph(0)
+        var scalar = UniChar(("l" as Character).utf16.first!)
+        #expect(CTFontGetGlyphsForCharacters(upright as CTFont, &scalar, &glyph, 1))
+        let uprightPath = try #require(CTFontCreatePathForGlyph(upright as CTFont, glyph, nil))
+        let obliqueBox = try #require(CTFontCreatePathForGlyph(oblique as CTFont, glyph, nil)).boundingBoxOfPath
+        var shear = CGAffineTransform(a: 1, b: 0, c: AppFonts.obliqueSkew, d: 1, tx: 0, ty: 0)
+        let shearedBox = try #require(uprightPath.copy(using: &shear)).boundingBoxOfPath
+        #expect(abs(shearedBox.minX - obliqueBox.minX) < 0.01 && abs(shearedBox.maxX - obliqueBox.maxX) < 0.01
+            && abs(shearedBox.minY - obliqueBox.minY) < 0.01 && abs(shearedBox.maxY - obliqueBox.maxY) < 0.01,
+            "\(uprightPath.boundingBoxOfPath) sheared is \(shearedBox), the oblique face gives \(obliqueBox)")
+        #expect(obliqueBox.width > uprightPath.boundingBoxOfPath.width + 1, "the slant must be visible at 13 pt")
+        #expect(oblique.lineHeight == upright.lineHeight, "the skew must not change the line box")
+    }
+
     @Test("CSS weights above 500 pick the semi-bold face")
     func weightMapping() {
         #expect(AppFonts.postScriptName(.body, weight: 400) == AppFonts.bodyRegular)

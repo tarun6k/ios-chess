@@ -248,14 +248,16 @@ struct AIEngineTests {
         task.cancel()
         await #expect(throws: CancellationError.self) { try await task.value }
 
-        // One poll inside the running search (TimeUp), one in handleAnalyze after it (the throw).
+        // Each position is a quick depth-4 search, so the cancellation lands either inside one (a poll
+        // throws TimeUp, then handleAnalyze's own poll throws: two polls) or between two (only the
+        // loop's poll sees it: one). Either way no further position is analysed.
         let polls = PollCounter()
         let observed = Task { try await engine.handleAnalyze(request, isCancelled: { polls.poll() }) }
         try await Task.sleep(for: .milliseconds(100))
         observed.cancel()
         await #expect(throws: CancellationError.self) { try await observed.value }
         #expect(polls.total >= 2)
-        #expect(polls.cancelled == 2)
+        #expect((1...2).contains(polls.cancelled))
     }
 }
 

@@ -24,6 +24,9 @@ struct GameOverDialog: View {
                 }
             }
         }
+        // A real container: without it SwiftUI hands the identifier to every element inside,
+        // overriding the title's and the buttons' own identifiers.
+        .accessibilityElement(children: .contain)
         .accessibilityIdentifier("play-game-over")
     }
 
