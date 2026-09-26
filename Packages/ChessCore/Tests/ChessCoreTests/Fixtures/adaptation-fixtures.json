@@ -1,0 +1,7729 @@
+{
+ "now": 1790380800000,
+ "games": [
+  {
+   "id": "scholars",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "Qh5",
+    "Nc6",
+    "Bc4",
+    "Nf6",
+    "Qxf7#"
+   ],
+   "thinkMs": [
+    null,
+    0,
+    674,
+    811,
+    948,
+    null,
+    0
+   ],
+   "end": null,
+   "result": {
+    "score": "1-0",
+    "kind": "checkmate",
+    "winner": 0,
+    "message": "White wins by checkmate"
+   },
+   "facts": {
+    "w": {
+     "playerColor": 0,
+     "captureRate": 0.25,
+     "earlyQueenPly": 2,
+     "castlePly": 30,
+     "checks": 1,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Italian Game"
+    },
+    "b": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Italian Game"
+    }
+   },
+   "analysis": [
+    {
+     "uci": "e2e4",
+     "evalBefore": 0,
+     "evalAfter": -18,
+     "bestUci": "b1c3",
+     "judgment": "good",
+     "cpLoss": 18
+    },
+    {
+     "uci": "e7e5",
+     "evalBefore": 25,
+     "evalAfter": 56,
+     "bestUci": "d7d5",
+     "judgment": "good",
+     "cpLoss": 31
+    },
+    {
+     "uci": "d1h5",
+     "evalBefore": 0,
+     "evalAfter": -42,
+     "bestUci": "b1c3",
+     "judgment": "good",
+     "cpLoss": 42
+    },
+    {
+     "uci": "b8c6",
+     "evalBefore": -11,
+     "evalAfter": -11,
+     "bestUci": "b8c6",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "f1c4",
+     "evalBefore": -67,
+     "evalAfter": -67,
+     "bestUci": "f1c4",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "g8f6",
+     "evalBefore": -11,
+     "evalAfter": 99998,
+     "bestUci": "d8e7",
+     "judgment": "blunder",
+     "cpLoss": 100009
+    },
+    {
+     "uci": "h5f7",
+     "evalBefore": 99999,
+     "evalAfter": 99999,
+     "bestUci": "h5f7",
+     "judgment": "best",
+     "cpLoss": 0
+    }
+   ],
+   "weaknesses": {
+    "w": {},
+    "b": {
+     "opening": 1,
+     "hanging-pieces": 1,
+     "king-safety": 1
+    }
+   },
+   "synthetic": {
+    "analysis": [
+     {
+      "uci": "e2e4",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "e2e4",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e7e5",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "d1h5",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "d1e8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "b8c6",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "b8c6",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "f1c4",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "g8f6",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "g8e1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "h5f7",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "h5f7",
+      "judgment": "best",
+      "cpLoss": 260
+     }
+    ],
+    "weaknesses": {
+     "w": {
+      "opening": 2,
+      "missed-tactics": 1,
+      "hanging-pieces": 1
+     },
+     "b": {
+      "opening": 3,
+      "missed-tactics": 2,
+      "hanging-pieces": 1,
+      "king-safety": 1
+     }
+    }
+   }
+  },
+  {
+   "id": "opera",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "Nf3",
+    "d6",
+    "d4",
+    "Bg4",
+    "dxe5",
+    "Bxf3",
+    "Qxf3",
+    "dxe5",
+    "Bc4",
+    "Nf6",
+    "Qb3",
+    "Qe7",
+    "Nc3",
+    "c6",
+    "Bg5",
+    "b5",
+    "Nxb5",
+    "cxb5",
+    "Bxb5+",
+    "Nbd7",
+    "O-O-O",
+    "Rd8",
+    "Rxd7",
+    "Rxd7",
+    "Rd1",
+    "Qe6",
+    "Bxd7+",
+    "Nxd7",
+    "Qb8+",
+    "Nxb8",
+    "Rd8#"
+   ],
+   "thinkMs": [
+    null,
+    0,
+    674,
+    811,
+    948,
+    null,
+    0,
+    1359,
+    1496,
+    1633,
+    null,
+    0,
+    2044,
+    2181,
+    2318,
+    null,
+    0,
+    2729,
+    2866,
+    3003,
+    null,
+    0,
+    3414,
+    3551,
+    3688,
+    null,
+    0,
+    4099,
+    4236,
+    4373,
+    null,
+    0,
+    4784
+   ],
+   "end": null,
+   "result": {
+    "score": "1-0",
+    "kind": "checkmate",
+    "winner": 0,
+    "message": "White wins by checkmate"
+   },
+   "facts": {
+    "w": {
+     "playerColor": 0,
+     "captureRate": 0.35294117647058826,
+     "earlyQueenPly": 8,
+     "castlePly": 22,
+     "checks": 4,
+     "pawnStorm": 1,
+     "tradeRate": 0.3333333333333333,
+     "avgThinkMs": 2646.8,
+     "openingName": "Italian Game"
+    },
+    "b": {
+     "playerColor": 1,
+     "captureRate": 0.375,
+     "earlyQueenPly": 13,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0.5,
+     "avgThinkMs": 2637.6666666666665,
+     "openingName": "Italian Game"
+    }
+   },
+   "analysis": [
+    {
+     "uci": "e2e4",
+     "evalBefore": 0,
+     "evalAfter": -18,
+     "bestUci": "b1c3",
+     "judgment": "good",
+     "cpLoss": 18
+    },
+    {
+     "uci": "e7e5",
+     "evalBefore": 25,
+     "evalAfter": 56,
+     "bestUci": "d7d5",
+     "judgment": "good",
+     "cpLoss": 31
+    },
+    {
+     "uci": "g1f3",
+     "evalBefore": 0,
+     "evalAfter": 0,
+     "bestUci": "b1c3",
+     "judgment": "good",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d7d6",
+     "evalBefore": 38,
+     "evalAfter": 76,
+     "bestUci": "b8c6",
+     "judgment": "good",
+     "cpLoss": 38
+    },
+    {
+     "uci": "d2d4",
+     "evalBefore": 39,
+     "evalAfter": 32,
+     "bestUci": "f1b5",
+     "judgment": "good",
+     "cpLoss": 7
+    },
+    {
+     "uci": "c8g4",
+     "evalBefore": 50,
+     "evalAfter": 80,
+     "bestUci": "g8f6",
+     "judgment": "good",
+     "cpLoss": 30
+    },
+    {
+     "uci": "d4e5",
+     "evalBefore": 80,
+     "evalAfter": 80,
+     "bestUci": "d4e5",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "g4f3",
+     "evalBefore": 123,
+     "evalAfter": 144,
+     "bestUci": "b8d7",
+     "judgment": "good",
+     "cpLoss": 21
+    },
+    {
+     "uci": "d1f3",
+     "evalBefore": 105,
+     "evalAfter": 105,
+     "bestUci": "d1f3",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d6e5",
+     "evalBefore": 145,
+     "evalAfter": 149,
+     "bestUci": "b8c6",
+     "judgment": "good",
+     "cpLoss": 4
+    },
+    {
+     "uci": "f1c4",
+     "evalBefore": 116,
+     "evalAfter": 59,
+     "bestUci": "f3b3",
+     "judgment": "inaccuracy",
+     "cpLoss": 57
+    },
+    {
+     "uci": "g8f6",
+     "evalBefore": 127,
+     "evalAfter": 135,
+     "bestUci": "d8f6",
+     "judgment": "good",
+     "cpLoss": 8
+    },
+    {
+     "uci": "f3b3",
+     "evalBefore": 163,
+     "evalAfter": 163,
+     "bestUci": "f3b3",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d8e7",
+     "evalBefore": 167,
+     "evalAfter": 177,
+     "bestUci": "d8d4",
+     "judgment": "good",
+     "cpLoss": 10
+    },
+    {
+     "uci": "b1c3",
+     "evalBefore": 162,
+     "evalAfter": 133,
+     "bestUci": "c4f7",
+     "judgment": "good",
+     "cpLoss": 29
+    },
+    {
+     "uci": "c7c6",
+     "evalBefore": 159,
+     "evalAfter": 190,
+     "bestUci": "b7b6",
+     "judgment": "good",
+     "cpLoss": 31
+    },
+    {
+     "uci": "c1g5",
+     "evalBefore": 139,
+     "evalAfter": 120,
+     "bestUci": "e1g1",
+     "judgment": "good",
+     "cpLoss": 19
+    },
+    {
+     "uci": "b7b5",
+     "evalBefore": 154,
+     "evalAfter": 154,
+     "bestUci": "b7b5",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "c3b5",
+     "evalBefore": 115,
+     "evalAfter": 46,
+     "bestUci": "c4d3",
+     "judgment": "inaccuracy",
+     "cpLoss": 69
+    },
+    {
+     "uci": "c6b5",
+     "evalBefore": 23,
+     "evalAfter": 23,
+     "bestUci": "c6b5",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "c4b5",
+     "evalBefore": 55,
+     "evalAfter": 55,
+     "bestUci": "c4b5",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "b8d7",
+     "evalBefore": 55,
+     "evalAfter": 55,
+     "bestUci": "b8d7",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "e1c1",
+     "evalBefore": 71,
+     "evalAfter": 71,
+     "bestUci": "e1c1",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "a8d8",
+     "evalBefore": 71,
+     "evalAfter": 71,
+     "bestUci": "a8d8",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d1d7",
+     "evalBefore": 132,
+     "evalAfter": 132,
+     "bestUci": "d1d7",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d8d7",
+     "evalBefore": 132,
+     "evalAfter": 132,
+     "bestUci": "d8d7",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "h1d1",
+     "evalBefore": 132,
+     "evalAfter": 132,
+     "bestUci": "h1d1",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "e7e6",
+     "evalBefore": 364,
+     "evalAfter": 458,
+     "bestUci": "e7c5",
+     "judgment": "inaccuracy",
+     "cpLoss": 94
+    },
+    {
+     "uci": "b5d7",
+     "evalBefore": 458,
+     "evalAfter": 458,
+     "bestUci": "b5d7",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "f6d7",
+     "evalBefore": 458,
+     "evalAfter": 99996,
+     "bestUci": "e6d7",
+     "judgment": "blunder",
+     "cpLoss": 99538
+    },
+    {
+     "uci": "b3b8",
+     "evalBefore": 99997,
+     "evalAfter": 99997,
+     "bestUci": "b3b8",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d7b8",
+     "evalBefore": 99998,
+     "evalAfter": 99998,
+     "bestUci": "d7b8",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d1d8",
+     "evalBefore": 99999,
+     "evalAfter": 99999,
+     "bestUci": "d1d8",
+     "judgment": "best",
+     "cpLoss": 0
+    }
+   ],
+   "weaknesses": {
+    "w": {},
+    "b": {
+     "missed-tactics": 1,
+     "king-safety": 1
+    }
+   },
+   "synthetic": {
+    "analysis": [
+     {
+      "uci": "e2e4",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "e2e4",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e7e5",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "g1f3",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "g1e8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d7d6",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "d7d6",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "d2d4",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "c8g4",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "c8e1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "d4e5",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "d4e5",
+      "judgment": "best",
+      "cpLoss": 260
+     },
+     {
+      "uci": "g4f3",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "d1f3",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "d1e8",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "d6e5",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "d6e5",
+      "judgment": "best",
+      "cpLoss": 130
+     },
+     {
+      "uci": "f1c4",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "g8f6",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "g8e1",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "f3b3",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "f3b3",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "d8e7",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "b1c3",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "b1e8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "c7c6",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "c7c6",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "c1g5",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "b7b5",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "b7e1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "c3b5",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "c3b5",
+      "judgment": "best",
+      "cpLoss": 260
+     },
+     {
+      "uci": "c6b5",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "c4b5",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "c4e8",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "b8d7",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "b8d7",
+      "judgment": "best",
+      "cpLoss": 130
+     },
+     {
+      "uci": "e1c1",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "a8d8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a8c1",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "d1d7",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "d1d7",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "d8d7",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "h1d1",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "h1e8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "e7e6",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "e7e6",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "b5d7",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "f6d7",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "f6c1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "b3b8",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "b3b8",
+      "judgment": "best",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d7b8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "d1d8",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "d1e8",
+      "judgment": "good",
+      "cpLoss": 0
+     }
+    ],
+    "weaknesses": {
+     "w": {
+      "opening": 4,
+      "missed-tactics": 5,
+      "hanging-pieces": 6
+     },
+     "b": {
+      "opening": 8,
+      "missed-tactics": 11,
+      "hanging-pieces": 5,
+      "back-rank": 2,
+      "king-safety": 1
+     }
+    }
+   }
+  },
+  {
+   "id": "kings-gambit-unfinished",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "f4",
+    "exf4",
+    "Nf3",
+    "g5",
+    "h4",
+    "g4",
+    "Ne5",
+    "Nf6",
+    "Bc4",
+    "d5",
+    "exd5",
+    "Bd6",
+    "d4",
+    "Nh5",
+    "Bb5+",
+    "c6",
+    "dxc6",
+    "bxc6",
+    "Nxc6",
+    "Nxc6",
+    "Bxc6+",
+    "Kf8",
+    "Bxa8"
+   ],
+   "thinkMs": [
+    null,
+    0,
+    674,
+    811,
+    948,
+    null,
+    0,
+    1359,
+    1496,
+    1633,
+    null,
+    0,
+    2044,
+    2181,
+    2318,
+    null,
+    0,
+    2729,
+    2866,
+    3003,
+    null,
+    0,
+    3414,
+    3551,
+    3688
+   ],
+   "end": null,
+   "result": null,
+   "facts": {
+    "w": {
+     "playerColor": 0,
+     "captureRate": 0.38461538461538464,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 2,
+     "pawnStorm": 2,
+     "tradeRate": 0.6666666666666666,
+     "avgThinkMs": 2181,
+     "openingName": "King's Gambit"
+    },
+    "b": {
+     "playerColor": 1,
+     "captureRate": 0.25,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 2,
+     "tradeRate": 0.5,
+     "avgThinkMs": 2181,
+     "openingName": "King's Gambit"
+    }
+   },
+   "analysis": [
+    {
+     "uci": "e2e4",
+     "evalBefore": 0,
+     "evalAfter": -18,
+     "bestUci": "b1c3",
+     "judgment": "good",
+     "cpLoss": 18
+    },
+    {
+     "uci": "e7e5",
+     "evalBefore": 25,
+     "evalAfter": 56,
+     "bestUci": "d7d5",
+     "judgment": "good",
+     "cpLoss": 31
+    },
+    {
+     "uci": "f2f4",
+     "evalBefore": 0,
+     "evalAfter": -90,
+     "bestUci": "b1c3",
+     "judgment": "inaccuracy",
+     "cpLoss": 90
+    },
+    {
+     "uci": "e5f4",
+     "evalBefore": -43,
+     "evalAfter": -34,
+     "bestUci": "b8c6",
+     "judgment": "good",
+     "cpLoss": 9
+    },
+    {
+     "uci": "g1f3",
+     "evalBefore": -72,
+     "evalAfter": -90,
+     "bestUci": "d2d3",
+     "judgment": "good",
+     "cpLoss": 18
+    },
+    {
+     "uci": "g7g5",
+     "evalBefore": -56,
+     "evalAfter": 6,
+     "bestUci": "g8f6",
+     "judgment": "inaccuracy",
+     "cpLoss": 62
+    },
+    {
+     "uci": "h2h4",
+     "evalBefore": -12,
+     "evalAfter": -70,
+     "bestUci": "b1c3",
+     "judgment": "inaccuracy",
+     "cpLoss": 58
+    },
+    {
+     "uci": "g5g4",
+     "evalBefore": -12,
+     "evalAfter": -12,
+     "bestUci": "g5g4",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "f3e5",
+     "evalBefore": -27,
+     "evalAfter": -27,
+     "bestUci": "f3e5",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "g8f6",
+     "evalBefore": 15,
+     "evalAfter": 15,
+     "bestUci": "g8f6",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "f1c4",
+     "evalBefore": -13,
+     "evalAfter": -13,
+     "bestUci": "f1c4",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d7d5",
+     "evalBefore": 22,
+     "evalAfter": 22,
+     "bestUci": "d7d5",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "e4d5",
+     "evalBefore": -28,
+     "evalAfter": -28,
+     "bestUci": "e4d5",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "f8d6",
+     "evalBefore": -9,
+     "evalAfter": 53,
+     "bestUci": "f6d5",
+     "judgment": "inaccuracy",
+     "cpLoss": 62
+    },
+    {
+     "uci": "d2d4",
+     "evalBefore": 21,
+     "evalAfter": 21,
+     "bestUci": "d2d4",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "f6h5",
+     "evalBefore": 27,
+     "evalAfter": 155,
+     "bestUci": "f6d5",
+     "judgment": "mistake",
+     "cpLoss": 128
+    },
+    {
+     "uci": "c4b5",
+     "evalBefore": 148,
+     "evalAfter": 148,
+     "bestUci": "c4b5",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "c7c6",
+     "evalBefore": 148,
+     "evalAfter": 169,
+     "bestUci": "b8d7",
+     "judgment": "good",
+     "cpLoss": 21
+    },
+    {
+     "uci": "d5c6",
+     "evalBefore": 169,
+     "evalAfter": 169,
+     "bestUci": "d5c6",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "b7c6",
+     "evalBefore": 222,
+     "evalAfter": 248,
+     "bestUci": "d8a5",
+     "judgment": "good",
+     "cpLoss": 26
+    },
+    {
+     "uci": "e5c6",
+     "evalBefore": 252,
+     "evalAfter": 252,
+     "bestUci": "e5c6",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "b8c6",
+     "evalBefore": 187,
+     "evalAfter": 294,
+     "bestUci": "d8b6",
+     "judgment": "inaccuracy",
+     "cpLoss": 107
+    },
+    {
+     "uci": "b5c6",
+     "evalBefore": 320,
+     "evalAfter": 320,
+     "bestUci": "b5c6",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "e8f8",
+     "evalBefore": 320,
+     "evalAfter": 590,
+     "bestUci": "c8d7",
+     "judgment": "blunder",
+     "cpLoss": 270
+    },
+    {
+     "uci": "c6a8",
+     "evalBefore": 566,
+     "evalAfter": 566,
+     "bestUci": "c6a8",
+     "judgment": "best",
+     "cpLoss": 0
+    }
+   ],
+   "weaknesses": {
+    "w": {
+     "king-safety": 1
+    },
+    "b": {
+     "opening": 1,
+     "missed-tactics": 1,
+     "hanging-pieces": 1,
+     "king-safety": 1
+    }
+   },
+   "synthetic": {
+    "analysis": [
+     {
+      "uci": "e2e4",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "e2e4",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e7e5",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "f2f4",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "f2e8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "e5f4",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "e5f4",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "g1f3",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "g7g5",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "g7e1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "h2h4",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "h2h4",
+      "judgment": "best",
+      "cpLoss": 260
+     },
+     {
+      "uci": "g5g4",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "f3e5",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "f3e8",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "g8f6",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "g8f6",
+      "judgment": "best",
+      "cpLoss": 130
+     },
+     {
+      "uci": "f1c4",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d7d5",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "d7e1",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "e4d5",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "e4d5",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "f8d6",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "d2d4",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "d2e8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "f6h5",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "f6h5",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "c4b5",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "c7c6",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "c7e1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "d5c6",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "d5c6",
+      "judgment": "best",
+      "cpLoss": 260
+     },
+     {
+      "uci": "b7c6",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "e5c6",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "e5e8",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "b8c6",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "b8c6",
+      "judgment": "best",
+      "cpLoss": 130
+     },
+     {
+      "uci": "b5c6",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "e8f8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "e8e1",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "c6a8",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "c6a8",
+      "judgment": "best",
+      "cpLoss": 0
+     }
+    ],
+    "weaknesses": {
+     "w": {
+      "opening": 4,
+      "missed-tactics": 4,
+      "hanging-pieces": 4,
+      "king-safety": 1
+     },
+     "b": {
+      "opening": 8,
+      "missed-tactics": 8,
+      "hanging-pieces": 4,
+      "king-safety": 1
+     }
+    }
+   }
+  },
+  {
+   "id": "rook-endgame",
+   "startFen": "4k3/pppp4/8/8/8/8/4PPPP/R3K2R w KQ - 0 1",
+   "sans": [
+    "O-O",
+    "Kd8",
+    "Ra6",
+    "Ke8",
+    "Rb6",
+    "Kd8",
+    "Rc6",
+    "Ke8",
+    "Rd6",
+    "Kd8",
+    "Re6",
+    "Kc8",
+    "Rf6",
+    "Kd8",
+    "Rg6",
+    "Ke8",
+    "Rh6",
+    "Kd8",
+    "h3",
+    "Ke8",
+    "h4",
+    "Kd8",
+    "h5",
+    "Ke8",
+    "Rf6",
+    "Kd8",
+    "h6",
+    "Ke8",
+    "h7",
+    "Kd8",
+    "h8=Q+",
+    "Ke7"
+   ],
+   "thinkMs": [
+    null,
+    0,
+    674,
+    811,
+    948,
+    null,
+    0,
+    1359,
+    1496,
+    1633,
+    null,
+    0,
+    2044,
+    2181,
+    2318,
+    null,
+    0,
+    2729,
+    2866,
+    3003,
+    null,
+    0,
+    3414,
+    3551,
+    3688,
+    null,
+    0,
+    4099,
+    4236,
+    4373,
+    null,
+    0
+   ],
+   "end": "resign:b",
+   "result": {
+    "score": "1-0",
+    "kind": "resignation",
+    "winner": 0,
+    "message": "White wins by resignation"
+   },
+   "facts": {
+    "w": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 0,
+     "checks": 1,
+     "pawnStorm": 4,
+     "tradeRate": 0,
+     "avgThinkMs": 2409.3333333333335,
+     "openingName": null
+    },
+    "b": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 2637.6666666666665,
+     "openingName": null
+    }
+   },
+   "analysis": [
+    {
+     "uci": "e1g1",
+     "evalBefore": 1252,
+     "evalAfter": 1152,
+     "bestUci": "a1a7",
+     "judgment": "inaccuracy",
+     "cpLoss": 100
+    },
+    {
+     "uci": "e8d8",
+     "evalBefore": 1155,
+     "evalAfter": 1187,
+     "bestUci": "a7a6",
+     "judgment": "good",
+     "cpLoss": 32
+    },
+    {
+     "uci": "a1a6",
+     "evalBefore": 1182,
+     "evalAfter": 546,
+     "bestUci": "a1a7",
+     "judgment": "blunder",
+     "cpLoss": 636
+    },
+    {
+     "uci": "d8e8",
+     "evalBefore": 613,
+     "evalAfter": 1221,
+     "bestUci": "b7a6",
+     "judgment": "blunder",
+     "cpLoss": 608
+    },
+    {
+     "uci": "a6b6",
+     "evalBefore": 1246,
+     "evalAfter": 534,
+     "bestUci": "a6a7",
+     "judgment": "blunder",
+     "cpLoss": 712
+    },
+    {
+     "uci": "e8d8",
+     "evalBefore": 568,
+     "evalAfter": 1188,
+     "bestUci": "a7b6",
+     "judgment": "blunder",
+     "cpLoss": 620
+    },
+    {
+     "uci": "b6c6",
+     "evalBefore": 1233,
+     "evalAfter": 559,
+     "bestUci": "b6b7",
+     "judgment": "blunder",
+     "cpLoss": 674
+    },
+    {
+     "uci": "d8e8",
+     "evalBefore": 574,
+     "evalAfter": 1222,
+     "bestUci": "d7c6",
+     "judgment": "blunder",
+     "cpLoss": 648
+    },
+    {
+     "uci": "c6d6",
+     "evalBefore": 1303,
+     "evalAfter": 584,
+     "bestUci": "c6c7",
+     "judgment": "blunder",
+     "cpLoss": 719
+    },
+    {
+     "uci": "e8d8",
+     "evalBefore": 639,
+     "evalAfter": 1008,
+     "bestUci": "c7d6",
+     "judgment": "blunder",
+     "cpLoss": 369
+    },
+    {
+     "uci": "d6e6",
+     "evalBefore": 1030,
+     "evalAfter": 525,
+     "bestUci": "d6d3",
+     "judgment": "blunder",
+     "cpLoss": 505
+    },
+    {
+     "uci": "d8c8",
+     "evalBefore": 536,
+     "evalAfter": 1007,
+     "bestUci": "d7e6",
+     "judgment": "blunder",
+     "cpLoss": 471
+    },
+    {
+     "uci": "e6f6",
+     "evalBefore": 99999,
+     "evalAfter": 1020,
+     "bestUci": "e6e8",
+     "judgment": "blunder",
+     "cpLoss": 98979
+    },
+    {
+     "uci": "c8d8",
+     "evalBefore": 1032,
+     "evalAfter": 1042,
+     "bestUci": "d7d5",
+     "judgment": "good",
+     "cpLoss": 10
+    },
+    {
+     "uci": "f6g6",
+     "evalBefore": 1048,
+     "evalAfter": 1013,
+     "bestUci": "f6f8",
+     "judgment": "good",
+     "cpLoss": 35
+    },
+    {
+     "uci": "d8e8",
+     "evalBefore": 1048,
+     "evalAfter": 1048,
+     "bestUci": "d8e7",
+     "judgment": "good",
+     "cpLoss": 0
+    },
+    {
+     "uci": "g6h6",
+     "evalBefore": 1048,
+     "evalAfter": 1008,
+     "bestUci": "g6g7",
+     "judgment": "good",
+     "cpLoss": 40
+    },
+    {
+     "uci": "e8d8",
+     "evalBefore": 1028,
+     "evalAfter": 1082,
+     "bestUci": "d7d5",
+     "judgment": "inaccuracy",
+     "cpLoss": 54
+    },
+    {
+     "uci": "h2h3",
+     "evalBefore": 1069,
+     "evalAfter": 1013,
+     "bestUci": "h6h8",
+     "judgment": "inaccuracy",
+     "cpLoss": 56
+    },
+    {
+     "uci": "d8e8",
+     "evalBefore": 1053,
+     "evalAfter": 1090,
+     "bestUci": "d7d5",
+     "judgment": "good",
+     "cpLoss": 37
+    },
+    {
+     "uci": "h3h4",
+     "evalBefore": 1074,
+     "evalAfter": 1019,
+     "bestUci": "f1c1",
+     "judgment": "inaccuracy",
+     "cpLoss": 55
+    },
+    {
+     "uci": "e8d8",
+     "evalBefore": 1042,
+     "evalAfter": 1093,
+     "bestUci": "d7d5",
+     "judgment": "inaccuracy",
+     "cpLoss": 51
+    },
+    {
+     "uci": "h4h5",
+     "evalBefore": 1080,
+     "evalAfter": 1042,
+     "bestUci": "h6h8",
+     "judgment": "good",
+     "cpLoss": 38
+    },
+    {
+     "uci": "d8e8",
+     "evalBefore": 1082,
+     "evalAfter": 1119,
+     "bestUci": "d7d5",
+     "judgment": "good",
+     "cpLoss": 37
+    },
+    {
+     "uci": "h6f6",
+     "evalBefore": 1112,
+     "evalAfter": 1013,
+     "bestUci": "h6h8",
+     "judgment": "inaccuracy",
+     "cpLoss": 99
+    },
+    {
+     "uci": "e8d8",
+     "evalBefore": 1053,
+     "evalAfter": 1147,
+     "bestUci": "e8e7",
+     "judgment": "inaccuracy",
+     "cpLoss": 94
+    },
+    {
+     "uci": "h5h6",
+     "evalBefore": 1229,
+     "evalAfter": 1229,
+     "bestUci": "h5h6",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d8e8",
+     "evalBefore": 1221,
+     "evalAfter": 1731,
+     "bestUci": "d8e7",
+     "judgment": "blunder",
+     "cpLoss": 510
+    },
+    {
+     "uci": "h6h7",
+     "evalBefore": 1746,
+     "evalAfter": 1746,
+     "bestUci": "h6h7",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "e8d8",
+     "evalBefore": 1772,
+     "evalAfter": 99996,
+     "bestUci": "e8e7",
+     "judgment": "blunder",
+     "cpLoss": 98224
+    },
+    {
+     "uci": "h7h8q",
+     "evalBefore": 99997,
+     "evalAfter": 99997,
+     "bestUci": "h7h8q",
+     "judgment": "best",
+     "cpLoss": 0
+    },
+    {
+     "uci": "d8e7",
+     "evalBefore": 99998,
+     "evalAfter": 99998,
+     "bestUci": "d8e7",
+     "judgment": "best",
+     "cpLoss": 0
+    }
+   ],
+   "weaknesses": {
+    "w": {
+     "opening": 6,
+     "missed-tactics": 4,
+     "hanging-pieces": 6,
+     "back-rank": 6
+    },
+    "b": {
+     "opening": 5,
+     "missed-tactics": 5,
+     "hanging-pieces": 7,
+     "endgame": 2,
+     "king-safety": 1
+    }
+   },
+   "synthetic": {
+    "analysis": [
+     {
+      "uci": "e1g1",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "e1g1",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e8d8",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "a1a6",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "a1d8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d8e8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "d8e8",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "a6b6",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e8d8",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "e8g1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "b6c6",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "b6c6",
+      "judgment": "best",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d8e8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "c6d6",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "c6e8",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e8d8",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "e8d8",
+      "judgment": "best",
+      "cpLoss": 130
+     },
+     {
+      "uci": "d6e6",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d8c8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "d8g1",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "e6f6",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "e6f6",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "c8d8",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "f6g6",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "f6d8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d8e8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "d8e8",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "g6h6",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e8d8",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "e8g1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "h2h3",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "h2h3",
+      "judgment": "best",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d8e8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "h3h4",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "h3e8",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e8d8",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "e8d8",
+      "judgment": "best",
+      "cpLoss": 130
+     },
+     {
+      "uci": "h4h5",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d8e8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "d8g1",
+      "judgment": "blunder",
+      "cpLoss": 300
+     },
+     {
+      "uci": "h6f6",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "h6f6",
+      "judgment": "best",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e8d8",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "a7a8q",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "h5h6",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "h5d8",
+      "judgment": "blunder",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d8e8",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "d8e8",
+      "judgment": "best",
+      "cpLoss": 300
+     },
+     {
+      "uci": "h6h7",
+      "evalBefore": 0,
+      "evalAfter": 0,
+      "bestUci": "a7a8q",
+      "judgment": "good",
+      "cpLoss": 0
+     },
+     {
+      "uci": "e8d8",
+      "evalBefore": 0,
+      "evalAfter": -130,
+      "bestUci": "e8g1",
+      "judgment": "mistake",
+      "cpLoss": 130
+     },
+     {
+      "uci": "h7h8q",
+      "evalBefore": 0,
+      "evalAfter": -260,
+      "bestUci": "h7h8q",
+      "judgment": "best",
+      "cpLoss": 260
+     },
+     {
+      "uci": "d8e7",
+      "evalBefore": 0,
+      "evalAfter": -300,
+      "bestUci": "a7a8q",
+      "judgment": "blunder",
+      "cpLoss": 300
+     }
+    ],
+    "weaknesses": {
+     "w": {
+      "opening": 4,
+      "missed-tactics": 5,
+      "hanging-pieces": 8,
+      "back-rank": 5,
+      "endgame": 4
+     },
+     "b": {
+      "opening": 8,
+      "missed-tactics": 11,
+      "hanging-pieces": 8,
+      "endgame": 8,
+      "king-safety": 1
+     }
+    }
+   }
+  }
+ ],
+ "bookGames": [
+  {
+   "id": "book-0",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "Bc4",
+    "Bc5",
+    "c3",
+    "Nf6",
+    "d3"
+   ],
+   "end": "resign:b"
+  },
+  {
+   "id": "book-1",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "Bb5",
+    "a6",
+    "Ba4",
+    "Nf6",
+    "O-O"
+   ],
+   "end": "resign:w"
+  },
+  {
+   "id": "book-2",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "d4",
+    "exd4",
+    "Nxd4"
+   ],
+   "end": null
+  },
+  {
+   "id": "book-3",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "f4",
+    "exf4",
+    "Nf3"
+   ],
+   "end": "resign:b"
+  },
+  {
+   "id": "book-4",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "c5",
+    "Nf3",
+    "d6",
+    "d4",
+    "cxd4",
+    "Nxd4",
+    "Nf6",
+    "Nc3"
+   ],
+   "end": "resign:w"
+  },
+  {
+   "id": "book-5",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "c5",
+    "Nc3",
+    "Nc6",
+    "g3",
+    "g6",
+    "Bg2",
+    "Bg7",
+    "d3"
+   ],
+   "end": null
+  },
+  {
+   "id": "book-6",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e6",
+    "d4",
+    "d5",
+    "e5",
+    "c5",
+    "c3",
+    "Nc6",
+    "Nf3"
+   ],
+   "end": "resign:b"
+  },
+  {
+   "id": "book-7",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "Nc3",
+    "dxe4",
+    "Nxe4",
+    "Bf5"
+   ],
+   "end": "resign:w"
+  },
+  {
+   "id": "book-8",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "d5",
+    "exd5",
+    "Qxd5",
+    "Nc3",
+    "Qa5",
+    "d4"
+   ],
+   "end": null
+  },
+  {
+   "id": "book-9",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "d6",
+    "d4",
+    "Nf6",
+    "Nc3",
+    "g6",
+    "Nf3",
+    "Bg7"
+   ],
+   "end": "resign:b"
+  },
+  {
+   "id": "book-10",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "d4",
+    "d5",
+    "c4",
+    "e6",
+    "Nc3",
+    "Nf6",
+    "Bg5",
+    "Be7",
+    "e3"
+   ],
+   "end": "resign:w"
+  },
+  {
+   "id": "book-11",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "d4",
+    "d5",
+    "c4",
+    "dxc4",
+    "Nf3",
+    "Nf6",
+    "e3",
+    "e6",
+    "Bxc4"
+   ],
+   "end": null
+  },
+  {
+   "id": "book-12",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "d4",
+    "d5",
+    "c4",
+    "c6",
+    "Nf3",
+    "Nf6",
+    "Nc3",
+    "dxc4",
+    "a4"
+   ],
+   "end": "resign:b"
+  },
+  {
+   "id": "book-13",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "d4",
+    "Nf6",
+    "c4",
+    "g6",
+    "Nc3",
+    "Bg7",
+    "e4",
+    "d6",
+    "Nf3",
+    "O-O"
+   ],
+   "end": "resign:w"
+  },
+  {
+   "id": "book-14",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "d4",
+    "Nf6",
+    "c4",
+    "e6",
+    "Nc3",
+    "Bb4",
+    "e3",
+    "O-O"
+   ],
+   "end": null
+  },
+  {
+   "id": "book-15",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "d4",
+    "Nf6",
+    "c4",
+    "g6",
+    "Nc3",
+    "d5",
+    "cxd5",
+    "Nxd5",
+    "e4"
+   ],
+   "end": "resign:b"
+  },
+  {
+   "id": "book-16",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "d4",
+    "d5",
+    "Nf3",
+    "Nf6",
+    "Bf4",
+    "e6",
+    "e3",
+    "Bd6",
+    "Bg3"
+   ],
+   "end": "resign:w"
+  },
+  {
+   "id": "book-17",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "c4",
+    "e5",
+    "Nc3",
+    "Nf6",
+    "g3",
+    "d5",
+    "cxd5",
+    "Nxd5",
+    "Bg2"
+   ],
+   "end": null
+  },
+  {
+   "id": "book-18",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "Nf3",
+    "d5",
+    "c4",
+    "e6",
+    "g3",
+    "Nf6",
+    "Bg2"
+   ],
+   "end": "resign:b"
+  },
+  {
+   "id": "book-19",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "Nc3",
+    "Nf6",
+    "f4",
+    "d5",
+    "fxe5",
+    "Nxe4"
+   ],
+   "end": "resign:w"
+  },
+  {
+   "id": "book-20",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "Nc3",
+    "Nf6",
+    "Bb5",
+    "Bb4"
+   ],
+   "end": null
+  },
+  {
+   "id": "book-21",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "sans": [
+    "d4",
+    "d5",
+    "Nf3",
+    "Nf6",
+    "e3",
+    "e6",
+    "Bd3"
+   ],
+   "end": "resign:b"
+  }
+ ],
+ "classify": [
+  {
+   "name": "aggressive",
+   "features": {
+    "games": 5,
+    "avgCaptureRate": 0.3,
+    "avgEarlyQueenPly": 5,
+    "avgCastlePly": 30,
+    "avgChecksPerGame": 5,
+    "avgPawnStorm": 6,
+    "avgTradeRate": 0.3,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "aggressive",
+   "scores": {
+    "aggressive": 4,
+    "tactical": 3,
+    "positional": 0,
+    "defensive": 0,
+    "materialistic": 1
+   }
+  },
+  {
+   "name": "tactical",
+   "features": {
+    "games": 5,
+    "avgCaptureRate": 0.25,
+    "avgEarlyQueenPly": 20,
+    "avgCastlePly": 12,
+    "avgChecksPerGame": 4.5,
+    "avgPawnStorm": 1,
+    "avgTradeRate": 0.3,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "tactical",
+   "scores": {
+    "aggressive": 2,
+    "tactical": 3,
+    "positional": 2,
+    "defensive": 1,
+    "materialistic": 1
+   }
+  },
+  {
+   "name": "positionalTie",
+   "features": {
+    "games": 5,
+    "avgCaptureRate": 0.1,
+    "avgEarlyQueenPly": 20,
+    "avgCastlePly": 10,
+    "avgChecksPerGame": 1,
+    "avgPawnStorm": 1,
+    "avgTradeRate": 0.3,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "positional",
+   "scores": {
+    "aggressive": 0,
+    "tactical": 0,
+    "positional": 3,
+    "defensive": 3,
+    "materialistic": 0
+   }
+  },
+  {
+   "name": "defensive",
+   "features": {
+    "games": 5,
+    "avgCaptureRate": 0.1,
+    "avgEarlyQueenPly": 20,
+    "avgCastlePly": 20,
+    "avgChecksPerGame": 1,
+    "avgPawnStorm": 4,
+    "avgTradeRate": 0.3,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "defensive",
+   "scores": {
+    "aggressive": 0,
+    "tactical": 0,
+    "positional": 1,
+    "defensive": 3,
+    "materialistic": 0
+   }
+  },
+  {
+   "name": "materialistic",
+   "features": {
+    "games": 5,
+    "avgCaptureRate": 0.21,
+    "avgEarlyQueenPly": 20,
+    "avgCastlePly": 20,
+    "avgChecksPerGame": 2,
+    "avgPawnStorm": 2,
+    "avgTradeRate": 0.7,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "materialistic",
+   "scores": {
+    "aggressive": 1,
+    "tactical": 1,
+    "positional": 1,
+    "defensive": 1,
+    "materialistic": 3
+   }
+  },
+  {
+   "name": "balancedOneGame",
+   "features": {
+    "games": 1,
+    "avgCaptureRate": 0.3,
+    "avgEarlyQueenPly": 5,
+    "avgCastlePly": 30,
+    "avgChecksPerGame": 5,
+    "avgPawnStorm": 6,
+    "avgTradeRate": 0,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "balanced",
+   "scores": {
+    "aggressive": 4,
+    "tactical": 3,
+    "positional": 0,
+    "defensive": 0,
+    "materialistic": 1
+   }
+  },
+  {
+   "name": "balancedLow",
+   "features": {
+    "games": 5,
+    "avgCaptureRate": 0.15,
+    "avgEarlyQueenPly": 12,
+    "avgCastlePly": 15,
+    "avgChecksPerGame": 2.5,
+    "avgPawnStorm": 3.5,
+    "avgTradeRate": 0.5,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "balanced",
+   "scores": {
+    "aggressive": 0,
+    "tactical": 0,
+    "positional": 0,
+    "defensive": 0,
+    "materialistic": 1
+   }
+  },
+  {
+   "name": "boundary",
+   "features": {
+    "games": 5,
+    "avgCaptureRate": 0.18,
+    "avgEarlyQueenPly": 10,
+    "avgCastlePly": 14,
+    "avgChecksPerGame": 3,
+    "avgPawnStorm": 5,
+    "avgTradeRate": 0.6,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "balanced",
+   "scores": {
+    "aggressive": 0,
+    "tactical": 1,
+    "positional": 0,
+    "defensive": 0,
+    "materialistic": 1
+   }
+  },
+  {
+   "name": "fresh",
+   "features": {
+    "games": 0,
+    "avgCaptureRate": 0,
+    "avgEarlyQueenPly": 24,
+    "avgCastlePly": 30,
+    "avgChecksPerGame": 0,
+    "avgPawnStorm": 0,
+    "avgTradeRate": 0,
+    "avgCpLoss": 0,
+    "avgThinkMs": 0
+   },
+   "label": "balanced",
+   "scores": {
+    "aggressive": 0,
+    "tactical": 0,
+    "positional": 2,
+    "defensive": 3,
+    "materialistic": 0
+   }
+  }
+ ],
+ "rating": {
+  "steps": [
+   {
+    "rating": 800,
+    "games": 0,
+    "aiElo": 800,
+    "score": 1,
+    "result": 824,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 824
+     }
+    ]
+   },
+   {
+    "rating": 800,
+    "games": 0,
+    "aiElo": 800,
+    "score": 0,
+    "result": 776,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 776
+     }
+    ]
+   },
+   {
+    "rating": 800,
+    "games": 0,
+    "aiElo": 800,
+    "score": 0.5,
+    "result": 800,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 800
+     }
+    ]
+   },
+   {
+    "rating": 800,
+    "games": 9,
+    "aiElo": 1000,
+    "score": 1,
+    "result": 836,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 836
+     }
+    ]
+   },
+   {
+    "rating": 800,
+    "games": 10,
+    "aiElo": 1000,
+    "score": 1,
+    "result": 818,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 818
+     }
+    ]
+   },
+   {
+    "rating": 800,
+    "games": 11,
+    "aiElo": 600,
+    "score": 0,
+    "result": 782,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 782
+     }
+    ]
+   },
+   {
+    "rating": 1234,
+    "games": 3,
+    "aiElo": 1500,
+    "score": 0.5,
+    "result": 1249,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 1249
+     }
+    ]
+   },
+   {
+    "rating": 1234,
+    "games": 30,
+    "aiElo": 900,
+    "score": 0.5,
+    "result": 1225,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 1225
+     }
+    ]
+   },
+   {
+    "rating": 210,
+    "games": 0,
+    "aiElo": 2200,
+    "score": 0,
+    "result": 210,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 210
+     }
+    ]
+   },
+   {
+    "rating": 205,
+    "games": 40,
+    "aiElo": 1000,
+    "score": 0,
+    "result": 205,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 205
+     }
+    ]
+   },
+   {
+    "rating": 2190,
+    "games": 40,
+    "aiElo": 2200,
+    "score": 1,
+    "result": 2202,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 2202
+     }
+    ]
+   },
+   {
+    "rating": 999,
+    "games": 7,
+    "aiElo": 1001,
+    "score": 1,
+    "result": 1023,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 1023
+     }
+    ]
+   },
+   {
+    "rating": 1000,
+    "games": 12,
+    "aiElo": 999,
+    "score": 0,
+    "result": 988,
+    "history": [
+     {
+      "t": 1790380800001,
+      "rating": 988
+     }
+    ]
+   }
+  ],
+  "cap": {
+   "calls": 205,
+   "model": {
+    "version": 1,
+    "rating": 1017,
+    "ratingHistory": [
+     {
+      "t": 1790380805000,
+      "rating": 864
+     },
+     {
+      "t": 1790380806000,
+      "rating": 897
+     },
+     {
+      "t": 1790380807000,
+      "rating": 880
+     },
+     {
+      "t": 1790380808000,
+      "rating": 888
+     },
+     {
+      "t": 1790380809000,
+      "rating": 919
+     },
+     {
+      "t": 1790380810000,
+      "rating": 900
+     },
+     {
+      "t": 1790380811000,
+      "rating": 907
+     },
+     {
+      "t": 1790380812000,
+      "rating": 937
+     },
+     {
+      "t": 1790380813000,
+      "rating": 917
+     },
+     {
+      "t": 1790380814000,
+      "rating": 923
+     },
+     {
+      "t": 1790380815000,
+      "rating": 952
+     },
+     {
+      "t": 1790380816000,
+      "rating": 931
+     },
+     {
+      "t": 1790380817000,
+      "rating": 936
+     },
+     {
+      "t": 1790380818000,
+      "rating": 964
+     },
+     {
+      "t": 1790380819000,
+      "rating": 942
+     },
+     {
+      "t": 1790380820000,
+      "rating": 946
+     },
+     {
+      "t": 1790380821000,
+      "rating": 974
+     },
+     {
+      "t": 1790380822000,
+      "rating": 952
+     },
+     {
+      "t": 1790380823000,
+      "rating": 955
+     },
+     {
+      "t": 1790380824000,
+      "rating": 982
+     },
+     {
+      "t": 1790380825000,
+      "rating": 959
+     },
+     {
+      "t": 1790380826000,
+      "rating": 962
+     },
+     {
+      "t": 1790380827000,
+      "rating": 989
+     },
+     {
+      "t": 1790380828000,
+      "rating": 966
+     },
+     {
+      "t": 1790380829000,
+      "rating": 968
+     },
+     {
+      "t": 1790380830000,
+      "rating": 994
+     },
+     {
+      "t": 1790380831000,
+      "rating": 970
+     },
+     {
+      "t": 1790380832000,
+      "rating": 972
+     },
+     {
+      "t": 1790380833000,
+      "rating": 998
+     },
+     {
+      "t": 1790380834000,
+      "rating": 974
+     },
+     {
+      "t": 1790380835000,
+      "rating": 976
+     },
+     {
+      "t": 1790380836000,
+      "rating": 1002
+     },
+     {
+      "t": 1790380837000,
+      "rating": 978
+     },
+     {
+      "t": 1790380838000,
+      "rating": 980
+     },
+     {
+      "t": 1790380839000,
+      "rating": 1005
+     },
+     {
+      "t": 1790380840000,
+      "rating": 981
+     },
+     {
+      "t": 1790380841000,
+      "rating": 982
+     },
+     {
+      "t": 1790380842000,
+      "rating": 1007
+     },
+     {
+      "t": 1790380843000,
+      "rating": 983
+     },
+     {
+      "t": 1790380844000,
+      "rating": 984
+     },
+     {
+      "t": 1790380845000,
+      "rating": 1009
+     },
+     {
+      "t": 1790380846000,
+      "rating": 984
+     },
+     {
+      "t": 1790380847000,
+      "rating": 985
+     },
+     {
+      "t": 1790380848000,
+      "rating": 1010
+     },
+     {
+      "t": 1790380849000,
+      "rating": 985
+     },
+     {
+      "t": 1790380850000,
+      "rating": 986
+     },
+     {
+      "t": 1790380851000,
+      "rating": 1011
+     },
+     {
+      "t": 1790380852000,
+      "rating": 986
+     },
+     {
+      "t": 1790380853000,
+      "rating": 987
+     },
+     {
+      "t": 1790380854000,
+      "rating": 1012
+     },
+     {
+      "t": 1790380855000,
+      "rating": 987
+     },
+     {
+      "t": 1790380856000,
+      "rating": 988
+     },
+     {
+      "t": 1790380857000,
+      "rating": 1013
+     },
+     {
+      "t": 1790380858000,
+      "rating": 988
+     },
+     {
+      "t": 1790380859000,
+      "rating": 989
+     },
+     {
+      "t": 1790380860000,
+      "rating": 1014
+     },
+     {
+      "t": 1790380861000,
+      "rating": 989
+     },
+     {
+      "t": 1790380862000,
+      "rating": 990
+     },
+     {
+      "t": 1790380863000,
+      "rating": 1015
+     },
+     {
+      "t": 1790380864000,
+      "rating": 990
+     },
+     {
+      "t": 1790380865000,
+      "rating": 991
+     },
+     {
+      "t": 1790380866000,
+      "rating": 1016
+     },
+     {
+      "t": 1790380867000,
+      "rating": 991
+     },
+     {
+      "t": 1790380868000,
+      "rating": 992
+     },
+     {
+      "t": 1790380869000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380870000,
+      "rating": 992
+     },
+     {
+      "t": 1790380871000,
+      "rating": 993
+     },
+     {
+      "t": 1790380872000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380873000,
+      "rating": 992
+     },
+     {
+      "t": 1790380874000,
+      "rating": 993
+     },
+     {
+      "t": 1790380875000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380876000,
+      "rating": 992
+     },
+     {
+      "t": 1790380877000,
+      "rating": 993
+     },
+     {
+      "t": 1790380878000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380879000,
+      "rating": 992
+     },
+     {
+      "t": 1790380880000,
+      "rating": 993
+     },
+     {
+      "t": 1790380881000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380882000,
+      "rating": 992
+     },
+     {
+      "t": 1790380883000,
+      "rating": 993
+     },
+     {
+      "t": 1790380884000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380885000,
+      "rating": 992
+     },
+     {
+      "t": 1790380886000,
+      "rating": 993
+     },
+     {
+      "t": 1790380887000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380888000,
+      "rating": 992
+     },
+     {
+      "t": 1790380889000,
+      "rating": 993
+     },
+     {
+      "t": 1790380890000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380891000,
+      "rating": 992
+     },
+     {
+      "t": 1790380892000,
+      "rating": 993
+     },
+     {
+      "t": 1790380893000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380894000,
+      "rating": 992
+     },
+     {
+      "t": 1790380895000,
+      "rating": 993
+     },
+     {
+      "t": 1790380896000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380897000,
+      "rating": 992
+     },
+     {
+      "t": 1790380898000,
+      "rating": 993
+     },
+     {
+      "t": 1790380899000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380900000,
+      "rating": 992
+     },
+     {
+      "t": 1790380901000,
+      "rating": 993
+     },
+     {
+      "t": 1790380902000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380903000,
+      "rating": 992
+     },
+     {
+      "t": 1790380904000,
+      "rating": 993
+     },
+     {
+      "t": 1790380905000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380906000,
+      "rating": 992
+     },
+     {
+      "t": 1790380907000,
+      "rating": 993
+     },
+     {
+      "t": 1790380908000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380909000,
+      "rating": 992
+     },
+     {
+      "t": 1790380910000,
+      "rating": 993
+     },
+     {
+      "t": 1790380911000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380912000,
+      "rating": 992
+     },
+     {
+      "t": 1790380913000,
+      "rating": 993
+     },
+     {
+      "t": 1790380914000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380915000,
+      "rating": 992
+     },
+     {
+      "t": 1790380916000,
+      "rating": 993
+     },
+     {
+      "t": 1790380917000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380918000,
+      "rating": 992
+     },
+     {
+      "t": 1790380919000,
+      "rating": 993
+     },
+     {
+      "t": 1790380920000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380921000,
+      "rating": 992
+     },
+     {
+      "t": 1790380922000,
+      "rating": 993
+     },
+     {
+      "t": 1790380923000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380924000,
+      "rating": 992
+     },
+     {
+      "t": 1790380925000,
+      "rating": 993
+     },
+     {
+      "t": 1790380926000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380927000,
+      "rating": 992
+     },
+     {
+      "t": 1790380928000,
+      "rating": 993
+     },
+     {
+      "t": 1790380929000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380930000,
+      "rating": 992
+     },
+     {
+      "t": 1790380931000,
+      "rating": 993
+     },
+     {
+      "t": 1790380932000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380933000,
+      "rating": 992
+     },
+     {
+      "t": 1790380934000,
+      "rating": 993
+     },
+     {
+      "t": 1790380935000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380936000,
+      "rating": 992
+     },
+     {
+      "t": 1790380937000,
+      "rating": 993
+     },
+     {
+      "t": 1790380938000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380939000,
+      "rating": 992
+     },
+     {
+      "t": 1790380940000,
+      "rating": 993
+     },
+     {
+      "t": 1790380941000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380942000,
+      "rating": 992
+     },
+     {
+      "t": 1790380943000,
+      "rating": 993
+     },
+     {
+      "t": 1790380944000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380945000,
+      "rating": 992
+     },
+     {
+      "t": 1790380946000,
+      "rating": 993
+     },
+     {
+      "t": 1790380947000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380948000,
+      "rating": 992
+     },
+     {
+      "t": 1790380949000,
+      "rating": 993
+     },
+     {
+      "t": 1790380950000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380951000,
+      "rating": 992
+     },
+     {
+      "t": 1790380952000,
+      "rating": 993
+     },
+     {
+      "t": 1790380953000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380954000,
+      "rating": 992
+     },
+     {
+      "t": 1790380955000,
+      "rating": 993
+     },
+     {
+      "t": 1790380956000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380957000,
+      "rating": 992
+     },
+     {
+      "t": 1790380958000,
+      "rating": 993
+     },
+     {
+      "t": 1790380959000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380960000,
+      "rating": 992
+     },
+     {
+      "t": 1790380961000,
+      "rating": 993
+     },
+     {
+      "t": 1790380962000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380963000,
+      "rating": 992
+     },
+     {
+      "t": 1790380964000,
+      "rating": 993
+     },
+     {
+      "t": 1790380965000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380966000,
+      "rating": 992
+     },
+     {
+      "t": 1790380967000,
+      "rating": 993
+     },
+     {
+      "t": 1790380968000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380969000,
+      "rating": 992
+     },
+     {
+      "t": 1790380970000,
+      "rating": 993
+     },
+     {
+      "t": 1790380971000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380972000,
+      "rating": 992
+     },
+     {
+      "t": 1790380973000,
+      "rating": 993
+     },
+     {
+      "t": 1790380974000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380975000,
+      "rating": 992
+     },
+     {
+      "t": 1790380976000,
+      "rating": 993
+     },
+     {
+      "t": 1790380977000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380978000,
+      "rating": 992
+     },
+     {
+      "t": 1790380979000,
+      "rating": 993
+     },
+     {
+      "t": 1790380980000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380981000,
+      "rating": 992
+     },
+     {
+      "t": 1790380982000,
+      "rating": 993
+     },
+     {
+      "t": 1790380983000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380984000,
+      "rating": 992
+     },
+     {
+      "t": 1790380985000,
+      "rating": 993
+     },
+     {
+      "t": 1790380986000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380987000,
+      "rating": 992
+     },
+     {
+      "t": 1790380988000,
+      "rating": 993
+     },
+     {
+      "t": 1790380989000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380990000,
+      "rating": 992
+     },
+     {
+      "t": 1790380991000,
+      "rating": 993
+     },
+     {
+      "t": 1790380992000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380993000,
+      "rating": 992
+     },
+     {
+      "t": 1790380994000,
+      "rating": 993
+     },
+     {
+      "t": 1790380995000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380996000,
+      "rating": 992
+     },
+     {
+      "t": 1790380997000,
+      "rating": 993
+     },
+     {
+      "t": 1790380998000,
+      "rating": 1017
+     },
+     {
+      "t": 1790380999000,
+      "rating": 992
+     },
+     {
+      "t": 1790381000000,
+      "rating": 993
+     },
+     {
+      "t": 1790381001000,
+      "rating": 1017
+     },
+     {
+      "t": 1790381002000,
+      "rating": 992
+     },
+     {
+      "t": 1790381003000,
+      "rating": 993
+     },
+     {
+      "t": 1790381004000,
+      "rating": 1017
+     }
+    ],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": 0,
+    "features": {
+     "games": 0,
+     "avgCaptureRate": 0,
+     "avgEarlyQueenPly": 24,
+     "avgCastlePly": 30,
+     "avgChecksPerGame": 0,
+     "avgPawnStorm": 0,
+     "avgTradeRate": 0,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 0,
+     "endgame": 0,
+     "opening": 0,
+     "king-safety": 0
+    },
+    "openings": []
+   }
+  }
+ },
+ "targetElo": [
+  {
+   "rating": 600,
+   "streak": -8,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -8,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -6,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -6,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -5,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -5,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -4,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -4,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -3,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -3,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 615
+  },
+  {
+   "rating": 600,
+   "streak": -2,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -2,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 640
+  },
+  {
+   "rating": 600,
+   "streak": -1,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -1,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 665
+  },
+  {
+   "rating": 600,
+   "streak": 0,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": 0,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 690
+  },
+  {
+   "rating": 600,
+   "streak": 1,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": 1,
+   "mode": "match",
+   "result": 625
+  },
+  {
+   "rating": 600,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 715
+  },
+  {
+   "rating": 600,
+   "streak": 2,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": 2,
+   "mode": "match",
+   "result": 650
+  },
+  {
+   "rating": 600,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 740
+  },
+  {
+   "rating": 600,
+   "streak": 3,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 600,
+   "streak": 3,
+   "mode": "match",
+   "result": 675
+  },
+  {
+   "rating": 600,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 765
+  },
+  {
+   "rating": 600,
+   "streak": 4,
+   "mode": "learn",
+   "result": 610
+  },
+  {
+   "rating": 600,
+   "streak": 4,
+   "mode": "match",
+   "result": 700
+  },
+  {
+   "rating": 600,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 790
+  },
+  {
+   "rating": 600,
+   "streak": 5,
+   "mode": "learn",
+   "result": 630
+  },
+  {
+   "rating": 600,
+   "streak": 5,
+   "mode": "match",
+   "result": 720
+  },
+  {
+   "rating": 600,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 810
+  },
+  {
+   "rating": 600,
+   "streak": 6,
+   "mode": "learn",
+   "result": 630
+  },
+  {
+   "rating": 600,
+   "streak": 6,
+   "mode": "match",
+   "result": 720
+  },
+  {
+   "rating": 600,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 810
+  },
+  {
+   "rating": 600,
+   "streak": 8,
+   "mode": "learn",
+   "result": 630
+  },
+  {
+   "rating": 600,
+   "streak": 8,
+   "mode": "match",
+   "result": 720
+  },
+  {
+   "rating": 600,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 810
+  },
+  {
+   "rating": 650,
+   "streak": -8,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -8,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 620
+  },
+  {
+   "rating": 650,
+   "streak": -6,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -6,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 620
+  },
+  {
+   "rating": 650,
+   "streak": -5,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -5,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 620
+  },
+  {
+   "rating": 650,
+   "streak": -4,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -4,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 640
+  },
+  {
+   "rating": 650,
+   "streak": -3,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -3,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 665
+  },
+  {
+   "rating": 650,
+   "streak": -2,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -2,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 690
+  },
+  {
+   "rating": 650,
+   "streak": -1,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": -1,
+   "mode": "match",
+   "result": 625
+  },
+  {
+   "rating": 650,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 715
+  },
+  {
+   "rating": 650,
+   "streak": 0,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": 0,
+   "mode": "match",
+   "result": 650
+  },
+  {
+   "rating": 650,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 740
+  },
+  {
+   "rating": 650,
+   "streak": 1,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 650,
+   "streak": 1,
+   "mode": "match",
+   "result": 675
+  },
+  {
+   "rating": 650,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 765
+  },
+  {
+   "rating": 650,
+   "streak": 2,
+   "mode": "learn",
+   "result": 610
+  },
+  {
+   "rating": 650,
+   "streak": 2,
+   "mode": "match",
+   "result": 700
+  },
+  {
+   "rating": 650,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 790
+  },
+  {
+   "rating": 650,
+   "streak": 3,
+   "mode": "learn",
+   "result": 635
+  },
+  {
+   "rating": 650,
+   "streak": 3,
+   "mode": "match",
+   "result": 725
+  },
+  {
+   "rating": 650,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 815
+  },
+  {
+   "rating": 650,
+   "streak": 4,
+   "mode": "learn",
+   "result": 660
+  },
+  {
+   "rating": 650,
+   "streak": 4,
+   "mode": "match",
+   "result": 750
+  },
+  {
+   "rating": 650,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 840
+  },
+  {
+   "rating": 650,
+   "streak": 5,
+   "mode": "learn",
+   "result": 680
+  },
+  {
+   "rating": 650,
+   "streak": 5,
+   "mode": "match",
+   "result": 770
+  },
+  {
+   "rating": 650,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 860
+  },
+  {
+   "rating": 650,
+   "streak": 6,
+   "mode": "learn",
+   "result": 680
+  },
+  {
+   "rating": 650,
+   "streak": 6,
+   "mode": "match",
+   "result": 770
+  },
+  {
+   "rating": 650,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 860
+  },
+  {
+   "rating": 650,
+   "streak": 8,
+   "mode": "learn",
+   "result": 680
+  },
+  {
+   "rating": 650,
+   "streak": 8,
+   "mode": "match",
+   "result": 770
+  },
+  {
+   "rating": 650,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 860
+  },
+  {
+   "rating": 700,
+   "streak": -8,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -8,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 670
+  },
+  {
+   "rating": 700,
+   "streak": -6,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -6,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 670
+  },
+  {
+   "rating": 700,
+   "streak": -5,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -5,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 670
+  },
+  {
+   "rating": 700,
+   "streak": -4,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -4,
+   "mode": "match",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 690
+  },
+  {
+   "rating": 700,
+   "streak": -3,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -3,
+   "mode": "match",
+   "result": 625
+  },
+  {
+   "rating": 700,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 715
+  },
+  {
+   "rating": 700,
+   "streak": -2,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -2,
+   "mode": "match",
+   "result": 650
+  },
+  {
+   "rating": 700,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 740
+  },
+  {
+   "rating": 700,
+   "streak": -1,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 700,
+   "streak": -1,
+   "mode": "match",
+   "result": 675
+  },
+  {
+   "rating": 700,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 765
+  },
+  {
+   "rating": 700,
+   "streak": 0,
+   "mode": "learn",
+   "result": 610
+  },
+  {
+   "rating": 700,
+   "streak": 0,
+   "mode": "match",
+   "result": 700
+  },
+  {
+   "rating": 700,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 790
+  },
+  {
+   "rating": 700,
+   "streak": 1,
+   "mode": "learn",
+   "result": 635
+  },
+  {
+   "rating": 700,
+   "streak": 1,
+   "mode": "match",
+   "result": 725
+  },
+  {
+   "rating": 700,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 815
+  },
+  {
+   "rating": 700,
+   "streak": 2,
+   "mode": "learn",
+   "result": 660
+  },
+  {
+   "rating": 700,
+   "streak": 2,
+   "mode": "match",
+   "result": 750
+  },
+  {
+   "rating": 700,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 840
+  },
+  {
+   "rating": 700,
+   "streak": 3,
+   "mode": "learn",
+   "result": 685
+  },
+  {
+   "rating": 700,
+   "streak": 3,
+   "mode": "match",
+   "result": 775
+  },
+  {
+   "rating": 700,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 865
+  },
+  {
+   "rating": 700,
+   "streak": 4,
+   "mode": "learn",
+   "result": 710
+  },
+  {
+   "rating": 700,
+   "streak": 4,
+   "mode": "match",
+   "result": 800
+  },
+  {
+   "rating": 700,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 890
+  },
+  {
+   "rating": 700,
+   "streak": 5,
+   "mode": "learn",
+   "result": 730
+  },
+  {
+   "rating": 700,
+   "streak": 5,
+   "mode": "match",
+   "result": 820
+  },
+  {
+   "rating": 700,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 910
+  },
+  {
+   "rating": 700,
+   "streak": 6,
+   "mode": "learn",
+   "result": 730
+  },
+  {
+   "rating": 700,
+   "streak": 6,
+   "mode": "match",
+   "result": 820
+  },
+  {
+   "rating": 700,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 910
+  },
+  {
+   "rating": 700,
+   "streak": 8,
+   "mode": "learn",
+   "result": 730
+  },
+  {
+   "rating": 700,
+   "streak": 8,
+   "mode": "match",
+   "result": 820
+  },
+  {
+   "rating": 700,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 910
+  },
+  {
+   "rating": 800,
+   "streak": -8,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 800,
+   "streak": -8,
+   "mode": "match",
+   "result": 680
+  },
+  {
+   "rating": 800,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 770
+  },
+  {
+   "rating": 800,
+   "streak": -6,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 800,
+   "streak": -6,
+   "mode": "match",
+   "result": 680
+  },
+  {
+   "rating": 800,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 770
+  },
+  {
+   "rating": 800,
+   "streak": -5,
+   "mode": "learn",
+   "result": 600
+  },
+  {
+   "rating": 800,
+   "streak": -5,
+   "mode": "match",
+   "result": 680
+  },
+  {
+   "rating": 800,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 770
+  },
+  {
+   "rating": 800,
+   "streak": -4,
+   "mode": "learn",
+   "result": 610
+  },
+  {
+   "rating": 800,
+   "streak": -4,
+   "mode": "match",
+   "result": 700
+  },
+  {
+   "rating": 800,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 790
+  },
+  {
+   "rating": 800,
+   "streak": -3,
+   "mode": "learn",
+   "result": 635
+  },
+  {
+   "rating": 800,
+   "streak": -3,
+   "mode": "match",
+   "result": 725
+  },
+  {
+   "rating": 800,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 815
+  },
+  {
+   "rating": 800,
+   "streak": -2,
+   "mode": "learn",
+   "result": 660
+  },
+  {
+   "rating": 800,
+   "streak": -2,
+   "mode": "match",
+   "result": 750
+  },
+  {
+   "rating": 800,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 840
+  },
+  {
+   "rating": 800,
+   "streak": -1,
+   "mode": "learn",
+   "result": 685
+  },
+  {
+   "rating": 800,
+   "streak": -1,
+   "mode": "match",
+   "result": 775
+  },
+  {
+   "rating": 800,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 865
+  },
+  {
+   "rating": 800,
+   "streak": 0,
+   "mode": "learn",
+   "result": 710
+  },
+  {
+   "rating": 800,
+   "streak": 0,
+   "mode": "match",
+   "result": 800
+  },
+  {
+   "rating": 800,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 890
+  },
+  {
+   "rating": 800,
+   "streak": 1,
+   "mode": "learn",
+   "result": 735
+  },
+  {
+   "rating": 800,
+   "streak": 1,
+   "mode": "match",
+   "result": 825
+  },
+  {
+   "rating": 800,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 915
+  },
+  {
+   "rating": 800,
+   "streak": 2,
+   "mode": "learn",
+   "result": 760
+  },
+  {
+   "rating": 800,
+   "streak": 2,
+   "mode": "match",
+   "result": 850
+  },
+  {
+   "rating": 800,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 940
+  },
+  {
+   "rating": 800,
+   "streak": 3,
+   "mode": "learn",
+   "result": 785
+  },
+  {
+   "rating": 800,
+   "streak": 3,
+   "mode": "match",
+   "result": 875
+  },
+  {
+   "rating": 800,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 965
+  },
+  {
+   "rating": 800,
+   "streak": 4,
+   "mode": "learn",
+   "result": 810
+  },
+  {
+   "rating": 800,
+   "streak": 4,
+   "mode": "match",
+   "result": 900
+  },
+  {
+   "rating": 800,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 990
+  },
+  {
+   "rating": 800,
+   "streak": 5,
+   "mode": "learn",
+   "result": 830
+  },
+  {
+   "rating": 800,
+   "streak": 5,
+   "mode": "match",
+   "result": 920
+  },
+  {
+   "rating": 800,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 1010
+  },
+  {
+   "rating": 800,
+   "streak": 6,
+   "mode": "learn",
+   "result": 830
+  },
+  {
+   "rating": 800,
+   "streak": 6,
+   "mode": "match",
+   "result": 920
+  },
+  {
+   "rating": 800,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 1010
+  },
+  {
+   "rating": 800,
+   "streak": 8,
+   "mode": "learn",
+   "result": 830
+  },
+  {
+   "rating": 800,
+   "streak": 8,
+   "mode": "match",
+   "result": 920
+  },
+  {
+   "rating": 800,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 1010
+  },
+  {
+   "rating": 1000,
+   "streak": -8,
+   "mode": "learn",
+   "result": 790
+  },
+  {
+   "rating": 1000,
+   "streak": -8,
+   "mode": "match",
+   "result": 880
+  },
+  {
+   "rating": 1000,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 970
+  },
+  {
+   "rating": 1000,
+   "streak": -6,
+   "mode": "learn",
+   "result": 790
+  },
+  {
+   "rating": 1000,
+   "streak": -6,
+   "mode": "match",
+   "result": 880
+  },
+  {
+   "rating": 1000,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 970
+  },
+  {
+   "rating": 1000,
+   "streak": -5,
+   "mode": "learn",
+   "result": 790
+  },
+  {
+   "rating": 1000,
+   "streak": -5,
+   "mode": "match",
+   "result": 880
+  },
+  {
+   "rating": 1000,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 970
+  },
+  {
+   "rating": 1000,
+   "streak": -4,
+   "mode": "learn",
+   "result": 810
+  },
+  {
+   "rating": 1000,
+   "streak": -4,
+   "mode": "match",
+   "result": 900
+  },
+  {
+   "rating": 1000,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 990
+  },
+  {
+   "rating": 1000,
+   "streak": -3,
+   "mode": "learn",
+   "result": 835
+  },
+  {
+   "rating": 1000,
+   "streak": -3,
+   "mode": "match",
+   "result": 925
+  },
+  {
+   "rating": 1000,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 1015
+  },
+  {
+   "rating": 1000,
+   "streak": -2,
+   "mode": "learn",
+   "result": 860
+  },
+  {
+   "rating": 1000,
+   "streak": -2,
+   "mode": "match",
+   "result": 950
+  },
+  {
+   "rating": 1000,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 1040
+  },
+  {
+   "rating": 1000,
+   "streak": -1,
+   "mode": "learn",
+   "result": 885
+  },
+  {
+   "rating": 1000,
+   "streak": -1,
+   "mode": "match",
+   "result": 975
+  },
+  {
+   "rating": 1000,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 1065
+  },
+  {
+   "rating": 1000,
+   "streak": 0,
+   "mode": "learn",
+   "result": 910
+  },
+  {
+   "rating": 1000,
+   "streak": 0,
+   "mode": "match",
+   "result": 1000
+  },
+  {
+   "rating": 1000,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 1090
+  },
+  {
+   "rating": 1000,
+   "streak": 1,
+   "mode": "learn",
+   "result": 935
+  },
+  {
+   "rating": 1000,
+   "streak": 1,
+   "mode": "match",
+   "result": 1025
+  },
+  {
+   "rating": 1000,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 1115
+  },
+  {
+   "rating": 1000,
+   "streak": 2,
+   "mode": "learn",
+   "result": 960
+  },
+  {
+   "rating": 1000,
+   "streak": 2,
+   "mode": "match",
+   "result": 1050
+  },
+  {
+   "rating": 1000,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 1140
+  },
+  {
+   "rating": 1000,
+   "streak": 3,
+   "mode": "learn",
+   "result": 985
+  },
+  {
+   "rating": 1000,
+   "streak": 3,
+   "mode": "match",
+   "result": 1075
+  },
+  {
+   "rating": 1000,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 1165
+  },
+  {
+   "rating": 1000,
+   "streak": 4,
+   "mode": "learn",
+   "result": 1010
+  },
+  {
+   "rating": 1000,
+   "streak": 4,
+   "mode": "match",
+   "result": 1100
+  },
+  {
+   "rating": 1000,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 1190
+  },
+  {
+   "rating": 1000,
+   "streak": 5,
+   "mode": "learn",
+   "result": 1030
+  },
+  {
+   "rating": 1000,
+   "streak": 5,
+   "mode": "match",
+   "result": 1120
+  },
+  {
+   "rating": 1000,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 1210
+  },
+  {
+   "rating": 1000,
+   "streak": 6,
+   "mode": "learn",
+   "result": 1030
+  },
+  {
+   "rating": 1000,
+   "streak": 6,
+   "mode": "match",
+   "result": 1120
+  },
+  {
+   "rating": 1000,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 1210
+  },
+  {
+   "rating": 1000,
+   "streak": 8,
+   "mode": "learn",
+   "result": 1030
+  },
+  {
+   "rating": 1000,
+   "streak": 8,
+   "mode": "match",
+   "result": 1120
+  },
+  {
+   "rating": 1000,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 1210
+  },
+  {
+   "rating": 1500,
+   "streak": -8,
+   "mode": "learn",
+   "result": 1290
+  },
+  {
+   "rating": 1500,
+   "streak": -8,
+   "mode": "match",
+   "result": 1380
+  },
+  {
+   "rating": 1500,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 1470
+  },
+  {
+   "rating": 1500,
+   "streak": -6,
+   "mode": "learn",
+   "result": 1290
+  },
+  {
+   "rating": 1500,
+   "streak": -6,
+   "mode": "match",
+   "result": 1380
+  },
+  {
+   "rating": 1500,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 1470
+  },
+  {
+   "rating": 1500,
+   "streak": -5,
+   "mode": "learn",
+   "result": 1290
+  },
+  {
+   "rating": 1500,
+   "streak": -5,
+   "mode": "match",
+   "result": 1380
+  },
+  {
+   "rating": 1500,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 1470
+  },
+  {
+   "rating": 1500,
+   "streak": -4,
+   "mode": "learn",
+   "result": 1310
+  },
+  {
+   "rating": 1500,
+   "streak": -4,
+   "mode": "match",
+   "result": 1400
+  },
+  {
+   "rating": 1500,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 1490
+  },
+  {
+   "rating": 1500,
+   "streak": -3,
+   "mode": "learn",
+   "result": 1335
+  },
+  {
+   "rating": 1500,
+   "streak": -3,
+   "mode": "match",
+   "result": 1425
+  },
+  {
+   "rating": 1500,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 1515
+  },
+  {
+   "rating": 1500,
+   "streak": -2,
+   "mode": "learn",
+   "result": 1360
+  },
+  {
+   "rating": 1500,
+   "streak": -2,
+   "mode": "match",
+   "result": 1450
+  },
+  {
+   "rating": 1500,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 1540
+  },
+  {
+   "rating": 1500,
+   "streak": -1,
+   "mode": "learn",
+   "result": 1385
+  },
+  {
+   "rating": 1500,
+   "streak": -1,
+   "mode": "match",
+   "result": 1475
+  },
+  {
+   "rating": 1500,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 1565
+  },
+  {
+   "rating": 1500,
+   "streak": 0,
+   "mode": "learn",
+   "result": 1410
+  },
+  {
+   "rating": 1500,
+   "streak": 0,
+   "mode": "match",
+   "result": 1500
+  },
+  {
+   "rating": 1500,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 1590
+  },
+  {
+   "rating": 1500,
+   "streak": 1,
+   "mode": "learn",
+   "result": 1435
+  },
+  {
+   "rating": 1500,
+   "streak": 1,
+   "mode": "match",
+   "result": 1525
+  },
+  {
+   "rating": 1500,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 1615
+  },
+  {
+   "rating": 1500,
+   "streak": 2,
+   "mode": "learn",
+   "result": 1460
+  },
+  {
+   "rating": 1500,
+   "streak": 2,
+   "mode": "match",
+   "result": 1550
+  },
+  {
+   "rating": 1500,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 1640
+  },
+  {
+   "rating": 1500,
+   "streak": 3,
+   "mode": "learn",
+   "result": 1485
+  },
+  {
+   "rating": 1500,
+   "streak": 3,
+   "mode": "match",
+   "result": 1575
+  },
+  {
+   "rating": 1500,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 1665
+  },
+  {
+   "rating": 1500,
+   "streak": 4,
+   "mode": "learn",
+   "result": 1510
+  },
+  {
+   "rating": 1500,
+   "streak": 4,
+   "mode": "match",
+   "result": 1600
+  },
+  {
+   "rating": 1500,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 1690
+  },
+  {
+   "rating": 1500,
+   "streak": 5,
+   "mode": "learn",
+   "result": 1530
+  },
+  {
+   "rating": 1500,
+   "streak": 5,
+   "mode": "match",
+   "result": 1620
+  },
+  {
+   "rating": 1500,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 1710
+  },
+  {
+   "rating": 1500,
+   "streak": 6,
+   "mode": "learn",
+   "result": 1530
+  },
+  {
+   "rating": 1500,
+   "streak": 6,
+   "mode": "match",
+   "result": 1620
+  },
+  {
+   "rating": 1500,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 1710
+  },
+  {
+   "rating": 1500,
+   "streak": 8,
+   "mode": "learn",
+   "result": 1530
+  },
+  {
+   "rating": 1500,
+   "streak": 8,
+   "mode": "match",
+   "result": 1620
+  },
+  {
+   "rating": 1500,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 1710
+  },
+  {
+   "rating": 2100,
+   "streak": -8,
+   "mode": "learn",
+   "result": 1890
+  },
+  {
+   "rating": 2100,
+   "streak": -8,
+   "mode": "match",
+   "result": 1980
+  },
+  {
+   "rating": 2100,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 2070
+  },
+  {
+   "rating": 2100,
+   "streak": -6,
+   "mode": "learn",
+   "result": 1890
+  },
+  {
+   "rating": 2100,
+   "streak": -6,
+   "mode": "match",
+   "result": 1980
+  },
+  {
+   "rating": 2100,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 2070
+  },
+  {
+   "rating": 2100,
+   "streak": -5,
+   "mode": "learn",
+   "result": 1890
+  },
+  {
+   "rating": 2100,
+   "streak": -5,
+   "mode": "match",
+   "result": 1980
+  },
+  {
+   "rating": 2100,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 2070
+  },
+  {
+   "rating": 2100,
+   "streak": -4,
+   "mode": "learn",
+   "result": 1910
+  },
+  {
+   "rating": 2100,
+   "streak": -4,
+   "mode": "match",
+   "result": 2000
+  },
+  {
+   "rating": 2100,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 2090
+  },
+  {
+   "rating": 2100,
+   "streak": -3,
+   "mode": "learn",
+   "result": 1935
+  },
+  {
+   "rating": 2100,
+   "streak": -3,
+   "mode": "match",
+   "result": 2025
+  },
+  {
+   "rating": 2100,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 2115
+  },
+  {
+   "rating": 2100,
+   "streak": -2,
+   "mode": "learn",
+   "result": 1960
+  },
+  {
+   "rating": 2100,
+   "streak": -2,
+   "mode": "match",
+   "result": 2050
+  },
+  {
+   "rating": 2100,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 2140
+  },
+  {
+   "rating": 2100,
+   "streak": -1,
+   "mode": "learn",
+   "result": 1985
+  },
+  {
+   "rating": 2100,
+   "streak": -1,
+   "mode": "match",
+   "result": 2075
+  },
+  {
+   "rating": 2100,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 2165
+  },
+  {
+   "rating": 2100,
+   "streak": 0,
+   "mode": "learn",
+   "result": 2010
+  },
+  {
+   "rating": 2100,
+   "streak": 0,
+   "mode": "match",
+   "result": 2100
+  },
+  {
+   "rating": 2100,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 2190
+  },
+  {
+   "rating": 2100,
+   "streak": 1,
+   "mode": "learn",
+   "result": 2035
+  },
+  {
+   "rating": 2100,
+   "streak": 1,
+   "mode": "match",
+   "result": 2125
+  },
+  {
+   "rating": 2100,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 2,
+   "mode": "learn",
+   "result": 2060
+  },
+  {
+   "rating": 2100,
+   "streak": 2,
+   "mode": "match",
+   "result": 2150
+  },
+  {
+   "rating": 2100,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 3,
+   "mode": "learn",
+   "result": 2085
+  },
+  {
+   "rating": 2100,
+   "streak": 3,
+   "mode": "match",
+   "result": 2175
+  },
+  {
+   "rating": 2100,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 4,
+   "mode": "learn",
+   "result": 2110
+  },
+  {
+   "rating": 2100,
+   "streak": 4,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 5,
+   "mode": "learn",
+   "result": 2130
+  },
+  {
+   "rating": 2100,
+   "streak": 5,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 6,
+   "mode": "learn",
+   "result": 2130
+  },
+  {
+   "rating": 2100,
+   "streak": 6,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 8,
+   "mode": "learn",
+   "result": 2130
+  },
+  {
+   "rating": 2100,
+   "streak": 8,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2100,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": -8,
+   "mode": "learn",
+   "result": 1940
+  },
+  {
+   "rating": 2150,
+   "streak": -8,
+   "mode": "match",
+   "result": 2030
+  },
+  {
+   "rating": 2150,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 2120
+  },
+  {
+   "rating": 2150,
+   "streak": -6,
+   "mode": "learn",
+   "result": 1940
+  },
+  {
+   "rating": 2150,
+   "streak": -6,
+   "mode": "match",
+   "result": 2030
+  },
+  {
+   "rating": 2150,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 2120
+  },
+  {
+   "rating": 2150,
+   "streak": -5,
+   "mode": "learn",
+   "result": 1940
+  },
+  {
+   "rating": 2150,
+   "streak": -5,
+   "mode": "match",
+   "result": 2030
+  },
+  {
+   "rating": 2150,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 2120
+  },
+  {
+   "rating": 2150,
+   "streak": -4,
+   "mode": "learn",
+   "result": 1960
+  },
+  {
+   "rating": 2150,
+   "streak": -4,
+   "mode": "match",
+   "result": 2050
+  },
+  {
+   "rating": 2150,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 2140
+  },
+  {
+   "rating": 2150,
+   "streak": -3,
+   "mode": "learn",
+   "result": 1985
+  },
+  {
+   "rating": 2150,
+   "streak": -3,
+   "mode": "match",
+   "result": 2075
+  },
+  {
+   "rating": 2150,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 2165
+  },
+  {
+   "rating": 2150,
+   "streak": -2,
+   "mode": "learn",
+   "result": 2010
+  },
+  {
+   "rating": 2150,
+   "streak": -2,
+   "mode": "match",
+   "result": 2100
+  },
+  {
+   "rating": 2150,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 2190
+  },
+  {
+   "rating": 2150,
+   "streak": -1,
+   "mode": "learn",
+   "result": 2035
+  },
+  {
+   "rating": 2150,
+   "streak": -1,
+   "mode": "match",
+   "result": 2125
+  },
+  {
+   "rating": 2150,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 0,
+   "mode": "learn",
+   "result": 2060
+  },
+  {
+   "rating": 2150,
+   "streak": 0,
+   "mode": "match",
+   "result": 2150
+  },
+  {
+   "rating": 2150,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 1,
+   "mode": "learn",
+   "result": 2085
+  },
+  {
+   "rating": 2150,
+   "streak": 1,
+   "mode": "match",
+   "result": 2175
+  },
+  {
+   "rating": 2150,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 2,
+   "mode": "learn",
+   "result": 2110
+  },
+  {
+   "rating": 2150,
+   "streak": 2,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 3,
+   "mode": "learn",
+   "result": 2135
+  },
+  {
+   "rating": 2150,
+   "streak": 3,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 4,
+   "mode": "learn",
+   "result": 2160
+  },
+  {
+   "rating": 2150,
+   "streak": 4,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 5,
+   "mode": "learn",
+   "result": 2180
+  },
+  {
+   "rating": 2150,
+   "streak": 5,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 6,
+   "mode": "learn",
+   "result": 2180
+  },
+  {
+   "rating": 2150,
+   "streak": 6,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 8,
+   "mode": "learn",
+   "result": 2180
+  },
+  {
+   "rating": 2150,
+   "streak": 8,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2150,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": -8,
+   "mode": "learn",
+   "result": 1990
+  },
+  {
+   "rating": 2200,
+   "streak": -8,
+   "mode": "match",
+   "result": 2080
+  },
+  {
+   "rating": 2200,
+   "streak": -8,
+   "mode": "challenge",
+   "result": 2170
+  },
+  {
+   "rating": 2200,
+   "streak": -6,
+   "mode": "learn",
+   "result": 1990
+  },
+  {
+   "rating": 2200,
+   "streak": -6,
+   "mode": "match",
+   "result": 2080
+  },
+  {
+   "rating": 2200,
+   "streak": -6,
+   "mode": "challenge",
+   "result": 2170
+  },
+  {
+   "rating": 2200,
+   "streak": -5,
+   "mode": "learn",
+   "result": 1990
+  },
+  {
+   "rating": 2200,
+   "streak": -5,
+   "mode": "match",
+   "result": 2080
+  },
+  {
+   "rating": 2200,
+   "streak": -5,
+   "mode": "challenge",
+   "result": 2170
+  },
+  {
+   "rating": 2200,
+   "streak": -4,
+   "mode": "learn",
+   "result": 2010
+  },
+  {
+   "rating": 2200,
+   "streak": -4,
+   "mode": "match",
+   "result": 2100
+  },
+  {
+   "rating": 2200,
+   "streak": -4,
+   "mode": "challenge",
+   "result": 2190
+  },
+  {
+   "rating": 2200,
+   "streak": -3,
+   "mode": "learn",
+   "result": 2035
+  },
+  {
+   "rating": 2200,
+   "streak": -3,
+   "mode": "match",
+   "result": 2125
+  },
+  {
+   "rating": 2200,
+   "streak": -3,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": -2,
+   "mode": "learn",
+   "result": 2060
+  },
+  {
+   "rating": 2200,
+   "streak": -2,
+   "mode": "match",
+   "result": 2150
+  },
+  {
+   "rating": 2200,
+   "streak": -2,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": -1,
+   "mode": "learn",
+   "result": 2085
+  },
+  {
+   "rating": 2200,
+   "streak": -1,
+   "mode": "match",
+   "result": 2175
+  },
+  {
+   "rating": 2200,
+   "streak": -1,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 0,
+   "mode": "learn",
+   "result": 2110
+  },
+  {
+   "rating": 2200,
+   "streak": 0,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 0,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 1,
+   "mode": "learn",
+   "result": 2135
+  },
+  {
+   "rating": 2200,
+   "streak": 1,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 1,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 2,
+   "mode": "learn",
+   "result": 2160
+  },
+  {
+   "rating": 2200,
+   "streak": 2,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 2,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 3,
+   "mode": "learn",
+   "result": 2185
+  },
+  {
+   "rating": 2200,
+   "streak": 3,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 3,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 4,
+   "mode": "learn",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 4,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 4,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 5,
+   "mode": "learn",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 5,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 5,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 6,
+   "mode": "learn",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 6,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 6,
+   "mode": "challenge",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 8,
+   "mode": "learn",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 8,
+   "mode": "match",
+   "result": 2200
+  },
+  {
+   "rating": 2200,
+   "streak": 8,
+   "mode": "challenge",
+   "result": 2200
+  }
+ ],
+ "eloToSkill": [
+  {
+   "elo": 0,
+   "skill": 0
+  },
+  {
+   "elo": 500,
+   "skill": 0
+  },
+  {
+   "elo": 599,
+   "skill": 0
+  },
+  {
+   "elo": 600,
+   "skill": 0
+  },
+  {
+   "elo": 601,
+   "skill": 0.0125
+  },
+  {
+   "elo": 639,
+   "skill": 0.4875
+  },
+  {
+   "elo": 640,
+   "skill": 0.5
+  },
+  {
+   "elo": 641,
+   "skill": 0.5125
+  },
+  {
+   "elo": 680,
+   "skill": 1
+  },
+  {
+   "elo": 800,
+   "skill": 2.5
+  },
+  {
+   "elo": 1000,
+   "skill": 5
+  },
+  {
+   "elo": 1400,
+   "skill": 10
+  },
+  {
+   "elo": 1799,
+   "skill": 14.9875
+  },
+  {
+   "elo": 1800,
+   "skill": 15
+  },
+  {
+   "elo": 2199,
+   "skill": 19.9875
+  },
+  {
+   "elo": 2200,
+   "skill": 20
+  },
+  {
+   "elo": 2201,
+   "skill": 20
+  },
+  {
+   "elo": 2300,
+   "skill": 20
+  },
+  {
+   "elo": 3000,
+   "skill": 20
+  }
+ ],
+ "plans": [
+  {
+   "name": "aggressive-mirror",
+   "model": {
+    "version": 1,
+    "rating": 1000,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": 0,
+    "features": {
+     "games": 5,
+     "avgCaptureRate": 0.3,
+     "avgEarlyQueenPly": 5,
+     "avgCastlePly": 30,
+     "avgChecksPerGame": 5,
+     "avgPawnStorm": 6,
+     "avgTradeRate": 0.3,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 2,
+     "missed-tactics": 5,
+     "back-rank": 0,
+     "endgame": 0,
+     "opening": 0,
+     "king-safety": 0
+    },
+    "openings": [
+     {
+      "name": "Italian Game",
+      "count": 4,
+      "asWhite": 4,
+      "wins": 2
+     },
+     {
+      "name": "Sicilian Defence",
+      "count": 1,
+      "asWhite": 0,
+      "wins": 0
+     }
+    ]
+   },
+   "mode": "match",
+   "aiColor": 1,
+   "rng": [
+    0.1
+   ],
+   "consumed": 1,
+   "plan": {
+    "skill": 5,
+    "aiElo": 1000,
+    "params": {
+     "aggression": -0.2,
+     "spaceWeight": 0,
+     "kingSafetyWeight": 0.8,
+     "closedPref": 0,
+     "mobilityWeight": 1
+    },
+    "bookTags": [
+     "solid"
+    ],
+    "mirrorOpening": "Italian Game",
+    "notes": [
+     "You attack early, so I kept my king extra safe and played solid setups that punish overextension.",
+     "You favor the Italian Game — this time I tried it against you.",
+     "I watched for chances around your tactical shots."
+    ],
+    "styleLabel": "aggressive"
+   }
+  },
+  {
+   "name": "aggressive-prepared",
+   "model": {
+    "version": 1,
+    "rating": 1000,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": -3,
+    "features": {
+     "games": 5,
+     "avgCaptureRate": 0.3,
+     "avgEarlyQueenPly": 5,
+     "avgCastlePly": 30,
+     "avgChecksPerGame": 5,
+     "avgPawnStorm": 6,
+     "avgTradeRate": 0.3,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 1,
+     "endgame": 0,
+     "opening": 0,
+     "king-safety": 0
+    },
+    "openings": [
+     {
+      "name": "Italian Game",
+      "count": 3,
+      "asWhite": 3,
+      "wins": 1
+     }
+    ]
+   },
+   "mode": "learn",
+   "aiColor": 0,
+   "rng": [
+    0.25
+   ],
+   "consumed": 1,
+   "plan": {
+    "skill": 2.9375,
+    "aiElo": 835,
+    "params": {
+     "aggression": -0.2,
+     "spaceWeight": 0,
+     "kingSafetyWeight": 0.8,
+     "closedPref": 0,
+     "mobilityWeight": 1
+    },
+    "bookTags": [
+     "solid"
+    ],
+    "mirrorOpening": null,
+    "notes": [
+     "You attack early, so I kept my king extra safe and played solid setups that punish overextension.",
+     "I expected your Italian Game and prepared against it.",
+     "I watched for chances around your back-rank weaknesses.",
+     "You were on a rough streak, so I eased off and allowed myself more human mistakes."
+    ],
+    "styleLabel": "aggressive"
+   }
+  },
+  {
+   "name": "tactical-white",
+   "model": {
+    "version": 1,
+    "rating": 1200,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": 3,
+    "features": {
+     "games": 5,
+     "avgCaptureRate": 0.25,
+     "avgEarlyQueenPly": 20,
+     "avgCastlePly": 12,
+     "avgChecksPerGame": 4.5,
+     "avgPawnStorm": 1,
+     "avgTradeRate": 0.3,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 0,
+     "endgame": 3,
+     "opening": 3,
+     "king-safety": 0
+    },
+    "openings": [
+     {
+      "name": "Sicilian Defence",
+      "count": 2,
+      "asWhite": 0,
+      "wins": 1
+     }
+    ]
+   },
+   "mode": "challenge",
+   "aiColor": 0,
+   "rng": [],
+   "consumed": 0,
+   "plan": {
+    "skill": 9.5625,
+    "aiElo": 1365,
+    "params": {
+     "aggression": 0,
+     "spaceWeight": 0,
+     "kingSafetyWeight": 0.4,
+     "closedPref": 0.8,
+     "mobilityWeight": 1
+    },
+    "bookTags": [
+     "closed",
+     "solid"
+    ],
+    "mirrorOpening": null,
+    "notes": [
+     "You thrive in tactics, so I steered toward closed positions with fewer combinations.",
+     "I watched for chances around your endgame technique.",
+     "You were winning steadily, so I stepped up my level."
+    ],
+    "styleLabel": "tactical"
+   }
+  },
+  {
+   "name": "tactical-black",
+   "model": {
+    "version": 1,
+    "rating": 1200,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": 1,
+    "features": {
+     "games": 5,
+     "avgCaptureRate": 0.25,
+     "avgEarlyQueenPly": 20,
+     "avgCastlePly": 12,
+     "avgChecksPerGame": 4.5,
+     "avgPawnStorm": 1,
+     "avgTradeRate": 0.3,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 0,
+     "endgame": 0,
+     "opening": 0,
+     "king-safety": 0
+    },
+    "openings": []
+   },
+   "mode": "match",
+   "aiColor": 1,
+   "rng": [],
+   "consumed": 0,
+   "plan": {
+    "skill": 7.8125,
+    "aiElo": 1225,
+    "params": {
+     "aggression": 0,
+     "spaceWeight": 0,
+     "kingSafetyWeight": 0.4,
+     "closedPref": 0.8,
+     "mobilityWeight": 1
+    },
+    "bookTags": [
+     "closed",
+     "solid"
+    ],
+    "mirrorOpening": null,
+    "notes": [
+     "You thrive in tactics, so I steered toward closed positions with fewer combinations."
+    ],
+    "styleLabel": "tactical"
+   }
+  },
+  {
+   "name": "positional-tie",
+   "model": {
+    "version": 1,
+    "rating": 700,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": -4,
+    "features": {
+     "games": 5,
+     "avgCaptureRate": 0.1,
+     "avgEarlyQueenPly": 20,
+     "avgCastlePly": 10,
+     "avgChecksPerGame": 1,
+     "avgPawnStorm": 1,
+     "avgTradeRate": 0.3,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 0,
+     "endgame": 0,
+     "opening": 1,
+     "king-safety": 1
+    },
+    "openings": [
+     {
+      "name": "Queen's Gambit Declined",
+      "count": 7,
+      "asWhite": 7,
+      "wins": 5
+     }
+    ]
+   },
+   "mode": "match",
+   "aiColor": 0,
+   "rng": [
+    0.9
+   ],
+   "consumed": 1,
+   "plan": {
+    "skill": 0,
+    "aiElo": 600,
+    "params": {
+     "aggression": 0.5,
+     "spaceWeight": 0,
+     "kingSafetyWeight": 0,
+     "closedPref": 0,
+     "mobilityWeight": 1.3
+    },
+    "bookTags": [
+     "open",
+     "sharp"
+    ],
+    "mirrorOpening": null,
+    "notes": [
+     "You like quiet maneuvering, so I opened the position and created sharp play.",
+     "I expected your Queen's Gambit Declined and prepared against it.",
+     "I watched for chances around your opening play.",
+     "You were on a rough streak, so I eased off and allowed myself more human mistakes."
+    ],
+    "styleLabel": "positional"
+   }
+  },
+  {
+   "name": "defensive",
+   "model": {
+    "version": 1,
+    "rating": 2150,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": 5,
+    "features": {
+     "games": 5,
+     "avgCaptureRate": 0.1,
+     "avgEarlyQueenPly": 20,
+     "avgCastlePly": 20,
+     "avgChecksPerGame": 1,
+     "avgPawnStorm": 4,
+     "avgTradeRate": 0.3,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 0,
+     "endgame": 2,
+     "opening": 0,
+     "king-safety": 0
+    },
+    "openings": [
+     {
+      "name": "London System",
+      "count": 3,
+      "asWhite": 3,
+      "wins": 3
+     }
+    ]
+   },
+   "mode": "learn",
+   "aiColor": 1,
+   "rng": [
+    0.2499
+   ],
+   "consumed": 1,
+   "plan": {
+    "skill": 19.75,
+    "aiElo": 2180,
+    "params": {
+     "aggression": 0.4,
+     "spaceWeight": 0.9,
+     "kingSafetyWeight": 0,
+     "closedPref": 0,
+     "mobilityWeight": 1
+    },
+    "bookTags": [
+     "space",
+     "sharp"
+    ],
+    "mirrorOpening": "London System",
+    "notes": [
+     "You play patiently, so I grabbed space and squeezed slowly instead of forcing matters.",
+     "You favor the London System — this time I tried it against you.",
+     "I watched for chances around your endgame technique.",
+     "You were winning steadily, so I stepped up my level."
+    ],
+    "styleLabel": "defensive"
+   }
+  },
+  {
+   "name": "materialistic",
+   "model": {
+    "version": 1,
+    "rating": 1500,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": -1,
+    "features": {
+     "games": 5,
+     "avgCaptureRate": 0.21,
+     "avgEarlyQueenPly": 20,
+     "avgCastlePly": 20,
+     "avgChecksPerGame": 2,
+     "avgPawnStorm": 2,
+     "avgTradeRate": 0.7,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 4,
+     "missed-tactics": 4,
+     "back-rank": 0,
+     "endgame": 0,
+     "opening": 0,
+     "king-safety": 0
+    },
+    "openings": [
+     {
+      "name": "Ruy Lopez",
+      "count": 5,
+      "asWhite": 5,
+      "wins": 2
+     }
+    ]
+   },
+   "mode": "challenge",
+   "aiColor": 0,
+   "rng": [
+    0.25
+   ],
+   "consumed": 1,
+   "plan": {
+    "skill": 12.0625,
+    "aiElo": 1565,
+    "params": {
+     "aggression": 0.5,
+     "spaceWeight": 0.4,
+     "kingSafetyWeight": 0,
+     "closedPref": 0,
+     "mobilityWeight": 1
+    },
+    "bookTags": [
+     "sharp"
+    ],
+    "mirrorOpening": null,
+    "notes": [
+     "You grab material readily, so I aimed for initiative and gambit-style pressure over pawns.",
+     "I expected your Ruy Lopez and prepared against it.",
+     "I watched for chances around your undefended pieces."
+    ],
+    "styleLabel": "materialistic"
+   }
+  },
+  {
+   "name": "balanced-one-game",
+   "model": {
+    "version": 1,
+    "rating": 800,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": 1,
+    "features": {
+     "games": 1,
+     "avgCaptureRate": 0.3,
+     "avgEarlyQueenPly": 5,
+     "avgCastlePly": 30,
+     "avgChecksPerGame": 5,
+     "avgPawnStorm": 6,
+     "avgTradeRate": 0,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 0,
+     "endgame": 0,
+     "opening": 0,
+     "king-safety": 0
+    },
+    "openings": [
+     {
+      "name": "Italian Game",
+      "count": 1,
+      "asWhite": 1,
+      "wins": 1
+     }
+    ]
+   },
+   "mode": "match",
+   "aiColor": 1,
+   "rng": [],
+   "consumed": 0,
+   "plan": {
+    "skill": 2.8125,
+    "aiElo": 825,
+    "params": {
+     "aggression": 0,
+     "spaceWeight": 0,
+     "kingSafetyWeight": 0,
+     "closedPref": 0,
+     "mobilityWeight": 1
+    },
+    "bookTags": [],
+    "mirrorOpening": null,
+    "notes": [
+     "Your style is still balanced — I played neutrally while I learn your patterns."
+    ],
+    "styleLabel": "balanced"
+   }
+  },
+  {
+   "name": "balanced-low",
+   "model": {
+    "version": 1,
+    "rating": 640,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": -6,
+    "features": {
+     "games": 5,
+     "avgCaptureRate": 0.15,
+     "avgEarlyQueenPly": 12,
+     "avgCastlePly": 15,
+     "avgChecksPerGame": 2.5,
+     "avgPawnStorm": 3.5,
+     "avgTradeRate": 0.5,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 2,
+     "endgame": 2,
+     "opening": 2,
+     "king-safety": 0
+    },
+    "openings": [
+     {
+      "name": "French Defence",
+      "count": 9,
+      "asWhite": 0,
+      "wins": 4
+     }
+    ]
+   },
+   "mode": "learn",
+   "aiColor": 0,
+   "rng": [
+    0
+   ],
+   "consumed": 1,
+   "plan": {
+    "skill": 0,
+    "aiElo": 600,
+    "params": {
+     "aggression": 0,
+     "spaceWeight": 0,
+     "kingSafetyWeight": 0,
+     "closedPref": 0,
+     "mobilityWeight": 1
+    },
+    "bookTags": [],
+    "mirrorOpening": "French Defence",
+    "notes": [
+     "Your style is still balanced — I played neutrally while I learn your patterns.",
+     "You favor the French Defence — this time I tried it against you.",
+     "I watched for chances around your back-rank weaknesses.",
+     "You were on a rough streak, so I eased off and allowed myself more human mistakes."
+    ],
+    "styleLabel": "balanced"
+   }
+  },
+  {
+   "name": "fresh",
+   "model": {
+    "version": 1,
+    "rating": 800,
+    "ratingHistory": [],
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "streak": 0,
+    "features": {
+     "games": 0,
+     "avgCaptureRate": 0,
+     "avgEarlyQueenPly": 24,
+     "avgCastlePly": 30,
+     "avgChecksPerGame": 0,
+     "avgPawnStorm": 0,
+     "avgTradeRate": 0,
+     "avgCpLoss": 0,
+     "avgThinkMs": 0
+    },
+    "weaknesses": {
+     "hanging-pieces": 0,
+     "missed-tactics": 0,
+     "back-rank": 0,
+     "endgame": 0,
+     "opening": 0,
+     "king-safety": 0
+    },
+    "openings": []
+   },
+   "mode": "match",
+   "aiColor": 0,
+   "rng": [],
+   "consumed": 0,
+   "plan": {
+    "skill": 2.5,
+    "aiElo": 800,
+    "params": {
+     "aggression": 0,
+     "spaceWeight": 0,
+     "kingSafetyWeight": 0,
+     "closedPref": 0,
+     "mobilityWeight": 1
+    },
+    "bookTags": [],
+    "mirrorOpening": null,
+    "notes": [
+     "Your style is still balanced — I played neutrally while I learn your patterns."
+    ],
+    "styleLabel": "balanced"
+   }
+  }
+ ],
+ "pickBook": [
+  {
+   "sans": [],
+   "bookTags": [],
+   "rng": [
+    0
+   ],
+   "consumed": 1,
+   "result": "e4"
+  },
+  {
+   "sans": [],
+   "bookTags": [],
+   "rng": [
+    0.5
+   ],
+   "consumed": 1,
+   "result": "d4"
+  },
+  {
+   "sans": [],
+   "bookTags": [],
+   "rng": [
+    0.999
+   ],
+   "consumed": 1,
+   "result": "d4"
+  },
+  {
+   "sans": [],
+   "bookTags": [
+    "closed"
+   ],
+   "rng": [
+    0
+   ],
+   "consumed": 1,
+   "result": "e4"
+  },
+  {
+   "sans": [],
+   "bookTags": [
+    "closed"
+   ],
+   "rng": [
+    0.99
+   ],
+   "consumed": 1,
+   "result": "d4"
+  },
+  {
+   "sans": [
+    "e4"
+   ],
+   "bookTags": [],
+   "rng": [
+    0.3
+   ],
+   "consumed": 1,
+   "result": "e5"
+  },
+  {
+   "sans": [
+    "e4"
+   ],
+   "bookTags": [
+    "sharp"
+   ],
+   "rng": [
+    0.7
+   ],
+   "consumed": 1,
+   "result": "c5"
+  },
+  {
+   "sans": [
+    "e4"
+   ],
+   "bookTags": [
+    "space"
+   ],
+   "rng": [
+    0.7
+   ],
+   "consumed": 1,
+   "result": "d5"
+  },
+  {
+   "sans": [
+    "e4",
+    "c5"
+   ],
+   "bookTags": [
+    "solid"
+   ],
+   "rng": [
+    0.5
+   ],
+   "consumed": 1,
+   "result": "Nc3"
+  },
+  {
+   "sans": [
+    "e4",
+    "c5"
+   ],
+   "bookTags": [
+    "space"
+   ],
+   "rng": [
+    0.5
+   ],
+   "consumed": 1,
+   "result": "Nc3"
+  },
+  {
+   "sans": [
+    "d4",
+    "d5"
+   ],
+   "bookTags": [
+    "closed",
+    "solid"
+   ],
+   "rng": [
+    0.6
+   ],
+   "consumed": 1,
+   "result": "Nf3"
+  },
+  {
+   "sans": [
+    "d4",
+    "Nf6",
+    "c4",
+    "g6"
+   ],
+   "bookTags": [],
+   "rng": [
+    0.4
+   ],
+   "consumed": 1,
+   "result": "Nc3"
+  },
+  {
+   "sans": [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "Bc4",
+    "Bc5",
+    "c3",
+    "Nf6",
+    "d3"
+   ],
+   "bookTags": [],
+   "rng": [
+    0.4
+   ],
+   "consumed": 0,
+   "result": null
+  },
+  {
+   "sans": [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "Bc4",
+    "Bc5",
+    "c3",
+    "Nf6",
+    "d3",
+    "d6"
+   ],
+   "bookTags": [],
+   "rng": [],
+   "consumed": 0,
+   "result": null
+  },
+  {
+   "sans": [
+    "a3"
+   ],
+   "bookTags": [],
+   "rng": [],
+   "consumed": 0,
+   "result": null
+  }
+ ],
+ "topWeaknesses": [
+  {
+   "weaknesses": {
+    "hanging-pieces": 0,
+    "missed-tactics": 0,
+    "back-rank": 0,
+    "endgame": 0,
+    "opening": 0,
+    "king-safety": 0
+   },
+   "n": null,
+   "result": []
+  },
+  {
+   "weaknesses": {
+    "hanging-pieces": 0,
+    "missed-tactics": 0,
+    "back-rank": 0,
+    "endgame": 1,
+    "opening": 0,
+    "king-safety": 0
+   },
+   "n": null,
+   "result": [
+    {
+     "key": "endgame",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "weaknesses": {
+    "hanging-pieces": 2,
+    "missed-tactics": 2,
+    "back-rank": 2,
+    "endgame": 2,
+    "opening": 2,
+    "king-safety": 2
+   },
+   "n": null,
+   "result": [
+    {
+     "key": "hanging-pieces",
+     "count": 2
+    },
+    {
+     "key": "missed-tactics",
+     "count": 2
+    },
+    {
+     "key": "back-rank",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "weaknesses": {
+    "hanging-pieces": 1,
+    "missed-tactics": 3,
+    "back-rank": 2,
+    "endgame": 3,
+    "opening": 0,
+    "king-safety": 5
+   },
+   "n": null,
+   "result": [
+    {
+     "key": "king-safety",
+     "count": 5
+    },
+    {
+     "key": "missed-tactics",
+     "count": 3
+    },
+    {
+     "key": "endgame",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "weaknesses": {
+    "hanging-pieces": 1,
+    "missed-tactics": 3,
+    "back-rank": 2,
+    "endgame": 3,
+    "opening": 0,
+    "king-safety": 5
+   },
+   "n": 1,
+   "result": [
+    {
+     "key": "king-safety",
+     "count": 5
+    }
+   ]
+  },
+  {
+   "weaknesses": {
+    "hanging-pieces": 1,
+    "missed-tactics": 3,
+    "back-rank": 2,
+    "endgame": 3,
+    "opening": 0,
+    "king-safety": 5
+   },
+   "n": 6,
+   "result": [
+    {
+     "key": "king-safety",
+     "count": 5
+    },
+    {
+     "key": "missed-tactics",
+     "count": 3
+    },
+    {
+     "key": "endgame",
+     "count": 3
+    },
+    {
+     "key": "back-rank",
+     "count": 2
+    },
+    {
+     "key": "hanging-pieces",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "weaknesses": {
+    "hanging-pieces": 0,
+    "missed-tactics": 0,
+    "back-rank": 0,
+    "endgame": 4,
+    "opening": 4,
+    "king-safety": 4
+   },
+   "n": 2,
+   "result": [
+    {
+     "key": "endgame",
+     "count": 4
+    },
+    {
+     "key": "opening",
+     "count": 4
+    }
+   ]
+  }
+ ],
+ "replay": {
+  "steps": [
+   {
+    "step": {
+     "game": "scholars",
+     "playerColor": 0,
+     "analysis": "real",
+     "vsAi": true,
+     "aiElo": 1000,
+     "now": 1790380800000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0.25,
+     "earlyQueenPly": 2,
+     "castlePly": 30,
+     "checks": 1,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Italian Game"
+    },
+    "json": "{\"version\":1,\"rating\":836,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836}],\"wins\":1,\"losses\":0,\"draws\":0,\"streak\":1,\"features\":{\"games\":1,\"avgCaptureRate\":0.0625,\"avgEarlyQueenPly\":18.5,\"avgCastlePly\":30,\"avgChecksPerGame\":0.25,\"avgPawnStorm\":0,\"avgTradeRate\":0,\"avgCpLoss\":15,\"avgThinkMs\":811},\"weaknesses\":{\"hanging-pieces\":0,\"missed-tactics\":0,\"back-rank\":0,\"endgame\":0,\"opening\":0,\"king-safety\":0},\"openings\":[{\"name\":\"Italian Game\",\"count\":1,\"asWhite\":1,\"wins\":1}]}"
+   },
+   {
+    "step": {
+     "game": "opera",
+     "playerColor": 1,
+     "analysis": "real",
+     "vsAi": true,
+     "aiElo": 1200,
+     "now": 1790380860000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0.375,
+     "earlyQueenPly": 13,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0.5,
+     "avgThinkMs": 2637.6666666666665,
+     "openingName": "Italian Game"
+    },
+    "json": "{\"version\":1,\"rating\":831,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831}],\"wins\":1,\"losses\":1,\"draws\":0,\"streak\":-1,\"features\":{\"games\":2,\"avgCaptureRate\":0.140625,\"avgEarlyQueenPly\":17.125,\"avgCastlePly\":30,\"avgChecksPerGame\":0.1875,\"avgPawnStorm\":0,\"avgTradeRate\":0.125,\"avgCpLoss\":1570.703125,\"avgThinkMs\":1267.6666666666665},\"weaknesses\":{\"hanging-pieces\":0,\"missed-tactics\":1,\"back-rank\":0,\"endgame\":0,\"opening\":0,\"king-safety\":1},\"openings\":[{\"name\":\"Italian Game\",\"count\":2,\"asWhite\":1,\"wins\":1}]}"
+   },
+   {
+    "step": {
+     "game": "kings-gambit-unfinished",
+     "playerColor": 0,
+     "analysis": "real",
+     "vsAi": true,
+     "aiElo": 1100,
+     "now": 1790380920000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0.38461538461538464,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 2,
+     "pawnStorm": 2,
+     "tradeRate": 0.6666666666666666,
+     "avgThinkMs": 2181,
+     "openingName": "King's Gambit"
+    },
+    "json": "{\"version\":1,\"rating\":847,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847}],\"wins\":1,\"losses\":1,\"draws\":1,\"streak\":0,\"features\":{\"games\":3,\"avgCaptureRate\":0.20162259615384615,\"avgEarlyQueenPly\":18.84375,\"avgCastlePly\":30,\"avgChecksPerGame\":0.640625,\"avgPawnStorm\":0.5,\"avgTradeRate\":0.26041666666666663,\"avgCpLoss\":1181.5658052884614,\"avgThinkMs\":1496},\"weaknesses\":{\"hanging-pieces\":0,\"missed-tactics\":1,\"back-rank\":0,\"endgame\":0,\"opening\":0,\"king-safety\":2},\"openings\":[{\"name\":\"Italian Game\",\"count\":2,\"asWhite\":1,\"wins\":1},{\"name\":\"King's Gambit\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "rook-endgame",
+     "playerColor": 0,
+     "analysis": "synthetic",
+     "vsAi": true,
+     "aiElo": 900,
+     "now": 1790380980000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 0,
+     "checks": 1,
+     "pawnStorm": 4,
+     "tradeRate": 0,
+     "avgThinkMs": 2409.3333333333335,
+     "openingName": null
+    },
+    "json": "{\"version\":1,\"rating\":875,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875}],\"wins\":2,\"losses\":1,\"draws\":1,\"streak\":1,\"features\":{\"games\":4,\"avgCaptureRate\":0.1512169471153846,\"avgEarlyQueenPly\":20.1328125,\"avgCastlePly\":22.5,\"avgChecksPerGame\":0.73046875,\"avgPawnStorm\":1.375,\"avgTradeRate\":0.19531249999999997,\"avgCpLoss\":918.6743539663461,\"avgThinkMs\":1724.3333333333335},\"weaknesses\":{\"hanging-pieces\":8,\"missed-tactics\":6,\"back-rank\":5,\"endgame\":4,\"opening\":4,\"king-safety\":2},\"openings\":[{\"name\":\"Italian Game\",\"count\":2,\"asWhite\":1,\"wins\":1},{\"name\":\"King's Gambit\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "opera",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": false,
+     "now": 1790381040000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0.35294117647058826,
+     "earlyQueenPly": 8,
+     "castlePly": 22,
+     "checks": 4,
+     "pawnStorm": 1,
+     "tradeRate": 0.3333333333333333,
+     "avgThinkMs": 2646.8,
+     "openingName": "Italian Game"
+    },
+    "json": "{\"version\":1,\"rating\":875,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875}],\"wins\":3,\"losses\":1,\"draws\":1,\"streak\":2,\"features\":{\"games\":5,\"avgCaptureRate\":0.19156179298642534,\"avgEarlyQueenPly\":17.70625,\"avgCastlePly\":22.4,\"avgChecksPerGame\":1.384375,\"avgPawnStorm\":1.3,\"avgTradeRate\":0.22291666666666665,\"avgCpLoss\":918.6743539663461,\"avgThinkMs\":1908.8266666666668},\"weaknesses\":{\"hanging-pieces\":8,\"missed-tactics\":6,\"back-rank\":5,\"endgame\":4,\"opening\":4,\"king-safety\":2},\"openings\":[{\"name\":\"Italian Game\",\"count\":3,\"asWhite\":2,\"wins\":2},{\"name\":\"King's Gambit\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "scholars",
+     "playerColor": 1,
+     "analysis": "synthetic",
+     "vsAi": true,
+     "aiElo": 0,
+     "now": 1790381100000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Italian Game"
+    },
+    "json": "{\"version\":1,\"rating\":875,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875}],\"wins\":3,\"losses\":2,\"draws\":1,\"streak\":-1,\"features\":{\"games\":6,\"avgCaptureRate\":0.1596348274886878,\"avgEarlyQueenPly\":18.755208333333336,\"avgCastlePly\":23.666666666666668,\"avgChecksPerGame\":1.1536458333333333,\"avgPawnStorm\":1.0833333333333335,\"avgTradeRate\":0.1857638888888889,\"avgCpLoss\":796.6730727497328,\"avgThinkMs\":1725.8555555555558},\"weaknesses\":{\"hanging-pieces\":9,\"missed-tactics\":8,\"back-rank\":5,\"endgame\":4,\"opening\":7,\"king-safety\":3},\"openings\":[{\"name\":\"Italian Game\",\"count\":4,\"asWhite\":2,\"wins\":2},{\"name\":\"King's Gambit\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "rook-endgame",
+     "playerColor": 1,
+     "analysis": "real",
+     "vsAi": true,
+     "aiElo": 1000,
+     "now": 1790381160000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 2637.6666666666665,
+     "openingName": null
+    },
+    "json": "{\"version\":1,\"rating\":859,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859}],\"wins\":3,\"losses\":3,\"draws\":1,\"streak\":-2,\"features\":{\"games\":7,\"avgCaptureRate\":0.13682985213316098,\"avgEarlyQueenPly\":19.50446428571429,\"avgCastlePly\":24.571428571428573,\"avgChecksPerGame\":0.9888392857142857,\"avgPawnStorm\":0.9285714285714287,\"avgTradeRate\":0.1592261904761905,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1856.1142857142859},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":4,\"asWhite\":2,\"wins\":2},{\"name\":\"King's Gambit\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-0",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1000,
+     "now": 1790381220000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1039.3333333333333,
+     "openingName": "Italian Game"
+    },
+    "json": "{\"version\":1,\"rating\":892,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892}],\"wins\":4,\"losses\":3,\"draws\":1,\"streak\":1,\"features\":{\"games\":8,\"avgCaptureRate\":0.11972612061651586,\"avgEarlyQueenPly\":20.066406250000004,\"avgCastlePly\":25.25,\"avgChecksPerGame\":0.865234375,\"avgPawnStorm\":0.8125000000000001,\"avgTradeRate\":0.13932291666666669,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1754.0166666666669},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-1",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1010,
+     "now": 1790381280000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1085,
+     "openingName": "Ruy Lopez"
+    },
+    "json": "{\"version\":1,\"rating\":924,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924}],\"wins\":5,\"losses\":3,\"draws\":1,\"streak\":2,\"features\":{\"games\":9,\"avgCaptureRate\":0.10642321832579187,\"avgEarlyQueenPly\":20.503472222222225,\"avgCastlePly\":25.777777777777775,\"avgChecksPerGame\":0.7690972222222222,\"avgPawnStorm\":0.7222222222222223,\"avgTradeRate\":0.1238425925925926,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1679.6814814814816},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1}]}"
+   },
+   {
+    "step": {
+     "game": "book-2",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1020,
+     "now": 1790381340000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0.25,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 1,
+     "avgThinkMs": 811,
+     "openingName": "Scotch Game"
+    },
+    "json": "{\"version\":1,\"rating\":927,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927}],\"wins\":5,\"losses\":3,\"draws\":2,\"streak\":0,\"features\":{\"games\":10,\"avgCaptureRate\":0.12078089649321269,\"avgEarlyQueenPly\":20.853125000000006,\"avgCastlePly\":26.2,\"avgChecksPerGame\":0.6921875,\"avgPawnStorm\":0.6500000000000001,\"avgTradeRate\":0.21145833333333336,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1592.8133333333333},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-3",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": false,
+     "aiElo": 1030,
+     "now": 1790381400000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0.5,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 1,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "King's Gambit"
+    },
+    "json": "{\"version\":1,\"rating\":927,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927}],\"wins\":5,\"losses\":4,\"draws\":2,\"streak\":-1,\"features\":{\"games\":11,\"avgCaptureRate\":0.15525536044837518,\"avgEarlyQueenPly\":21.139204545454547,\"avgCastlePly\":26.545454545454543,\"avgChecksPerGame\":0.6292613636363635,\"avgPawnStorm\":0.681818181818182,\"avgTradeRate\":0.1922348484848485,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1521.739393939394},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-4",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1040,
+     "now": 1790381460000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0.2,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 1,
+     "avgThinkMs": 1039.3333333333333,
+     "openingName": "Sicilian Defence"
+    },
+    "json": "{\"version\":1,\"rating\":919,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919}],\"wins\":5,\"losses\":5,\"draws\":2,\"streak\":-2,\"features\":{\"games\":12,\"avgCaptureRate\":0.15898408041101056,\"avgEarlyQueenPly\":21.377604166666668,\"avgCastlePly\":26.83333333333333,\"avgChecksPerGame\":0.5768229166666665,\"avgPawnStorm\":0.6250000000000001,\"avgTradeRate\":0.2595486111111111,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1481.5388888888888},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-5",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1050,
+     "now": 1790381520000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1085,
+     "openingName": "Sicilian, Closed"
+    },
+    "json": "{\"version\":1,\"rating\":923,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923}],\"wins\":5,\"losses\":5,\"draws\":3,\"streak\":0,\"features\":{\"games\":13,\"avgCaptureRate\":0.14675453576400976,\"avgEarlyQueenPly\":21.579326923076927,\"avgCastlePly\":27.076923076923073,\"avgChecksPerGame\":0.532451923076923,\"avgPawnStorm\":0.5769230769230771,\"avgTradeRate\":0.23958333333333334,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1451.0358974358976},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-6",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1060,
+     "now": 1790381580000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 1,
+     "tradeRate": 0,
+     "avgThinkMs": 1039.3333333333333,
+     "openingName": "French Defence"
+    },
+    "json": "{\"version\":1,\"rating\":940,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940}],\"wins\":6,\"losses\":5,\"draws\":3,\"streak\":1,\"features\":{\"games\":14,\"avgCaptureRate\":0.13627206892372334,\"avgEarlyQueenPly\":21.75223214285715,\"avgCastlePly\":27.28571428571428,\"avgChecksPerGame\":0.4944196428571428,\"avgPawnStorm\":0.6071428571428573,\"avgTradeRate\":0.2224702380952381,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1421.6285714285716},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1}]}"
+   },
+   {
+    "step": {
+     "game": "book-7",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": false,
+     "aiElo": 1070,
+     "now": 1790381640000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0.25,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 1,
+     "tradeRate": 0,
+     "avgThinkMs": 1085,
+     "openingName": "Caro-Kann Defence"
+    },
+    "json": "{\"version\":1,\"rating\":940,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940}],\"wins\":7,\"losses\":5,\"draws\":3,\"streak\":2,\"features\":{\"games\":15,\"avgCaptureRate\":0.1438539309954751,\"avgEarlyQueenPly\":21.90208333333334,\"avgCastlePly\":27.46666666666666,\"avgChecksPerGame\":0.4614583333333333,\"avgPawnStorm\":0.6333333333333335,\"avgTradeRate\":0.2076388888888889,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1399.1866666666667},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1}]}"
+   },
+   {
+    "step": {
+     "game": "book-8",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1080,
+     "now": 1790381700000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0.25,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 1,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Scandinavian Defence"
+    },
+    "json": "{\"version\":1,\"rating\":945,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945}],\"wins\":7,\"losses\":5,\"draws\":4,\"streak\":0,\"features\":{\"games\":16,\"avgCaptureRate\":0.15048806030825793,\"avgEarlyQueenPly\":22.033203125000007,\"avgCastlePly\":27.624999999999996,\"avgChecksPerGame\":0.4326171875,\"avgPawnStorm\":0.6562500000000002,\"avgTradeRate\":0.19466145833333334,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1362.425},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-9",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1090,
+     "now": 1790381760000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1085,
+     "openingName": "Pirc Defence"
+    },
+    "json": "{\"version\":1,\"rating\":938,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938}],\"wins\":7,\"losses\":6,\"draws\":4,\"streak\":-1,\"features\":{\"games\":17,\"avgCaptureRate\":0.1416358214665957,\"avgEarlyQueenPly\":22.148897058823536,\"avgCastlePly\":27.76470588235294,\"avgChecksPerGame\":0.4071691176470588,\"avgPawnStorm\":0.6176470588235297,\"avgTradeRate\":0.1832107843137255,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1346.105882352941},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-10",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1100,
+     "now": 1790381820000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1039.3333333333333,
+     "openingName": "Queen's Gambit Declined"
+    },
+    "json": "{\"version\":1,\"rating\":931,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931}],\"wins\":7,\"losses\":7,\"draws\":4,\"streak\":-2,\"features\":{\"games\":18,\"avgCaptureRate\":0.1337671647184515,\"avgEarlyQueenPly\":22.251736111111114,\"avgCastlePly\":27.888888888888886,\"avgChecksPerGame\":0.3845486111111111,\"avgPawnStorm\":0.5833333333333336,\"avgTradeRate\":0.1730324074074074,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1329.0629629629627},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-11",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": false,
+     "aiElo": 1110,
+     "now": 1790381880000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0.25,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 1,
+     "tradeRate": 0,
+     "avgThinkMs": 1085,
+     "openingName": "Queen's Gambit Accepted"
+    },
+    "json": "{\"version\":1,\"rating\":931,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931}],\"wins\":7,\"losses\":7,\"draws\":5,\"streak\":0,\"features\":{\"games\":19,\"avgCaptureRate\":0.1398846823648488,\"avgEarlyQueenPly\":22.343750000000004,\"avgCastlePly\":27.999999999999996,\"avgChecksPerGame\":0.3643092105263158,\"avgPawnStorm\":0.6052631578947372,\"avgTradeRate\":0.16392543859649125,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1316.2175438596491},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-12",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1120,
+     "now": 1790381940000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1039.3333333333333,
+     "openingName": "Slav Defence"
+    },
+    "json": "{\"version\":1,\"rating\":949,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949}],\"wins\":8,\"losses\":7,\"draws\":5,\"streak\":1,\"features\":{\"games\":20,\"avgCaptureRate\":0.13289044824660634,\"avgEarlyQueenPly\":22.426562500000003,\"avgCastlePly\":28.099999999999994,\"avgChecksPerGame\":0.34609375000000003,\"avgPawnStorm\":0.5750000000000003,\"avgTradeRate\":0.15572916666666667,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1302.3733333333332},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-13",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1130,
+     "now": 1790382000000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 9,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1267.6666666666667,
+     "openingName": "King's Indian Defence"
+    },
+    "json": "{\"version\":1,\"rating\":967,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967}],\"wins\":9,\"losses\":7,\"draws\":5,\"streak\":2,\"features\":{\"games\":21,\"avgCaptureRate\":0.1265623316634346,\"avgEarlyQueenPly\":22.501488095238095,\"avgCastlePly\":27.190476190476183,\"avgChecksPerGame\":0.32961309523809523,\"avgPawnStorm\":0.5476190476190479,\"avgTradeRate\":0.14831349206349206,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1300.7206349206347},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-14",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1140,
+     "now": 1790382060000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Nimzo-Indian Defence"
+    },
+    "json": "{\"version\":1,\"rating\":973,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973}],\"wins\":9,\"losses\":7,\"draws\":6,\"streak\":0,\"features\":{\"games\":22,\"avgCaptureRate\":0.12080949840600577,\"avgEarlyQueenPly\":22.569602272727273,\"avgCastlePly\":27.318181818181813,\"avgChecksPerGame\":0.3146306818181818,\"avgPawnStorm\":0.522727272727273,\"avgTradeRate\":0.1415719696969697,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1278.4606060606059},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-15",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": false,
+     "aiElo": 1150,
+     "now": 1790382120000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0.25,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 1,
+     "avgThinkMs": 1085,
+     "openingName": "Grünfeld Defence"
+    },
+    "json": "{\"version\":1,\"rating\":973,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973}],\"wins\":9,\"losses\":8,\"draws\":6,\"streak\":-1,\"features\":{\"games\":23,\"avgCaptureRate\":0.12642647673617943,\"avgEarlyQueenPly\":22.63179347826087,\"avgCastlePly\":27.43478260869565,\"avgChecksPerGame\":0.30095108695652173,\"avgPawnStorm\":0.5000000000000003,\"avgTradeRate\":0.17889492753623187,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1270.0492753623187},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-16",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1160,
+     "now": 1790382180000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1039.3333333333333,
+     "openingName": "London System"
+    },
+    "json": "{\"version\":1,\"rating\":967,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967}],\"wins\":9,\"losses\":9,\"draws\":6,\"streak\":-2,\"features\":{\"games\":24,\"avgCaptureRate\":0.12115870687217196,\"avgEarlyQueenPly\":22.688802083333336,\"avgCastlePly\":27.541666666666664,\"avgChecksPerGame\":0.2884114583333333,\"avgPawnStorm\":0.479166666666667,\"avgTradeRate\":0.1714409722222222,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1260.4361111111111},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-17",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1170,
+     "now": 1790382240000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0.25,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 1,
+     "avgThinkMs": 1085,
+     "openingName": "English Opening"
+    },
+    "json": "{\"version\":1,\"rating\":973,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967},{\"t\":1790382240000,\"rating\":973}],\"wins\":9,\"losses\":9,\"draws\":7,\"streak\":0,\"features\":{\"games\":25,\"avgCaptureRate\":0.1263123585972851,\"avgEarlyQueenPly\":22.74125,\"avgCastlePly\":27.639999999999997,\"avgChecksPerGame\":0.276875,\"avgPawnStorm\":0.4600000000000003,\"avgTradeRate\":0.2045833333333333,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1253.4186666666667},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-18",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1180,
+     "now": 1790382300000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Réti Opening"
+    },
+    "json": "{\"version\":1,\"rating\":991,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967},{\"t\":1790382240000,\"rating\":973},{\"t\":1790382300000,\"rating\":991}],\"wins\":10,\"losses\":9,\"draws\":7,\"streak\":1,\"features\":{\"games\":26,\"avgCaptureRate\":0.12145419095892798,\"avgEarlyQueenPly\":22.789663461538463,\"avgCastlePly\":27.730769230769226,\"avgChecksPerGame\":0.2662259615384615,\"avgPawnStorm\":0.4423076923076926,\"avgTradeRate\":0.19671474358974358,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1236.4025641025642},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-19",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": false,
+     "aiElo": 1190,
+     "now": 1790382360000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0.25,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 1085,
+     "openingName": "Vienna Game"
+    },
+    "json": "{\"version\":1,\"rating\":991,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967},{\"t\":1790382240000,\"rating\":973},{\"t\":1790382300000,\"rating\":991}],\"wins\":11,\"losses\":9,\"draws\":7,\"streak\":2,\"features\":{\"games\":27,\"avgCaptureRate\":0.12621514684933804,\"avgEarlyQueenPly\":22.834490740740744,\"avgCastlePly\":27.814814814814813,\"avgChecksPerGame\":0.2563657407407407,\"avgPawnStorm\":0.42592592592592626,\"avgTradeRate\":0.18942901234567902,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1230.7950617283952},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-20",
+     "playerColor": 0,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1200,
+     "now": 1790382420000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Four Knights Game"
+    },
+    "json": "{\"version\":1,\"rating\":997,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967},{\"t\":1790382240000,\"rating\":973},{\"t\":1790382300000,\"rating\":991},{\"t\":1790382420000,\"rating\":997}],\"wins\":11,\"losses\":9,\"draws\":8,\"streak\":0,\"features\":{\"games\":28,\"avgCaptureRate\":0.12170746303329026,\"avgEarlyQueenPly\":22.876116071428577,\"avgCastlePly\":27.892857142857142,\"avgChecksPerGame\":0.2472098214285714,\"avgPawnStorm\":0.41071428571428603,\"avgTradeRate\":0.1826636904761905,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1215.802380952381},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "book-21",
+     "playerColor": 1,
+     "analysis": null,
+     "vsAi": true,
+     "aiElo": 1210,
+     "now": 1790382480000
+    },
+    "facts": {
+     "playerColor": 1,
+     "captureRate": 0,
+     "earlyQueenPly": 24,
+     "castlePly": 30,
+     "checks": 0,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Queen's Pawn Game"
+    },
+    "json": "{\"version\":1,\"rating\":992,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967},{\"t\":1790382240000,\"rating\":973},{\"t\":1790382300000,\"rating\":991},{\"t\":1790382420000,\"rating\":997},{\"t\":1790382480000,\"rating\":992}],\"wins\":11,\"losses\":10,\"draws\":8,\"streak\":-1,\"features\":{\"games\":29,\"avgCaptureRate\":0.11751065396317681,\"avgEarlyQueenPly\":22.914870689655178,\"avgCastlePly\":27.965517241379313,\"avgChecksPerGame\":0.2386853448275862,\"avgPawnStorm\":0.3965517241379314,\"avgTradeRate\":0.17636494252873566,\"avgCpLoss\":1591.4787052140566,\"avgThinkMs\":1201.8436781609198},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":5,\"asWhite\":3,\"wins\":3},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   },
+   {
+    "step": {
+     "game": "scholars",
+     "playerColor": 0,
+     "analysis": "real",
+     "vsAi": true,
+     "aiElo": 1300,
+     "now": 1790383800000
+    },
+    "facts": {
+     "playerColor": 0,
+     "captureRate": 0.25,
+     "earlyQueenPly": 2,
+     "castlePly": 30,
+     "checks": 1,
+     "pawnStorm": 0,
+     "tradeRate": 0,
+     "avgThinkMs": 811,
+     "openingName": "Italian Game"
+    },
+    "json": "{\"version\":1,\"rating\":1013,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967},{\"t\":1790382240000,\"rating\":973},{\"t\":1790382300000,\"rating\":991},{\"t\":1790382420000,\"rating\":997},{\"t\":1790382480000,\"rating\":992},{\"t\":1790383800000,\"rating\":1013}],\"wins\":12,\"losses\":10,\"draws\":8,\"streak\":1,\"features\":{\"games\":30,\"avgCaptureRate\":0.12192696549773759,\"avgEarlyQueenPly\":22.217708333333338,\"avgCastlePly\":28.033333333333335,\"avgChecksPerGame\":0.2640625,\"avgPawnStorm\":0.3833333333333337,\"avgTradeRate\":0.17048611111111114,\"avgCpLoss\":1538.9294150402548,\"avgThinkMs\":1188.8155555555559},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":6,\"asWhite\":4,\"wins\":4},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}"
+   }
+  ],
+  "storedWithoutAdaptation": "{\"version\":1,\"rating\":1013,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967},{\"t\":1790382240000,\"rating\":973},{\"t\":1790382300000,\"rating\":991},{\"t\":1790382420000,\"rating\":997},{\"t\":1790382480000,\"rating\":992},{\"t\":1790383800000,\"rating\":1013}],\"wins\":12,\"losses\":10,\"draws\":8,\"streak\":1,\"features\":{\"games\":30,\"avgCaptureRate\":0.12192696549773759,\"avgEarlyQueenPly\":22.217708333333338,\"avgCastlePly\":28.033333333333335,\"avgChecksPerGame\":0.2640625,\"avgPawnStorm\":0.3833333333333337,\"avgTradeRate\":0.17048611111111114,\"avgCpLoss\":1538.9294150402548,\"avgThinkMs\":1188.8155555555559},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":6,\"asWhite\":4,\"wins\":4},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}]}",
+  "storedWithAdaptation": "{\"version\":1,\"rating\":1013,\"ratingHistory\":[{\"t\":1790380800000,\"rating\":836},{\"t\":1790380860000,\"rating\":831},{\"t\":1790380920000,\"rating\":847},{\"t\":1790380980000,\"rating\":875},{\"t\":1790381160000,\"rating\":859},{\"t\":1790381220000,\"rating\":892},{\"t\":1790381280000,\"rating\":924},{\"t\":1790381340000,\"rating\":927},{\"t\":1790381460000,\"rating\":919},{\"t\":1790381520000,\"rating\":923},{\"t\":1790381580000,\"rating\":940},{\"t\":1790381700000,\"rating\":945},{\"t\":1790381760000,\"rating\":938},{\"t\":1790381820000,\"rating\":931},{\"t\":1790381940000,\"rating\":949},{\"t\":1790382000000,\"rating\":967},{\"t\":1790382060000,\"rating\":973},{\"t\":1790382180000,\"rating\":967},{\"t\":1790382240000,\"rating\":973},{\"t\":1790382300000,\"rating\":991},{\"t\":1790382420000,\"rating\":997},{\"t\":1790382480000,\"rating\":992},{\"t\":1790383800000,\"rating\":1013}],\"wins\":12,\"losses\":10,\"draws\":8,\"streak\":1,\"features\":{\"games\":30,\"avgCaptureRate\":0.12192696549773759,\"avgEarlyQueenPly\":22.217708333333338,\"avgCastlePly\":28.033333333333335,\"avgChecksPerGame\":0.2640625,\"avgPawnStorm\":0.3833333333333337,\"avgTradeRate\":0.17048611111111114,\"avgCpLoss\":1538.9294150402548,\"avgThinkMs\":1188.8155555555559},\"weaknesses\":{\"hanging-pieces\":16,\"missed-tactics\":13,\"back-rank\":5,\"endgame\":6,\"opening\":12,\"king-safety\":4},\"openings\":[{\"name\":\"Italian Game\",\"count\":6,\"asWhite\":4,\"wins\":4},{\"name\":\"King's Gambit\",\"count\":2,\"asWhite\":1,\"wins\":0},{\"name\":\"Ruy Lopez\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scotch Game\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Sicilian, Closed\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"French Defence\",\"count\":1,\"asWhite\":1,\"wins\":1},{\"name\":\"Caro-Kann Defence\",\"count\":1,\"asWhite\":0,\"wins\":1},{\"name\":\"Scandinavian Defence\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Pirc Defence\",\"count\":1,\"asWhite\":0,\"wins\":0},{\"name\":\"Queen's Gambit Declined\",\"count\":1,\"asWhite\":1,\"wins\":0},{\"name\":\"Queen's Gambit Accepted\",\"count\":1,\"asWhite\":0,\"wins\":0}],\"lastAdaptation\":[\"You attack early, so I kept my king extra safe and played solid setups that punish overextension.\",\"You favor the Italian Game — this time I tried it against you.\",\"I watched for chances around your tactical shots.\"]}",
+  "fresh": "{\"version\":1,\"rating\":800,\"ratingHistory\":[],\"wins\":0,\"losses\":0,\"draws\":0,\"streak\":0,\"features\":{\"games\":0,\"avgCaptureRate\":0,\"avgEarlyQueenPly\":24,\"avgCastlePly\":30,\"avgChecksPerGame\":0,\"avgPawnStorm\":0,\"avgTradeRate\":0,\"avgCpLoss\":0,\"avgThinkMs\":0},\"weaknesses\":{\"hanging-pieces\":0,\"missed-tactics\":0,\"back-rank\":0,\"endgame\":0,\"opening\":0,\"king-safety\":0},\"openings\":[]}"
+ }
+}

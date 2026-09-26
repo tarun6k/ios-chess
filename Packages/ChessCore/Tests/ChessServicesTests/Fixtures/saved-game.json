@@ -1,0 +1,250 @@
+{
+  "saved": {
+    "mode": "ai",
+    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "uciMoves": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "e1g1",
+      "g8f6",
+      "d2d4",
+      "e5d4",
+      "e4e5",
+      "d7d5",
+      "e5f6",
+      "d5c4",
+      "f6g7",
+      "h8g8",
+      "f3d4",
+      "g8g7"
+    ],
+    "thinkMs": [
+      1200,
+      461,
+      1274,
+      483,
+      1348,
+      505,
+      1422,
+      527,
+      1496,
+      549,
+      1570,
+      571,
+      1644,
+      593,
+      1718,
+      615,
+      1792,
+      637
+    ],
+    "playerColor": "w",
+    "difficulty": "match",
+    "timeControl": {
+      "name": "Blitz 3+2",
+      "baseMs": 180000,
+      "incrementMs": 2000
+    },
+    "clockRemaining": [
+      171250,
+      168900
+    ],
+    "timerOn": true,
+    "hintsLeft": 2,
+    "challengeId": null,
+    "adaptationNotes": [
+      "Your style is still balanced — I played neutrally while I learn your patterns."
+    ],
+    "aiSkill": 2.5,
+    "aiElo": 800,
+    "savedAt": 1790380800000
+  },
+  "savedMinimal": {
+    "mode": "pvp",
+    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "uciMoves": [
+      "d2d4",
+      "d7d5",
+      "c2c4"
+    ],
+    "thinkMs": [
+      800,
+      900,
+      700
+    ],
+    "playerColor": "w",
+    "difficulty": "learn",
+    "timeControl": null,
+    "clockRemaining": null,
+    "timerOn": false,
+    "hintsLeft": 0,
+    "challengeId": null,
+    "adaptationNotes": [],
+    "aiSkill": 20,
+    "aiElo": 2200,
+    "savedAt": 1790380800001
+  },
+  "savedPuzzle": {
+    "mode": "puzzle",
+    "startFen": "6k1/5ppp/8/8/8/8/8/R3K3 w - - 0 1",
+    "uciMoves": [],
+    "thinkMs": [],
+    "playerColor": "b",
+    "difficulty": "challenge",
+    "timeControl": {
+      "name": "Handicap",
+      "baseMs": 300000,
+      "incrementMs": 0,
+      "whiteBaseMs": 120000,
+      "blackBaseMs": 300000
+    },
+    "clockRemaining": [
+      120000,
+      300000
+    ],
+    "timerOn": false,
+    "hintsLeft": 3,
+    "challengeId": "mate-back-rank-1",
+    "adaptationNotes": [],
+    "aiSkill": 13.75,
+    "aiElo": 1700,
+    "savedAt": 1790380800002
+  },
+  "archive": [
+    {
+      "pgn": "[Event \"Adaptive Chess\"]\n[Site \"Local\"]\n[Date \"2026.09.26\"]\n[Round \"-\"]\n[White \"You\"]\n[Black \"AI (1420)\"]\n[Result \"1-0\"]\n\n1. e4 e5 2. Bc4 Nc6 3. Qh5 Nf6 4. Qxf7# 1-0\n",
+      "mode": "ai",
+      "playerColor": "w",
+      "result": "White wins by checkmate",
+      "score": "1-0",
+      "aiElo": 1420,
+      "date": 1790380800003,
+      "analysis": [
+        {
+          "uci": "e2e4",
+          "evalBefore": 0,
+          "evalAfter": -18,
+          "bestUci": "b1c3",
+          "judgment": "good",
+          "cpLoss": 18
+        },
+        {
+          "uci": "e7e5",
+          "evalBefore": 25,
+          "evalAfter": 56,
+          "bestUci": "d7d5",
+          "judgment": "good",
+          "cpLoss": 31
+        },
+        {
+          "uci": "f1c4",
+          "evalBefore": 0,
+          "evalAfter": -28,
+          "bestUci": "b1c3",
+          "judgment": "good",
+          "cpLoss": 28
+        },
+        {
+          "uci": "b8c6",
+          "evalBefore": 30,
+          "evalAfter": 30,
+          "bestUci": "b8c6",
+          "judgment": "best",
+          "cpLoss": 0
+        },
+        {
+          "uci": "d1h5",
+          "evalBefore": 0,
+          "evalAfter": -67,
+          "bestUci": "g1f3",
+          "judgment": "inaccuracy",
+          "cpLoss": 67
+        },
+        {
+          "uci": "g8f6",
+          "evalBefore": -11,
+          "evalAfter": 99998,
+          "bestUci": "d8e7",
+          "judgment": "blunder",
+          "cpLoss": 100009
+        },
+        {
+          "uci": "h5f7",
+          "evalBefore": 99999,
+          "evalAfter": 99999,
+          "bestUci": "h5f7",
+          "judgment": "best",
+          "cpLoss": 0
+        }
+      ],
+      "adaptationNotes": [
+        "You attack early, so I kept my king extra safe and played solid setups that punish overextension."
+      ],
+      "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "uciMoves": [
+        "e2e4",
+        "e7e5",
+        "f1c4",
+        "b8c6",
+        "d1h5",
+        "g8f6",
+        "h5f7"
+      ]
+    },
+    {
+      "pgn": "[Event \"Adaptive Chess\"]\n[Site \"Local\"]\n[Date \"2026.09.26\"]\n[Round \"-\"]\n[White \"White\"]\n[Black \"Black\"]\n[Result \"1-0\"]\n\n1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O Nf6 5. d4 exd4 6. e5 d5 7. exf6 dxc4 8.\nfxg7 Rg8 9. Nxd4 Rxg7 1-0\n",
+      "mode": "pvp",
+      "playerColor": "w",
+      "result": "White wins by resignation",
+      "score": "1-0",
+      "aiElo": null,
+      "date": 1790380800004,
+      "analysis": null,
+      "adaptationNotes": [],
+      "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "uciMoves": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1c4",
+        "f8c5",
+        "e1g1",
+        "g8f6",
+        "d2d4",
+        "e5d4",
+        "e4e5",
+        "d7d5",
+        "e5f6",
+        "d5c4",
+        "f6g7",
+        "h8g8",
+        "f3d4",
+        "g8g7"
+      ]
+    },
+    {
+      "pgn": "[Event \"Adaptive Chess\"]\n[Site \"Local\"]\n[Date \"2026.09.26\"]\n[Round \"-\"]\n[White \"AI (1100)\"]\n[Black \"You\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 5 4\"]\n\n4... g6 5. Qf3 Nd4 6. Qd3 d5 *\n",
+      "mode": "drill",
+      "playerColor": "b",
+      "result": "",
+      "score": "*",
+      "aiElo": 1100,
+      "date": 1790380800005,
+      "analysis": [],
+      "adaptationNotes": [],
+      "startFen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 5 4",
+      "uciMoves": [
+        "g7g6",
+        "h5f3",
+        "c6d4",
+        "f3d3",
+        "d7d5"
+      ]
+    }
+  ]
+}
