@@ -68,9 +68,9 @@ Package root: `Packages/ChessCore/Sources/`. App root: `AdaptiveChess/`.
 
 | TS file | Swift file(s) | Phase |
 |---|---|---|
-| src/engine/types.ts | ChessCore/Engine/Types.swift (Color, PieceType, Piece packing, squares, Move packing as UInt32, deltas) | 1 |
+| src/engine/types.ts | ChessCore/Engine/Types.swift (PieceColor, PieceType, Piece as Int8 code, squares, CastlingRights / MoveFlags option sets, Move packing as UInt32, deltas) | 1 |
 | src/engine/zobrist.ts | ChessCore/Engine/Zobrist.swift (mulberry32 on UInt32, key tables as UInt64 = hi<<32 \| lo) | 1 |
-| src/engine/position.ts | ChessCore/Engine/Position.swift (board [Int8] ×64, FEN, attacks, pseudo/legal generation, make/unmake, material, insufficient/dead) | 1 |
+| src/engine/position.ts | ChessCore/Engine/Position.swift (FEN, attacks, pseudo/legal generation, make/unmake, material, insufficient/dead) + Board.swift (64 inline Int8, no heap) + MoveList.swift (256-slot inline move buffer) | 1 |
 | src/engine/perft.ts | ChessCore/Engine/Perft.swift | 1 |
 | src/engine/game.ts | ChessCore/Engine/Game.swift (ResultKind, GameResult, HistoryEntry, repetition table, claims, automatic ends, FIDE 6.9 timeout) | 2 |
 | src/engine/san.ts | ChessCore/Engine/SAN.swift (toSAN, normalizeSAN, fromSAN with LAN fallback) | 2 |
@@ -143,13 +143,13 @@ Package root: `Packages/ChessCore/Sources/`. App root: `AdaptiveChess/`.
 - [x] Commit "Phase 0: scaffold native project and porting plan"
 
 ### Phase 1 — Engine core
-- [ ] Types.swift: colours, piece codes, `PIECE_CHARS`, square helpers, castle/flag constants, `Move` as UInt32 with the exact bit layout, `moveToUci`, delta tables
-- [ ] Zobrist.swift: mulberry32 bit-identical to TS (UInt32 wrapping arithmetic, `>>>` as logical shift), tables generated in the same order, `hashKey` string identical to TS (`lo.toString(36) + '.' + hi.toString(36)`)
-- [ ] Position.swift: FEN load/emit, attack detection, pseudo-legal and legal generation in the same move order (promotions Q,R,B,N), EP square only when capturable, make/unmake with undo stack, incremental hashing, material helpers, insufficient and dead position
-- [ ] Perft.swift
-- [ ] Tests: PerftTests (all six positions to the listed depths), ZobristTests (first mulberry32 outputs and selected keys captured from TS), RulesTests (Position cases), NotationTests (FEN round-trip, incremental hash = recompute over 5×120 random plies with the same LCG, unmake restores FEN)
-- [ ] Check: `swift test` green in Packages/ChessCore with zero warnings
-- [ ] Commit "Phase 1: engine core"
+- [x] Types.swift: colours, piece codes, `PIECE_CHARS`, square helpers, castle/flag constants, `Move` as UInt32 with the exact bit layout, `moveToUci`, delta tables
+- [x] Zobrist.swift: mulberry32 bit-identical to TS (UInt32 wrapping arithmetic, `>>>` as logical shift), tables generated in the same order, `hashKey` string identical to TS (`lo.toString(36) + '.' + hi.toString(36)`)
+- [x] Position.swift: FEN load/emit, attack detection, pseudo-legal and legal generation in the same move order (promotions Q,R,B,N), EP square only when capturable, make/unmake with undo stack, incremental hashing, material helpers, insufficient and dead position
+- [x] Perft.swift
+- [x] Tests: PerftTests (all six positions to the listed depths), ZobristTests (first mulberry32 outputs and selected keys captured from TS), RulesTests (Position cases), NotationTests (FEN round-trip, incremental hash = recompute over 5×120 random plies with the same LCG, unmake restores FEN)
+- [x] Check: `swift test` green in Packages/ChessCore with zero warnings
+- [x] Commit "Phase 1: engine core"
 
 ### Phase 2 — Game rules & notation
 - [ ] Game.swift: status, result kinds and messages, history entries with optional `clockMs`/`thinkMs`, repetition counting, `play`/`playSAN`/`undo`, resign, FIDE 6.9 timeout, draw offers, claimable and automatic draws (3/5-fold, 50/75 moves, insufficient, dead), `positionAt`, `sanLine`, `uciLine`, `capturedBy`
@@ -219,7 +219,8 @@ Package root: `Packages/ChessCore/Sources/`. App root: `AdaptiveChess/`.
 
 ## Faithfully-ported bugs
 
-(none yet)
+- **En-passant square from FEN is always hashed (position.ts `loadFen` vs `makeMove`).** `makeMove` records `ep` only when an enemy pawn can actually capture (FIDE position identity), but `loadFen` takes the FEN's ep square verbatim and `computeHash` XORs it in. So `…/PPPP1PPP/RNBQKBNR b KQkq e3 0 1` loaded from FEN hashes to `qsljuo.x3ajeo`, while the identical position reached by playing 1.e4 hashes to `9741ik.tbz9di`. Only affects repetition counting in games started from such a FEN. Ported as-is; both values are asserted in `ZobristTests`.
+- **`loadFen` does not reset the king squares.** `kingSq` keeps its previous value (`[4, 60]` initially) for a side whose king is missing from the FEN. Position is only ever loaded with two kings by the app, so it is harmless; ported as-is.
 
 ## Notes / open questions
 
@@ -229,4 +230,6 @@ Package root: `Packages/ChessCore/Sources/`. App root: `AdaptiveChess/`.
 - **Timestamps:** TS stores `Date.now()` milliseconds as integers (`ratingHistory[].t`, mistakes `at`, saved-game `savedAt`). Swift uses `Int(Date().timeIntervalSince1970 * 1000)`. `dateKey` in progression is the UTC calendar day.
 - **Test automation:** the TS app exposes `window.__chess` for scripting. The native app will expose accessibility identifiers instead (names decided in Phase 8), used by `AdaptiveChessUITests`.
 - **Toolchain notes:** two simulators named "iPhone 17 Pro" exist on this Mac (`EFDAE60C…` is the booted one, `8A385C66…` is shut down); the name-based destination builds fine, and `simctl` commands use `booted`. `xcodebuild` prints an `appintentsmetadataprocessor` notice on every build; it is a tool message, not a compiler warning. Port 5173 was taken by an unrelated process, so the reference captures were made with Vite on port 5180.
+- **Phase 1 engine performance (release, `swift test -c release --no-parallel`, Apple Silicon Mac, Swift 6.4):** perft(5) from the start position = 4,865,609 nodes in **0.29 s (~16.8 Mnps)**; kiwipete perft(4) 0.24 s, position 5 perft(4) 0.12 s, position 6 perft(4) 0.20 s. The whole ChessCore suite (32 tests) runs in 0.4 s in release. In debug (`swift test`) the same perft(5) takes ~19 s (the inline-tuple `Board`/`MoveList` accessors are not inlined at -Onone), so the debug suite takes ~20 s; that is the trade-off for a heap-free hot path. Measured with the parallel runner the release perft(5) reads ~0.37 s because the six perft cases share the cores.
+- **Phase 1 API notes:** the TS packed move has no piece or capture fields (only from, to, flags, promotion); Swift keeps that exact 19-bit layout. Swift names: `Color`→`PieceColor` (avoids SwiftUI.Color), `typeOf/colorOf/makePiece`→`Piece.type/.color/Piece(type:color:)`, `sqName`→`squareName`, `attacked`→`isAttacked(_:by:)`, `generatePseudo/generateLegal`→`generatePseudoLegalMoves(into:)/generateLegalMoves()`, `toFen`→`fen`, `computeHash`→`recomputeHash()`, `ep`→`enPassant`, `kingSq[c]`→`kingSquare(c)`, `hashLo/hashHi` are views of one `UInt64 hash` (`hi << 32 | lo`). `parseSquare` returns `nil` for malformed names (TS returns an off-board number); `loadFen` throws `FENError` with the TS message text, and additionally rejects a FEN whose piece placement overflows the board (the TS silently drops out-of-range writes into the `Int8Array`). `Piece.empty.color` is `.black` exactly like TS `colorOf(0)`. `mulberry32` is internal to the module (`Mulberry32`), reachable from tests via `@testable`.
 - **Launch assets:** `AppIcon` and `Splash` copied from `ios/App` are the Capacitor defaults (blue placeholder icon, white splash). The launch screen uses the `LaunchBackground` colour (#f3f2f2) rather than the splash image; replacing the icon artwork is out of scope for the port.
