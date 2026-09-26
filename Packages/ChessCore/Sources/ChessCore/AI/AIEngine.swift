@@ -1,18 +1,24 @@
-// Ported 1:1 from src/ai/worker.ts — the request handlers, without the Web Worker plumbing.
+// Ported 1:1 from src/ai/worker.ts and src/app/aiClient.ts — the AI worker as a Swift actor.
 //
 // TypeScript name → Swift name
 //   const search = new Search()      → AIEngine.search (one engine owns one Search, so the transposition
 //                                       table and history heuristic persist across requests like the worker's)
+//   requestAiMove / requestHint /
+//   requestAnalysis (aiClient.ts)    → move(_:) / hint(_:) / analyze(_:) — async, run on the actor (never on
+//                                       the main thread), and honour Task cancellation
 //   handleMove / handleHint /
-//   handleAnalyze                    → same names; `ErrorResponse` → thrown AIEngineError / FENError
+//   handleAnalyze (worker.ts)        → same names (synchronous, actor-isolated); `ErrorResponse` → thrown
+//                                       AIEngineError / FENError
 //   judge(cpLoss, isBest)            → AIEngine.judge(cpLoss:isBest:)
 //   uciToMove(pos, uci)              → AIEngine.uciToMove(_:_:)
 //   Math.random (via chooseMove)     → the injected `random` closure
 //
-// `isCancelled` is polled by the search like its deadline: a cancelled request returns the last
-// completed depth (Phase 5's AIClient discards stale replies, as controller.ts does with `moveSeq`).
+// Cancellation: the search polls `isCancelled` where it polls its deadline (every 2048 nodes) and
+// abandons the running iteration; a cancelled request then throws `CancellationError` instead of
+// returning the partial result. The public methods poll `Task.isCancelled`, so cancelling the awaiting
+// Task is enough (Phase 6's controller does that where controller.ts discards stale replies via `moveSeq`).
 
-public final class AIEngine {
+public actor AIEngine {
     private var search = Search()
     private let random: @Sendable () -> Double
 
@@ -26,7 +32,35 @@ public final class AIEngine {
         pos.generateLegalMoves().first { $0.uci == uci }
     }
 
-    public func handleMove(_ req: MoveRequest, isCancelled: (@Sendable () -> Bool)? = nil) throws -> MoveResponse {
+    /// TS `judge`: thresholds 50 / 120 / 250 cp.
+    public static func judge(cpLoss: Int, isBest: Bool) -> Judgment {
+        if isBest { return .best }
+        if cpLoss >= 250 { return .blunder }
+        if cpLoss >= 120 { return .mistake }
+        if cpLoss >= 50 { return .inaccuracy }
+        return .good
+    }
+
+    // MARK: - aiClient.ts
+
+    /// TS `requestAiMove`.
+    public func move(_ req: MoveRequest) async throws -> MoveResponse {
+        try handleMove(req, isCancelled: { Task.isCancelled })
+    }
+
+    /// TS `requestHint`.
+    public func hint(_ req: HintRequest) async throws -> HintResponse {
+        try handleHint(req, isCancelled: { Task.isCancelled })
+    }
+
+    /// TS `requestAnalysis`.
+    public func analyze(_ req: AnalyzeRequest) async throws -> AnalyzeResponse {
+        try handleAnalyze(req, isCancelled: { Task.isCancelled })
+    }
+
+    // MARK: - worker.ts
+
+    func handleMove(_ req: MoveRequest, isCancelled: @escaping @Sendable () -> Bool = { false }) throws -> MoveResponse {
         let pos = try Position(fen: req.fen)
 
         if let bookMove = req.bookMove, AIEngine.uciToMove(pos, bookMove) != nil {
@@ -41,6 +75,7 @@ public final class AIEngine {
             historyKeys: req.historyKeys,
             isCancelled: isCancelled
         ))
+        if isCancelled() { throw CancellationError() }
         guard result.best != nil else { throw AIEngineError.noLegalMoves }
         let idx = chooseMove(result.rootMoves, persona: persona, rng: random)
         let chosen = result.rootMoves[idx]
@@ -54,25 +89,17 @@ public final class AIEngine {
         )
     }
 
-    public func handleHint(_ req: HintRequest, isCancelled: (@Sendable () -> Bool)? = nil) throws -> HintResponse {
+    func handleHint(_ req: HintRequest, isCancelled: @escaping @Sendable () -> Bool = { false }) throws -> HintResponse {
         let pos = try Position(fen: req.fen)
         let result = search.search(pos, options: SearchOptions(
             maxDepth: 5, moveTimeMs: 1500, params: .neutral, historyKeys: req.historyKeys, isCancelled: isCancelled
         ))
+        if isCancelled() { throw CancellationError() }
         guard let best = result.best else { throw AIEngineError.noLegalMoves }
         return HintResponse(uci: best.uci, score: result.score)
     }
 
-    /// TS `judge`: thresholds 50 / 120 / 250 cp.
-    public static func judge(cpLoss: Int, isBest: Bool) -> Judgment {
-        if isBest { return .best }
-        if cpLoss >= 250 { return .blunder }
-        if cpLoss >= 120 { return .mistake }
-        if cpLoss >= 50 { return .inaccuracy }
-        return .good
-    }
-
-    public func handleAnalyze(_ req: AnalyzeRequest, isCancelled: (@Sendable () -> Bool)? = nil) throws -> AnalyzeResponse {
+    func handleAnalyze(_ req: AnalyzeRequest, isCancelled: @escaping @Sendable () -> Bool = { false }) throws -> AnalyzeResponse {
         var pos = try Position(fen: req.startFEN)
         var out: [AnalyzedMove] = []
         var keys: [String] = [pos.hashKey]
@@ -82,6 +109,7 @@ public final class AIEngine {
             let before = search.search(pos, options: SearchOptions(
                 maxDepth: 4, moveTimeMs: req.perMoveMs, historyKeys: keys, isCancelled: isCancelled
             ))
+            if isCancelled() { throw CancellationError() }
             let bestScoreMover = before.rootMoves.isEmpty ? 0 : before.rootMoves[0].score
             let played = before.rootMoves.first { $0.move == m }
             // If the played move fell outside exact-window scoring, re-search it quickly.

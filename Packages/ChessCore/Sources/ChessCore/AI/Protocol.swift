@@ -1,8 +1,8 @@
 // Ported from src/ai/protocol.ts: the messages between the app and the AI worker.
 //
 // The TS envelopes carry `id` and `type` so aiClient.ts can match a worker reply to its promise; the
-// Swift engine is called directly (`AIEngine.handleMove` …), so only the payload fields are kept and
-// `ErrorResponse` becomes the thrown `AIEngineError`. `Judgment` and `AnalyzedMove` live in
+// Swift engine is an actor called directly (`await engine.move(…)`), so only the payload fields are kept
+// and `ErrorResponse` becomes the thrown `AIEngineError`. `Judgment` and `AnalyzedMove` live in
 // AnalyzedMove.swift (Phase 2, persisted by the archive).
 
 public struct MoveRequest: Hashable, Sendable {
@@ -42,7 +42,8 @@ public struct AnalyzeRequest: Hashable, Sendable {
     /// ms budget per position
     public var perMoveMs: Double
 
-    public init(startFEN: String, uciMoves: [String], perMoveMs: Double) {
+    /// The default budget is aiClient.ts `requestAnalysis(startFen, uciMoves, perMoveMs = 350)`.
+    public init(startFEN: String, uciMoves: [String], perMoveMs: Double = 350) {
         self.startFEN = startFEN
         self.uciMoves = uciMoves
         self.perMoveMs = perMoveMs

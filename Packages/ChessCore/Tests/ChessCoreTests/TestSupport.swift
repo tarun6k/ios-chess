@@ -21,3 +21,14 @@ extension Game {
         }
     }
 }
+
+/// Re-serialises JSON with sorted keys so `JSON.stringify` output and `JSONEncoder` output can be compared
+/// (key order and `/` escaping differ between the two; the values must not).
+func canonicalJSON(_ data: Data) throws -> String {
+    let object = try JSONSerialization.jsonObject(with: data)
+    return String(decoding: try JSONSerialization.data(withJSONObject: object, options: [.sortedKeys]), as: UTF8.self)
+}
+
+func canonicalJSON(_ json: String) throws -> String {
+    try canonicalJSON(Data(json.utf8))
+}
