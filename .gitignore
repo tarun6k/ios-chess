@@ -9,3 +9,10 @@ android/app/build/
 android/local.properties
 android/.idea/
 android/app/release/
+.porting/
+
+# Swift / Xcode build artifacts
+.build/
+.swiftpm/
+xcuserdata/
+DerivedData/
