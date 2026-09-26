@@ -1,22 +1,72 @@
 # Adaptive Chess
 
-An offline Android chess app with an AI opponent that **models the player and adapts** —
-built on the "Classical" design system from the companion Claude Design project
-(`Chess Game.dc.html` is implemented 1:1 as the game screen; the other screens extend
-its visual language minimally).
+An offline iOS (and Android) chess app with an AI opponent that **models the player
+and adapts** — built on the "Classical" design system from the companion Claude Design
+project (`Chess Game.dc.html` is implemented 1:1 as the game screen; the other screens
+extend its visual language minimally).
 
 ## Quick start
 
 ```bash
 npm install
-npm run dev            # web dev server
-npm test               # full engine test suite (includes perft(5) = 4,865,609)
+npm run dev            # web dev server (http://localhost:5173)
+npm test               # full test suite (engine, AI, app layer; includes perft(5) = 4,865,609)
+npm run ios            # build web → sync into ios/ → open the Xcode workspace
+```
+
+### iOS
+
+Requirements on this machine:
+
+- Xcode 27 beta at `/Applications/Xcode-beta.app`. Either make it the default
+  (`sudo xcode-select -s /Applications/Xcode-beta.app`) or export
+  `DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer` before any
+  `npx cap` / `xcodebuild` / `xcrun` command.
+- CocoaPods. `npx cap sync ios` runs `pod install` in `ios/App` for you.
+
+Build and run on the simulator from the command line:
+
+```bash
+npm run build && npx cap sync ios
+cd ios/App
+xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+  -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO build
+xcrun simctl boot "iPhone 17 Pro"
+xcrun simctl install booted DerivedData/Build/Products/Debug-iphonesimulator/App.app
+xcrun simctl launch booted com.adaptivechess.app
+```
+
+For a device build, open the workspace (`npx cap open ios`) and set your team under
+*Signing & Capabilities*. The bundle identifier is `com.adaptivechess.app`.
+
+What is tracked in `ios/` versus generated: the Xcode project, `Info.plist`,
+`AppDelegate.swift`, the asset catalog and `Podfile` are committed. `Pods/`,
+`DerivedData/`, the synced web bundle in `App/App/public/`, and the generated
+`capacitor.config.json` / `config.xml` are ignored and recreated by `npx cap sync ios`.
+
+iOS-specific behaviour worth knowing:
+
+- **Safe areas** — `index.html` sets `viewport-fit=cover`; `public/styles.css` pads
+  `#app` and the bottom nav with `env(safe-area-inset-*)`. `capacitor.config.ts` sets
+  `contentInset: 'never'` and a webview `backgroundColor` matching `--color-bg` so
+  nothing flashes white behind the app.
+- **Orientation** — iPhone is portrait-only (`UISupportedInterfaceOrientations`). The
+  board is sized from viewport width with 62px-max squares, which does not fit a
+  landscape phone. iPad keeps all orientations; its height is sufficient.
+- **First launch** — `src/ui/loginScreen.ts` asks for a name or a guest opt-out once;
+  the choice is persisted via Capacitor Preferences and the screen never returns.
+  `src/ui/router.ts` re-asserts scroll position after the iOS keyboard dismisses.
+
+### Android
+
+```bash
 npm run android        # build web → sync → assemble debug APK
 ```
 
 The debug APK lands in `android/app/build/outputs/apk/debug/app-debug.apk`.
-Building needs a JDK 21 (`JAVA_HOME=/opt/homebrew/opt/openjdk@21` on this machine)
-and the Android SDK (`ANDROID_HOME=~/Library/Android/sdk`, platform 35).
+Building needs a JDK 21 (`JAVA_HOME=/opt/homebrew/opt/openjdk@21`) and the Android SDK
+(`ANDROID_HOME=~/Library/Android/sdk`, platform 35).
 
 ## Architecture
 
@@ -40,25 +90,47 @@ src/ai/        the opponent
   playerModel.ts persistent player model: style features, weaknesses, openings, Elo
   adaptation.ts  player model → eval params, opening prep, difficulty band
   openings.ts    compact named opening book
+  protocol.ts    request/response types shared with the worker
   worker.ts      Web Worker entry — search never blocks the UI
 
 src/app/       application services
   controller.ts  one live game: clocks, AI turns, challenges, autosave
+  aiClient.ts    promise-based bridge to the worker
   clock.ts       Fischer clocks, presets, handicaps, flag/low-time events
   puzzles.ts     engine-verified puzzles, endgame drills, constraint games
   progression.ts XP, levels, badges, daily challenge + streaks
-  store.ts       app state + crash-safe persistence (Preferences + localStorage)
+  store.ts       app state + crash-safe persistence
+  storage.ts     Preferences (native) + localStorage (web), written to both
+  feedback.ts    synthesized sounds + haptics
 
 src/ui/        screens (vanilla TS, design-system CSS from public/styles.css)
+  router.ts, dom.ts, boardView.ts
+  loginScreen, homeScreen, gameScreen, puzzlesScreen, statsScreen, settingsScreen
 ```
 
 **Rules coverage**: castling with all legality conditions, en passant (incl. the
 pin edge case), underpromotion, stalemate, threefold (claim) / fivefold (auto),
 fifty (claim) / seventy-five (auto) move rules, insufficient material, dead
 position, resignation, draw offers, and the FIDE 6.9 timeout rule (flag fall is
-a draw when the opponent cannot possibly mate). Move generation is perft-verified
-against six reference positions (`tests/perft.test.ts`); every shipped puzzle is
-verified by the engine itself (`tests/puzzles.test.ts`).
+a draw when the opponent cannot possibly mate).
+
+## Tests
+
+```
+tests/perft.test.ts        move generation vs six reference positions
+tests/rules.test.ts        castling, en passant, promotion, check/mate edge cases
+tests/draws.test.ts        every draw rule
+tests/notation.test.ts     SAN / PGN round trips
+tests/ai.test.ts           search finds mates, persona error model
+tests/puzzles.test.ts      every shipped puzzle verified by the engine
+tests/clock.test.ts        Fischer clock, increments, low-time, flag fall, formatting
+tests/progression.test.ts  levels, badges, daily streaks, AI-offered challenges
+tests/store.test.ts        persistence round trips, migrations, caps
+tests/controller.test.ts   game flow with a mocked AI worker: turns, puzzles,
+                           constraints, drills, clocks, resume, hints, analysis
+```
+
+`npm test` runs everything; `npm run test:perft` runs only the perft suite.
 
 ## How adaptation works
 
