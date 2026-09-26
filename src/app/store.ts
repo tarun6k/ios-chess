@@ -77,6 +77,8 @@ export interface AppState {
   archive: ArchivedGame[];
   mistakes: RecordedMistake[];
   difficulty: DifficultyMode;
+  playerName: string | null;
+  guest: boolean;              // true once the login screen was skipped as guest
 }
 
 const KEYS = {
@@ -87,6 +89,8 @@ const KEYS = {
   archive: 'chess.archive',
   mistakes: 'chess.mistakes',
   difficulty: 'chess.difficulty',
+  playerName: 'chess.playerName',
+  guest: 'chess.guest',
 };
 
 export const state: AppState = {
@@ -97,10 +101,12 @@ export const state: AppState = {
   archive: [],
   mistakes: [],
   difficulty: 'match',
+  playerName: null,
+  guest: false,
 };
 
 export async function loadAll(): Promise<void> {
-  const [settings, model, progress, saved, archive, mistakes, difficulty] = await Promise.all([
+  const [settings, model, progress, saved, archive, mistakes, difficulty, playerName, guest] = await Promise.all([
     loadKey<Settings>(KEYS.settings),
     loadKey<PlayerModel>(KEYS.model),
     loadKey<Progress>(KEYS.progress),
@@ -108,6 +114,8 @@ export async function loadAll(): Promise<void> {
     loadKey<ArchivedGame[]>(KEYS.archive),
     loadKey<RecordedMistake[]>(KEYS.mistakes),
     loadKey<DifficultyMode>(KEYS.difficulty),
+    loadKey<string>(KEYS.playerName),
+    loadKey<boolean>(KEYS.guest),
   ]);
   if (settings) state.settings = { ...DEFAULT_SETTINGS, ...settings };
   if (model) state.model = { ...newPlayerModel(), ...model };
@@ -116,6 +124,8 @@ export async function loadAll(): Promise<void> {
   state.archive = archive ?? [];
   state.mistakes = mistakes ?? [];
   if (difficulty) state.difficulty = difficulty;
+  state.playerName = playerName;
+  state.guest = guest ?? false;
 }
 
 export const persist = {
@@ -126,6 +136,8 @@ export const persist = {
   archive: () => saveKey(KEYS.archive, state.archive.slice(0, 100)),
   mistakes: () => saveKey(KEYS.mistakes, state.mistakes.slice(0, 60)),
   difficulty: () => saveKey(KEYS.difficulty, state.difficulty),
+  playerName: () => state.playerName ? saveKey(KEYS.playerName, state.playerName) : removeKey(KEYS.playerName),
+  guest: () => saveKey(KEYS.guest, state.guest),
 };
 
 export function recordMistakes(list: RecordedMistake[]): void {

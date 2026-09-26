@@ -66,6 +66,20 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
 }
+
+/* — iOS/Android safe areas (index.html sets viewport-fit=cover) — */
+#app {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+nav[aria-label='Main navigation'] {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
 h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
 
 .plate{filter:sepia(0.22) saturate(0.82) contrast(1.05);box-sizing:border-box;

@@ -36,7 +36,7 @@ export class StatsScreen implements Screen {
         el('div', { style: 'font-family:var(--font-heading); font-weight:400; font-size:36px' }, 'Insights'),
         el('div', { style: 'width:64px; height:1px; background:var(--color-divider); margin:10px auto' }),
         el('div', { style: 'font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-neutral-600)' },
-          `Rating ${m.rating} · Level ${lv.level}`),
+          `${state.playerName ?? 'Guest'} · Rating ${m.rating} · Level ${lv.level}`),
       ),
     );
     const col = el('div', { style: 'width:min(420px, calc(100vw - 24px)); display:flex; flex-direction:column; gap:20px; margin-top:clamp(16px,3vw,28px)' });

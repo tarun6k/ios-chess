@@ -3,6 +3,7 @@ import { controller } from './app/controller';
 import { initRouter, registerScreen, navigate } from './ui/router';
 import { GameScreen } from './ui/gameScreen';
 import { HomeScreen } from './ui/homeScreen';
+import { LoginScreen } from './ui/loginScreen';
 import { PuzzlesScreen } from './ui/puzzlesScreen';
 import { StatsScreen } from './ui/statsScreen';
 import { SettingsScreen } from './ui/settingsScreen';
@@ -13,6 +14,7 @@ let gameScreen: GameScreen | null = null;
 async function boot(): Promise<void> {
   await loadAll();
 
+  registerScreen('login', () => new LoginScreen());
   registerScreen('home', () => new HomeScreen());
   registerScreen('play', () => {
     if (!gameScreen) gameScreen = new GameScreen();
@@ -28,6 +30,14 @@ async function boot(): Promise<void> {
 
   const app = document.getElementById('app')!;
   initRouter(app);
+
+  // First launch: ask for a name (or a guest opt-out) before anything else.
+  // A stale #login hash after that choice falls through to home.
+  if (!state.playerName && !state.guest) {
+    navigate('login');
+  } else if (location.hash === '#login') {
+    navigate('home');
+  }
 
   // Crash-safe resume: if an unfinished game exists, restore it silently so
   // "Play" (and the Home continue card) both land on the exact position.

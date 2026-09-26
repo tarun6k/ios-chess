@@ -2,7 +2,7 @@
 
 import { el, clear } from './dom';
 
-export type Route = 'home' | 'play' | 'puzzles' | 'stats' | 'settings';
+export type Route = 'login' | 'home' | 'play' | 'puzzles' | 'stats' | 'settings';
 
 export interface Screen {
   root: HTMLElement;
@@ -38,8 +38,14 @@ function show(route: Route): void {
     outlet.append(current.root);
     outlet.scrollTop = 0;
     window.scrollTo(0, 0);
+    // iOS: a dismissing keyboard re-applies its scroll compensation after we
+    // navigate away from a focused input; re-assert the top once it settles.
+    window.setTimeout(() => window.scrollTo(0, 0), 350);
   }
   current.mount?.();
+  // The login screen owns the whole viewport — no bottom nav until the
+  // player has introduced themselves (or chosen to stay a guest).
+  if (navBar) navBar.style.display = route === 'login' ? 'none' : 'flex';
   renderNav();
 }
 

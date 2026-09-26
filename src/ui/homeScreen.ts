@@ -34,7 +34,7 @@ export class HomeScreen implements Screen {
         el('div', { style: 'font-family:var(--font-heading); font-weight:400; font-size:44px; letter-spacing:0.02em; line-height:1.1' }, 'Chess'),
         el('div', { style: 'width:64px; height:1px; background:var(--color-divider); margin:10px auto' }),
         el('div', { style: 'font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-neutral-600)' },
-          'An opponent that learns you'),
+          state.playerName ? `Welcome back, ${state.playerName}` : 'An opponent that learns you'),
       ),
     );
 
