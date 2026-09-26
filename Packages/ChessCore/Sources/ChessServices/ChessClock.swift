@@ -1,9 +1,11 @@
 // TS src/app/clock.ts: the time presets, `customTimeControl`, the Fischer-increment `ChessClock` and
 // `formatClock` (`TimeControl` itself is in TimeControl.swift since Phase 2). The TS clock reads
 // `Date.now()` and ticks with `setInterval(…, 100)`; here both come from an injectable
-// `ClockTimeSource` — `ContinuousClockTimeSource` in the app, `ManualTimeSource` in tests.
+// `ClockTimeSource` — `ContinuousClockTimeSource` in the app, `ManualTimeSource` in tests. The same
+// source also stands in for the controller's `Date.now()` wall clock and its `setTimeout`.
 
 import ChessCore
+import Foundation
 
 /// TS `TIME_PRESETS`.
 public let timePresets: [TimeControl] = [
@@ -27,16 +29,21 @@ public func customTimeControl(baseMin: Double, incSec: Double) -> TimeControl {
     return TimeControl(name: "Custom \(b)+\(i)", baseMs: b * 60_000, incrementMs: i * 1000)
 }
 
-/// TS `Date.now()` and `setInterval`: the wall clock and the interval timer a `ChessClock` runs on.
+/// TS `Date.now()`, `setInterval` and `setTimeout`: the clock a `ChessClock` and the `GameController`
+/// run on.
 @MainActor
 public protocol ClockTimeSource: AnyObject {
     /// Milliseconds on a monotonic scale; only differences are used.
     var nowMs: Int { get }
+    /// The wall-clock date (TS `new Date()` / `Date.now()` where the value is stored or displayed).
+    var now: Date { get }
     /// Calls `tick` every `intervalMs` milliseconds until the returned timer is cancelled.
     func schedule(intervalMs: Int, _ tick: @escaping @MainActor () -> Void) -> ClockTimer
+    /// Calls `fire` once, `afterMs` milliseconds from now, unless the returned timer is cancelled first.
+    func schedule(afterMs: Int, _ fire: @escaping @MainActor () -> Void) -> ClockTimer
 }
 
-/// A repeating timer handle (`clearInterval`).
+/// A timer handle (`clearInterval` / `clearTimeout`).
 @MainActor
 public final class ClockTimer {
     private var onCancel: (@MainActor () -> Void)?
@@ -64,6 +71,8 @@ public final class ContinuousClockTimeSource: ClockTimeSource {
         return Int(seconds) * 1000 + Int(attoseconds / 1_000_000_000_000_000)
     }
 
+    public var now: Date { Date() }
+
     public func schedule(intervalMs: Int, _ tick: @escaping @MainActor () -> Void) -> ClockTimer {
         let task = Task { @MainActor in
             while !Task.isCancelled {
@@ -74,19 +83,30 @@ public final class ContinuousClockTimeSource: ClockTimeSource {
         }
         return ClockTimer { task.cancel() }
     }
+
+    public func schedule(afterMs: Int, _ fire: @escaping @MainActor () -> Void) -> ClockTimer {
+        let task = Task { @MainActor in
+            do { try await Task.sleep(for: .milliseconds(max(0, afterMs))) } catch { return }
+            if Task.isCancelled { return }
+            fire()
+        }
+        return ClockTimer { task.cancel() }
+    }
 }
 
 /// A hand-driven time source for tests and previews (vitest's fake timers): `advance(ms:)` moves the
 /// clock and fires every due timer in order, setting `nowMs` to the timer's due time before its callback
-/// runs, exactly like `vi.advanceTimersByTime`.
+/// runs, exactly like `vi.advanceTimersByTime`. `nowMs` doubles as the epoch-millisecond wall clock
+/// (`vi.setSystemTime`), so `now` is `Date(timeIntervalSince1970: nowMs / 1000)`.
 @MainActor
 public final class ManualTimeSource: ClockTimeSource {
     private final class Entry {
-        let intervalMs: Int
+        /// Repeat interval; nil for a one-shot `setTimeout`.
+        let intervalMs: Int?
         var dueMs: Int
         let tick: @MainActor () -> Void
 
-        init(intervalMs: Int, dueMs: Int, tick: @escaping @MainActor () -> Void) {
+        init(intervalMs: Int?, dueMs: Int, tick: @escaping @MainActor () -> Void) {
             self.intervalMs = intervalMs
             self.dueMs = dueMs
             self.tick = tick
@@ -100,11 +120,20 @@ public final class ManualTimeSource: ClockTimeSource {
         self.nowMs = nowMs
     }
 
-    /// Number of live timers (0 once every clock is paused or disposed).
+    public var now: Date { Date(timeIntervalSince1970: Double(nowMs) / 1000) }
+
+    /// Number of live timers (0 once every clock is paused or disposed and every timeout has fired).
     public var scheduledTimerCount: Int { timers.count }
 
     public func schedule(intervalMs: Int, _ tick: @escaping @MainActor () -> Void) -> ClockTimer {
-        let entry = Entry(intervalMs: intervalMs, dueMs: nowMs + intervalMs, tick: tick)
+        add(Entry(intervalMs: intervalMs, dueMs: nowMs + intervalMs, tick: tick))
+    }
+
+    public func schedule(afterMs: Int, _ fire: @escaping @MainActor () -> Void) -> ClockTimer {
+        add(Entry(intervalMs: nil, dueMs: nowMs + max(0, afterMs), tick: fire))
+    }
+
+    private func add(_ entry: Entry) -> ClockTimer {
         timers.append(entry)
         return ClockTimer { [weak self] in
             self?.timers.removeAll { $0 === entry }
@@ -112,11 +141,16 @@ public final class ManualTimeSource: ClockTimeSource {
     }
 
     /// Moves time forward by `ms`, firing due timers in due-time order (registration order on ties).
+    /// Timers registered by a callback are fired in the same pass when they fall due before `target`.
     public func advance(ms: Int) {
         let target = nowMs + ms
         while let next = timers.min(by: { $0.dueMs < $1.dueMs }), next.dueMs <= target {
             nowMs = next.dueMs
-            next.dueMs += next.intervalMs
+            if let interval = next.intervalMs {
+                next.dueMs += interval
+            } else {
+                timers.removeAll { $0 === next }
+            }
             next.tick()
         }
         nowMs = target
