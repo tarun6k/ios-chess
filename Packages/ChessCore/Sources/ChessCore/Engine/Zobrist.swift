@@ -46,6 +46,14 @@ public enum Zobrist {
     /// The TS `hi` half of a packed key.
     @inline(__always) public static func hi(of key: UInt64) -> UInt32 { UInt32(truncatingIfNeeded: key >> 32) }
 
+    /// Inverse of `Position.hashKey` (`lo.toString(36) + '.' + hi.toString(36)`); nil for any other string.
+    public static func hash(fromKey key: String) -> UInt64? {
+        guard let dot = key.firstIndex(of: "."),
+              let lo = UInt32(key[..<dot], radix: 36),
+              let hi = UInt32(key[key.index(after: dot)...], radix: 36) else { return nil }
+        return Zobrist.key(lo: lo, hi: hi)
+    }
+
     private struct Tables {
         var pieces: [UInt64] = []
         var castling: [UInt64] = []
