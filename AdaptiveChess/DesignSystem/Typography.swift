@@ -1,7 +1,7 @@
 // Fonts and the type scale of public/styles.css + the inline text styles the TS screens use.
 //
 // The web app ships two variable fonts and pins `wght` through `@font-face` (400 and 600).
-// The bundle carries the same faces as four static instances (see PORTING_PLAN Notes), so the
+// The bundle carries the same faces as four static instances (see docs/PORTING_NOTES.md, Notes), so the
 // CSS weight → face lookup is the browser's: 400/500 → Regular, 600 → SemiBold.
 
 import SwiftUI

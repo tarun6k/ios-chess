@@ -158,7 +158,7 @@ public struct Storage: Sendable {
 // MARK: - Capacitor migration
 
 extension Storage {
-    /// `@capacitor/preferences` (node_modules/@capacitor/preferences/ios/Sources/PreferencesPlugin/Preferences.swift)
+    /// The `@capacitor/preferences` iOS plugin (`PreferencesPlugin/Preferences.swift` in that package)
     /// keeps every value as a string in `UserDefaults.standard` under `"CapacitorStorage." + key` — the
     /// default group `"CapacitorStorage"` plus a dot, since the app never calls `configure`.
     public static let capacitorKeyPrefix = "CapacitorStorage."

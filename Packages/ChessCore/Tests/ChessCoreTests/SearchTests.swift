@@ -219,7 +219,7 @@ struct SearchTests {
 
     // MARK: - Speed
 
-    @Test("nodes per second (for PORTING_PLAN Notes)")
+    @Test("nodes per second (for the Notes in docs/PORTING_NOTES.md)")
     func speed() throws {
         let positions = [
             ("start d5", Position(), 5),

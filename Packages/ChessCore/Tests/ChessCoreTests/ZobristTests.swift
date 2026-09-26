@@ -1,8 +1,8 @@
 import Testing
 @testable import ChessCore
 
-/// Parity fixtures printed from the TypeScript engine by `.porting/tools/zobrist-dump.ts`
-/// (`node_modules/.bin/vite-node .porting/tools/zobrist-dump.ts`).
+/// Parity fixtures printed from the TypeScript engine by `.porting/tools/zobrist-dump.ts` (vite-node);
+/// the TS was removed in Phase 10, see docs/PORTING_NOTES.md to regenerate.
 @Suite("Zobrist parity with zobrist.ts")
 struct ZobristTests {
     /// The first 20 outputs of `mulberry32(0x9e3779b9)`, i.e. ZOBRIST_PIECES_LO/HI[0…9] interleaved.

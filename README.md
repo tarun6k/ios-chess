@@ -1,179 +1,249 @@
 # Adaptive Chess
 
-An offline iOS (and Android) chess app with an AI opponent that **models the player
-and adapts** — built on the "Classical" design system from the companion Claude Design
-project (`Chess Game.dc.html` is implemented 1:1 as the game screen; the other screens
-extend its visual language minimally).
+An offline iPhone and iPad chess app, written in Swift and SwiftUI, with an AI opponent that
+**models the player and adapts**. It is a 1:1 native port of the earlier TypeScript/Capacitor
+app: the same rules engine, search, persona model, adaptation logic, puzzles, progression and
+persistence, verified move-for-move and byte-for-byte against fixtures generated from the
+original. The "Classical" design system (wood plate, engraved glyph pieces, Cormorant Garamond
+and Lora) is reproduced in SwiftUI.
 
-## Quick start
+No CocoaPods, no npm, no third-party packages: the app uses Apple frameworks only.
 
-```bash
-npm install
-npm run dev            # web dev server (http://localhost:5173)
-npm test               # full test suite (engine, AI, app layer; includes perft(5) = 4,865,609)
-npm run ios            # build web → sync into ios/ → open the Xcode workspace
-```
+## Requirements
 
-### iOS
+- macOS with **Xcode 27 beta** at `/Applications/Xcode-beta.app` (Swift 6 toolchain).
+  Either make it the default with `sudo xcode-select -s /Applications/Xcode-beta.app` or export
+  `DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer` before every `xcodebuild`,
+  `xcrun` and `swift` command below. The examples assume the export.
+- An **iPhone 17 Pro** simulator (any iOS 17+ simulator works; the commands name this one).
+- No Apple developer account is needed for the simulator (`CODE_SIGNING_ALLOWED=NO`). For a
+  device build, open `AdaptiveChess.xcodeproj` in Xcode and pick your team under
+  *Signing & Capabilities*. The bundle identifier is `com.adaptivechess.app`.
 
-Requirements on this machine:
+Deployment target iOS 17.0; the Swift package also builds for macOS 14 so its tests run on the Mac.
 
-- Xcode 27 beta at `/Applications/Xcode-beta.app`. Either make it the default
-  (`sudo xcode-select -s /Applications/Xcode-beta.app`) or export
-  `DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer` before any
-  `npx cap` / `xcodebuild` / `xcrun` command.
-- CocoaPods. `npx cap sync ios` runs `pod install` in `ios/App` for you.
-
-Build and run on the simulator from the command line:
+## Build, run and test
 
 ```bash
-npm run build && npx cap sync ios
-cd ios/App
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug \
-  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
-  -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO build
+export DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer
+SIM='platform=iOS Simulator,name=iPhone 17 Pro'
+
+# Build the app for the simulator
+xcodebuild build -project AdaptiveChess.xcodeproj -scheme AdaptiveChess \
+  -destination "$SIM" -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO
+
+# Install and launch it
 xcrun simctl boot "iPhone 17 Pro"
-xcrun simctl install booted DerivedData/Build/Products/Debug-iphonesimulator/App.app
+open -a Simulator
+xcrun simctl install booted DerivedData/Build/Products/Debug-iphonesimulator/AdaptiveChess.app
 xcrun simctl launch booted com.adaptivechess.app
+
+# Engine, AI and services tests (Swift Testing, runs on the Mac; release = realistic speed)
+( cd Packages/ChessCore && swift test -c release )
+
+# App unit tests + UI tests on the simulator (all three test targets)
+xcodebuild test -project AdaptiveChess.xcodeproj -scheme AdaptiveChess \
+  -destination "$SIM" -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO
+
+# Only one bundle
+xcodebuild test ... -only-testing:AdaptiveChessTests
+xcodebuild test ... -only-testing:AdaptiveChessUITests
+xcodebuild test ... -only-testing:AdaptiveChessUITests/LayoutUITests
+
+# Clean
+xcodebuild clean -project AdaptiveChess.xcodeproj -scheme AdaptiveChess -derivedDataPath DerivedData
+( cd Packages/ChessCore && swift package clean )
 ```
 
-For a device build, open the workspace (`npx cap open ios`) and set your team under
-*Signing & Capabilities*. The bundle identifier is `com.adaptivechess.app`.
+Useful variants:
 
-What is tracked in `ios/` versus generated: the Xcode project, `Info.plist`,
-`AppDelegate.swift`, the asset catalog and `Podfile` are committed. `Pods/`,
-`DerivedData/`, the synced web bundle in `App/App/public/`, and the generated
-`capacitor.config.json` / `config.xml` are ignored and recreated by `npx cap sync ios`.
+- **iPad**: swap the destination for `name=iPad Pro 13-inch (M5)` or `name=iPad mini (A17 Pro)`.
+  `LayoutUITests` checks portrait and landscape on iPad; the landscape case is skipped on
+  iPhone because the phone is portrait-only.
+- **Screenshots from the UI tests**: `TEST_RUNNER_ADAPTIVE_CHESS_SHOTS=/absolute/dir` makes
+  `LayoutUITests` write one PNG per scenario and device (`iPhone-17-Pro-play-start.png` …).
+- **Debug launch arguments** (DEBUG builds only, used by the UI tests): `--scenario <name>`
+  puts the app straight into a state (`home`, `play-start`, `play-selected`, `play-promotion`,
+  `gameover-pvp`, `finished-pvp`, `gameover-ai`, `puzzles`, `insights`, `settings`,
+  `home-continue`); `--board-gallery <page>` shows one page of board states (start, selected,
+  captures, check, promotion, flipped, design-system sampler) for visual comparison;
+  `--reset-state` wipes saved data first. Example:
+  `xcrun simctl launch booted com.adaptivechess.app --reset-state --scenario play-promotion`.
 
-iOS-specific behaviour worth knowing:
+## Project layout
 
-- **Safe areas** — `index.html` sets `viewport-fit=cover`; `public/styles.css` pads
-  `#app` and the bottom nav with `env(safe-area-inset-*)`. `capacitor.config.ts` sets
-  `contentInset: 'never'` and a webview `backgroundColor` matching `--color-bg` so
-  nothing flashes white behind the app.
-- **Orientation** — iPhone is portrait-only (`UISupportedInterfaceOrientations`). The
-  board is sized from viewport width with 62px-max squares, which does not fit a
-  landscape phone. iPad keeps all orientations; its height is sufficient.
-- **First launch** — `src/ui/loginScreen.ts` asks for a name or a guest opt-out once;
-  the choice is persisted via Capacitor Preferences and the screen never returns.
-  `src/ui/router.ts` re-asserts scroll position after the iOS keyboard dismisses.
-
-### Android
-
-```bash
-npm run android        # build web → sync → assemble debug APK
 ```
-
-The debug APK lands in `android/app/build/outputs/apk/debug/app-debug.apk`.
-Building needs a JDK 21 (`JAVA_HOME=/opt/homebrew/opt/openjdk@21`) and the Android SDK
-(`ANDROID_HOME=~/Library/Android/sdk`, platform 35).
+AdaptiveChess.xcodeproj         app + AdaptiveChessTests + AdaptiveChessUITests targets
+AdaptiveChess/                  the iOS app (MainActor default isolation)
+  AdaptiveChessApp.swift          @main, scene phases → pause clock / autosave / resume
+  Info.plist                      portrait-only iPhone, all orientations on iPad
+  DesignSystem/                   Theme (colours, spacing, radii), Typography (bundled fonts,
+                                  synthetic oblique), Components (buttons, cards, segmented
+                                  controls, section labels, tags)
+  Platform/                       AppFeedback (FeedbackService), SoundPlayer (AVAudioEngine
+                                  synthesised tones), Haptics (UIKit generators)
+  Resources/                      Assets.xcassets (AppIcon, Splash, wood texture, colours),
+                                  Fonts (Cormorant Garamond, Lora)
+  UI/                             AppBoot, RootView (tab bar + router), DebugScenarios
+    Board/                        BoardView, SquareView, PieceGlyph, BoardGestures,
+                                  PromotionDialog, BoardGallery
+    Screens/                      LoginScreen, HomeScreen, PuzzlesScreen, InsightsScreen,
+                                  SettingsScreen, PageLayout
+      Game/                       GameScreen, GameScreenModel, SidePanel, ReviewCard,
+                                  GameOverDialog, DrawOfferDialog
+AdaptiveChessTests/             Swift Testing: launch smoke test, design system, AI speed
+AdaptiveChessUITests/           XCTest UI tests: flows, board interaction, layout snapshots
+Packages/ChessCore/             local Swift package (Swift 6 language mode)
+  Sources/ChessCore/
+    Engine/                       Types, Zobrist, MoveList, Position, Game, SAN, PGN, Perft
+    AI/                           Eval, Search, Persona, PlayerModel, Adaptation, Openings,
+                                  Protocol, AnalyzedMove, DifficultyMode, AIEngine
+  Sources/ChessServices/        GameController, AIService, ChessClock, TimeControl, Puzzles,
+                                Progression, Store, StoreModels, Storage, Feedback
+  Tests/ChessCoreTests/         engine, AI and adaptation tests + JSON fixtures from the TS
+  Tests/ChessServicesTests/     clock, store, progression, puzzle validity, controller tests
+docs/PORTING_NOTES.md           TS → Swift mapping, phase history, notes, faithfully-ported bugs
+```
 
 ## Architecture
 
-Three strictly separated layers — the rules engine and AI know nothing about the DOM,
-so they run identically in the UI thread, the Web Worker, and Vitest:
+Four layers. The two package libraries know nothing about SwiftUI, so they run identically in
+the app, in `swift test` on the Mac and inside the simulator.
 
-```
-src/engine/    deterministic rules engine (zero dependencies)
-  types.ts       board/move encodings (packed 32-bit moves)
-  position.ts    make/unmake, legal movegen, FEN, Zobrist hashing, material logic
-  game.ts        game lifecycle: SAN history, every draw rule, results
-  san.ts, pgn.ts notation + PGN import/export
-  perft.ts       verification node counts
+**Engine** (`ChessCore/Engine`) is a deterministic rules engine with zero dependencies.
+`Position` holds a 64-square mailbox board with packed 32-bit moves, make/unmake, legal move
+generation into a fixed-size `MoveList`, FEN, incremental Zobrist hashing and material logic.
+`Game` adds the move history with SAN, every draw rule and `GameResult`. `SAN.swift`,
+`PGN.swift` and `Perft.swift` provide notation, PGN import/export and verification counts.
 
-src/ai/        the opponent
-  eval.ts        material + PSTs + pawn structure + king safety + mobility,
-                 with adaptation knobs (EvalParams)
-  search.ts      iterative-deepening alpha-beta, quiescence, transposition
-                 table, killers/history, repetition-aware
-  persona.ts     skill → depth/noise/blunder model (human-like errors)
-  playerModel.ts persistent player model: style features, weaknesses, openings, Elo
-  adaptation.ts  player model → eval params, opening prep, difficulty band
-  openings.ts    compact named opening book
-  protocol.ts    request/response types shared with the worker
-  worker.ts      Web Worker entry — search never blocks the UI
+**AI** (`ChessCore/AI`) is the opponent. `evaluate(_:params:)` scores material, piece-square
+tables, pawn structure, king safety and mobility with the adaptation knobs in `EvalParams`.
+`Search` is iterative-deepening alpha-beta with quiescence, a transposition table, killer and
+history heuristics, repetition awareness and a deadline polled every 2048 nodes. `Persona`
+turns a 0–20 skill into depth, evaluation noise and a blunder model; `PlayerModel` is the
+persistent profile (style features, weaknesses, openings, Elo); `Adaptation` turns the profile
+into a plan; `Openings` is the compact named book. `AIEngine` is an **actor**: the search runs
+off the main thread and honours Task cancellation, replacing the Web Worker of the TS app.
 
-src/app/       application services
-  controller.ts  one live game: clocks, AI turns, challenges, autosave
-  aiClient.ts    promise-based bridge to the worker
-  clock.ts       Fischer clocks, presets, handicaps, flag/low-time events
-  puzzles.ts     engine-verified puzzles, endgame drills, constraint games
-  progression.ts XP, levels, badges, daily challenge + streaks
-  store.ts       app state + crash-safe persistence
-  storage.ts     Preferences (native) + localStorage (web), written to both
-  feedback.ts    synthesized sounds + haptics
+**Services** (`ChessServices`) is the application layer. `GameController` (`@Observable`,
+`@MainActor`) drives one live game: clocks, AI turns, hints, puzzles, constraint games, drills,
+draw offers, autosave and the post-game pipeline. `AppState` owns settings, the player model,
+progress, the saved game, the archive and recorded mistakes, and persists each through
+`Storage`, which writes every value twice (an atomically replaced `<key>.json` in
+`Library/Application Support/com.adaptivechess.app/` and `UserDefaults`) so a crash mid-write
+still leaves one good copy. `ChessClock` implements Fischer clocks with presets and handicaps;
+`Puzzles` and `Progression` hold the engine-verified puzzles, drills, XP, levels, badges and the
+daily challenge; `FeedbackService` abstracts sounds and haptics.
 
-src/ui/        screens (vanilla TS, design-system CSS from public/styles.css)
-  router.ts, dom.ts, boardView.ts
-  loginScreen, homeScreen, gameScreen, puzzlesScreen, statsScreen, settingsScreen
-```
+**UI** (`AdaptiveChess/`) is SwiftUI with the Observation framework. `AppBoot` runs the
+Capacitor migration, loads state, gates on the login screen and resumes the saved game or starts
+a new one against the AI. `RootView` hosts the Home, Play, Puzzles, Insights and Settings tabs.
+The board (`BoardView` → `SquareView` → `PieceGlyph`) is sized from the viewport width with
+62 pt maximum squares, takes tap and drag input through `BoardGestures`, and draws the dot and
+ring move targets and the promotion dialog.
 
-**Rules coverage**: castling with all legality conditions, en passant (incl. the
-pin edge case), underpromotion, stalemate, threefold (claim) / fivefold (auto),
-fifty (claim) / seventy-five (auto) move rules, insufficient material, dead
-position, resignation, draw offers, and the FIDE 6.9 timeout rule (flag fall is
-a draw when the opponent cannot possibly mate).
+### Rules coverage
+
+Castling with all legality conditions, en passant (including the pin edge case),
+underpromotion, check and checkmate, stalemate, threefold (claimable) and fivefold (automatic)
+repetition, fifty-move (claimable) and seventy-five-move (automatic) rules, insufficient
+material, resignation, draw by agreement, flag fall, and the FIDE 6.9 timeout rule (a flag fall
+is a draw when the opponent cannot possibly mate). Move generation is verified by perft against
+six reference positions.
 
 ## Tests
 
-```
-tests/perft.test.ts        move generation vs six reference positions
-tests/rules.test.ts        castling, en passant, promotion, check/mate edge cases
-tests/draws.test.ts        every draw rule
-tests/notation.test.ts     SAN / PGN round trips
-tests/ai.test.ts           search finds mates, persona error model
-tests/puzzles.test.ts      every shipped puzzle verified by the engine
-tests/clock.test.ts        Fischer clock, increments, low-time, flag fall, formatting
-tests/progression.test.ts  levels, badges, daily streaks, AI-offered challenges
-tests/store.test.ts        persistence round trips, migrations, caps
-tests/controller.test.ts   game flow with a mocked AI worker: turns, puzzles,
-                           constraints, drills, clocks, resume, hints, analysis
-```
+| Target | Framework | Runs on | Contents |
+|---|---|---|---|
+| `ChessCoreTests` + `ChessServicesTests` (169 tests, 29 suites) | Swift Testing | Mac via `swift test -c release` | perft, rules, draws, SAN/PGN, Zobrist parity, eval, search, persona, player model, adaptation, openings, AI engine, puzzle search, clock, store, progression, puzzle validity, game controller |
+| `AdaptiveChessTests` (10 tests) | Swift Testing | simulator | launch scaffold, fonts and board geometry, AI speed budget |
+| `AdaptiveChessUITests` (18 tests) | XCTest | simulator | first-launch and navigation flows, board taps and drags, promotion, layout snapshots on iPhone and iPad (landscape skipped on iPhone) |
 
-`npm test` runs everything; `npm run test:perft` runs only the perft suite.
+The package tests assert exact TS parity: the search fixtures pin best move, score, node count,
+root scores and PV; the adaptation fixtures pin the plan, notes and rating for three analysed
+games. Every function that rolls dice takes an `rng` parameter, so the tests replay the TS tests'
+seeded generator and get the same persona picks and mirror decisions.
 
 ## How adaptation works
 
-After every finished AI game:
+After every finished game against the AI (`GameController.onGameEnd`):
 
-1. **Facts** are extracted from the move record (capture rate, early-queen ply,
-   castling ply, pawn storms, checks, trade rate, think time) and folded into
-   rolling style features (`playerModel.ts`).
-2. A **background analysis** pass (same engine, in the worker) grades each of the
-   player's moves; mistakes are classified into weaknesses — hanging pieces,
-   missed tactics, back-rank, endgame, opening, king safety — and big mistakes
-   are saved verbatim as **personalized puzzles** ("find the move you missed").
-3. Before the next game, `planForGame()` turns the model into behavior:
-   - *aggressive players* → the AI weights its own king safety up and plays solid book lines;
-   - *tactical players* → closed-center preference (locked-pawn eval bonus), closed openings;
-   - *passive players* → space-grab weighting and sharp lines;
+1. **Facts** are extracted from the move record by `extractFacts(_:playerColor:)` (capture
+   rate, early-queen ply, castling ply, pawn storms, checks, trade rate, think time) and folded
+   into the rolling `StyleFeatures` of the `PlayerModel` by `updateModelAfterGame`.
+2. A **background analysis** (`AIEngine.analyze`, 250 ms per move, run as a cancellable Task)
+   grades each move as an `AnalyzedMove`. `extractWeaknesses` classifies the player's mistakes
+   into `WeaknessKey`s (hanging pieces, missed tactics, back rank, endgame, opening, king
+   safety), the centipawn loss feeds the accuracy feature, and moves that lost 200 cp or more
+   are stored as `RecordedMistake`s and served back as **personalised puzzles** ("find the move
+   you missed"). The grades are attached to the archived game for review.
+3. Before the next game, `planForGame(_:mode:aiColor:rng:)` turns the model into an
+   `AdaptationPlan` (`EvalParams`, preferred opening tags, notes):
+   - *aggressive players* → the AI raises its own king-safety weight and plays solid book lines;
+   - *tactical players* → closed-centre preference and closed openings;
+   - *defensive players* → space weighting and sharp lines;
+   - *positional players* → aggression and mobility, open sharp lines;
    - *materialistic players* → initiative over pawns.
-   It also prepares against the player's most-frequent opening — and ~25% of the
-   time mirrors it back at them.
-4. Everything the AI did differently is shown honestly in the post-game
-   **"How I adapted"** panel and on the Insights screen.
+   It also prepares against the player's most frequent opening and, one time in four,
+   `pickBookMove` mirrors it back at them.
+4. Everything the AI did differently is listed in the plan's notes and shown honestly in the
+   **"How I adapted"** section of `GameOverDialog` and on the Insights screen.
 
 ## Tuning AI difficulty
 
-Rubber-band Elo, in `adaptation.ts` / `persona.ts`:
+Rubber-band Elo, in `Adaptation.swift` and `Persona.swift`:
 
-- The player has a persistent Elo (K=48 first 10 games, then 24), updated after
-  each AI game against the AI's effective Elo.
-- Mode offsets: **Learn** = player−90, **Match** = player, **Push me** = player+90,
-  plus a streak band of ±25 Elo per consecutive win/loss (capped ±120) — win and
-  the AI firms up, slump and it eases off.
-- Target Elo maps to skill 0–20 (`eloToSkill`), which sets: search depth (2–8),
-  Gaussian evaluation noise (0–220 cp), a bounded-loss candidate window, and the
-  blunder rate. Mistakes are *plausible*: the persona only picks among moves the
-  search actually scored, never abandons a found mate, and never hangs a piece
-  outside its loss bound. Tune the depth/noise tables in `personaForSkill()` and
-  the offsets in `targetElo()`.
+- The player has a persistent Elo (`updateRating`: K = 48 for the first 10 games, then 24,
+  floor 200, history capped at 200 points), updated after each AI game against the AI's
+  effective Elo.
+- `targetElo(_:mode:)`: **Learn** = player − 90, **Match** = player, **Push me** = player + 90,
+  plus a streak band of ±25 Elo per consecutive win or loss capped at ±120, clamped to
+  600…2200. Win and the AI firms up; slump and it eases off.
+- `eloToSkill` maps that to skill 0–20 (`skillToElo` is 600 + 80 × skill) and
+  `personaForSkill(_:moveTimeMs:)` sets: search depth 2/3/4/5/8 for skill ≤2/≤6/≤11/≤16/above,
+  Gaussian evaluation noise `(20 − skill)² × 0.55` cp (0 at 20, 220 at 0), a bounded-loss
+  candidate window of 30/80/160/320 cp and a blunder rate of 2/6/12/22 %. Mistakes are
+  *plausible*: `chooseMove` only picks among moves the search actually scored, never abandons a
+  found mate and never exceeds its loss bound. Tune the tables in `personaForSkill` and the
+  offsets in `targetElo`.
+- The move-time budget is 900 + 300 × depth ms, so a skill-20 reply is bounded by about 3.3 s
+  even on a slow device; `AIPerformanceTests` checks it in the simulator.
+
+## Data migration from the Capacitor version
+
+The old app stored its nine `chess.*` keys through `@capacitor/preferences`, which keeps each
+value as a JSON string in `UserDefaults.standard` under `CapacitorStorage.<key>`. On first
+launch `AppBoot` calls `AppState.migrateFromCapacitor()` before loading state:
+`Storage.migrateCapacitorPreferences(from:)` copies each legacy value that has no native
+counterpart yet into the new dual-copy storage, never overwrites native data, leaves the legacy
+values in place and records `chess.capacitorMigrated` so the import runs once. Settings, player
+model, progress, saved game, archive, recorded mistakes, difficulty, player name and guest flag
+all carry over, so an upgrade keeps the rating, badges and the game in progress.
+
+## Performance (release, Apple silicon)
+
+| Measurement | Value |
+|---|---|
+| perft(5) from the start position (4,865,609 nodes) | 0.29 s, about 16.8 M nodes/s |
+| search speed (fixture positions) | about 1.33 M nodes/s (the TS ran about 194 k nodes/s in Node) |
+| start position, depth 5 | 77,830 nodes in 48 ms |
+| transposition table | 262,144 entries, about 6.3 MB |
+
+Debug builds in the simulator search roughly ten to a hundred times slower; the release
+configuration is what ships.
 
 ## Design fidelity
 
-`public/styles.css` is the Classical design system verbatim (fonts bundled
-locally for offline); the game screen reproduces the design file's exact markup
-and inline styles — wood plate, textured squares, engraved glyph pieces, dot/ring
-targets, segmented controls, promotion dialog. Extensions (difficulty picker,
-draw/resign/hint, game-over sheet, review mode, Home/Puzzles/Insights/Settings)
-reuse only tokens and components from that system.
+`Theme.swift` holds the Classical design tokens (colours, spacing, radii), `Typography.swift`
+registers the bundled Cormorant Garamond and Lora faces and synthesises the 14° oblique WebKit
+produced for italic text, and `Components.swift` reproduces the buttons, cards, segmented
+controls and tags. The game screen follows the original markup: wood plate, textured squares,
+engraved glyph pieces, dot and ring targets, promotion dialog, side panel and review card.
+Layouts were compared against reference screenshots of the TS app at iPhone and iPad viewports.
+
+## Known gaps
+
+The port reproduces the TS app's behaviour, including its bugs; they are listed with their
+causes under "Faithfully-ported bugs" in `docs/PORTING_NOTES.md` (for example the unused
+Animations setting, the unreachable dead-position result and the closed-centre bonus that only
+applies when the AI is White). The launch icon and splash are still the Capacitor placeholders.

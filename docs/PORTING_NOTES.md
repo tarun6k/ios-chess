@@ -1,8 +1,15 @@
-# Porting plan: Adaptive Chess → native Swift + SwiftUI
+# Porting notes: Adaptive Chess → native Swift + SwiftUI
 
-Branch `swift-native`. The TypeScript app in `src/` is the specification. This document records the
-rules of the port, how every TS file becomes Swift, which phase does it, and what each phase must prove
-before it is committed.
+The TypeScript/Capacitor app was the specification for this port. Its sources were removed from the
+tree in Phase 10; the last commit that still contains `src/`, `tests/`, `public/`, `ios/` and
+`android/` is `6eecf06` ("Phase 9: QA, UI tests and polish"), so `git show 6eecf06:src/ai/search.ts`
+(or a checkout of that commit) is the way to read any TS file named below. This document records the
+rules of the port, how every TS file became Swift, which phase did it, what each phase proved before it
+was committed, the notes gathered along the way and the TS bugs that were ported faithfully.
+
+`.porting/` is local, gitignored working material (reference screenshots, screenshot-diff tools,
+Playwright DOM measurements, the `*-dump.ts` fixture generators that import from `src/`); it is not
+in the repository and the generators need the checkout above to run again.
 
 ## RULES
 
@@ -57,8 +64,9 @@ are in `.porting/reference/` (gitignored). Each exists as a viewport shot and a 
 | 11-settings | Settings tab |
 | 12-home-continue | home with a resumable game ("Continue" card) |
 
-Regenerate: `npm run dev -- --port 5180` then `node .porting/tools/capture.mjs http://127.0.0.1:5180`
-(the tools folder has its own `package.json` with Playwright; nothing is added to the app's `package.json`).
+Regenerate (from a checkout of `6eecf06`): `npm install && npm run dev -- --port 5180`, then
+`node .porting/tools/capture.mjs http://localhost:5180` (the tools folder has its own `package.json`
+with Playwright).
 
 ## Mapping: TypeScript → Swift
 
@@ -228,10 +236,11 @@ Run on a real iPhone (release build) and once on an iPad:
 10. **Rotation on iPad.** Rotate mid-game: the board keeps its size and position state, the side panel moves from under the board (portrait) to its right (landscape), no dialog is clipped. On an iPhone the app must stay portrait when the phone is turned.
 
 ### Phase 10 — Cleanup & PR
-- [ ] Remove the Capacitor/TS app: src/, tests/, public/, index.html, capacitor.config.ts, vite.config.ts, tsconfig.json, package.json, package-lock.json, ios/App, android/
-- [ ] Update README.md for the native project (build, test, layout); update .gitignore
-- [ ] Final `swift test` + `xcodebuild build` from a clean clone of the branch
-- [ ] Commit "Phase 10: cleanup" and open a pull request from `swift-native` into `main` on tarun6k/ios-chess (do not push to main)
+- [x] Removed the Capacitor/TS app: `src/`, `tests/`, `public/`, `index.html`, `capacitor.config.ts`, `vite.config.ts`, `tsconfig.json`, `package.json`, `package-lock.json`, the whole `ios/` Capacitor project (Podfile, Podfile.lock, Pods, DerivedData) and `android/`, plus the untracked `node_modules/` and `dist/`. Nothing in the Swift project referenced those paths (checked with a grep of the app, the tests, the package and the pbxproj); the TS file names survive only in provenance comments and in this document
+- [x] README.md rewritten for the native project; `.gitignore` reduced to Xcode/SwiftPM artifacts and `.porting/`; this plan moved to `docs/PORTING_NOTES.md` (there was no `SWIFT_PORT_PHASES.md` in the repository)
+- [x] Leftover search (`Capacitor`, `npm`, `node`, `vite`, `android`, `localStorage`, `WebView`, `.ts`): the remaining hits are the Capacitor Preferences migration (`Storage.migrateCapacitorPreferences`, its tests and the README section that documents it), comments that name the TS file a Swift file was ported from, the search's node counts, and this document
+- [x] Final check after `swift package clean` / `xcodebuild clean`: `swift test -c release` (169 tests), `xcodebuild test` on iPhone 17 Pro (all three targets) green with zero warnings; the branch also builds and tests from a fresh `git clone`
+- [x] Commit "Phase 10: remove Android and web code, update docs" and open the pull request from `swift-native` into `main` on tarun6k/ios-chess (nothing is pushed to main)
 
 ## Faithfully-ported bugs
 

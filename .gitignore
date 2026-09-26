@@ -1,18 +1,19 @@
-node_modules/
-dist/
+# macOS
 .DS_Store
 
-# Android build artifacts
-android/.gradle/
-android/build/
-android/app/build/
-android/local.properties
-android/.idea/
-android/app/release/
-.porting/
+# Xcode
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcresult
+*.xcscmblueprint
+*.xccheckout
 
-# Swift / Xcode build artifacts
+# Swift Package Manager
 .build/
 .swiftpm/
-xcuserdata/
-DerivedData/
+Packages/*/.build/
+Package.resolved
+
+# Local porting material (reference screenshots, TS fixture generators, comparison tools)
+.porting/

@@ -62,7 +62,7 @@ public func planForGame(_ model: PlayerModel, mode: DifficultyMode, aiColor: Pie
 
     // closedPref is a white-positive eval term; flip so it favors the AI's wish.
     // TS: `const closedSign = aiColor === WHITE ? 1 : 1;` — both branches are 1, so `aiColor` has no effect
-    // (see "Faithfully-ported bugs" in PORTING_PLAN.md).
+    // (see "Faithfully-ported bugs" in docs/PORTING_NOTES.md).
     let closedSign: Double = 1
     switch label {
     case .aggressive:

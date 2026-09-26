@@ -2,8 +2,8 @@ import Foundation
 import Testing
 @testable import ChessCore
 
-// Expected values generated from the TypeScript by `.porting/tools/ai-dump.ts`
-// (run `node_modules/.bin/vite-node .porting/tools/ai-dump.ts` from the repo root).
+// Expected values generated from the TypeScript sources by `.porting/tools/ai-dump.ts` (vite-node).
+// The TS was removed in Phase 10; docs/PORTING_NOTES.md says which commit to check out to regenerate.
 
 struct AIFixtures: Decodable, Sendable {
     struct Tables: Decodable, Sendable {

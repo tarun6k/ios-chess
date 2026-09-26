@@ -335,7 +335,7 @@ struct GamePortTests {
     func deadPosition() throws {
         // isDeadPosition is material-based (neither side has mating potential), and every such
         // material set is also isInsufficientMaterial, which checkAutomaticEnd tests first. So a game
-        // never ends with kind .deadPosition; the TS behaves the same (see PORTING_PLAN.md notes).
+        // never ends with kind .deadPosition; the TS behaves the same (see docs/PORTING_NOTES.md notes).
         for fen in ["4k3/8/8/8/8/8/8/1N2K3 w - - 0 1", "4kb2/8/8/8/8/8/8/2B1K3 w - - 0 1",
                     "4k3/8/8/8/8/8/8/2B1K3 w - - 0 1", "4k3/8/8/8/8/8/8/4K3 w - - 0 1"] {
             let pos = try Position(fen: fen)
